@@ -10,10 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_24_135027) do
+ActiveRecord::Schema.define(version: 2018_10_25_131733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "post_id"
+    t.text "content"
+    t.text "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "goods", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "post_id"
+    t.boolean "is_good", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_goods_on_post_id"
+    t.index ["user_id"], name: "index_goods_on_user_id"
+  end
+
+  create_table "interest_tags", force: :cascade do |t|
+    t.text "title"
+    t.text "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "zone_id"
+    t.bigint "interest_tag_id"
+    t.text "content"
+    t.text "photo"
+    t.integer "number_of_goods", default: 0
+    t.integer "number_of_shares", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["interest_tag_id"], name: "index_posts_on_interest_tag_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
+    t.index ["zone_id"], name: "index_posts_on_zone_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +66,44 @@ ActiveRecord::Schema.define(version: 2018_10_24_135027) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "firstname"
+    t.string "lastname"
+    t.integer "gender", default: 0
+    t.string "avatar_url"
+    t.boolean "is_admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "zone_tags", force: :cascade do |t|
+    t.bigint "zone_id"
+    t.bigint "interest_tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["interest_tag_id"], name: "index_zone_tags_on_interest_tag_id"
+    t.index ["zone_id"], name: "index_zone_tags_on_zone_id"
+  end
+
+  create_table "zones", force: :cascade do |t|
+    t.float "latitude"
+    t.float "longtitude"
+    t.integer "radius"
+    t.text "title"
+    t.text "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_zones_on_user_id"
+  end
+
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
+  add_foreign_key "goods", "posts"
+  add_foreign_key "goods", "users"
+  add_foreign_key "posts", "interest_tags"
+  add_foreign_key "posts", "users"
+  add_foreign_key "posts", "zones"
+  add_foreign_key "zone_tags", "interest_tags"
+  add_foreign_key "zone_tags", "zones"
+  add_foreign_key "zones", "users"
 end

@@ -3,4 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  enum gender: { male: 0, female:1, other: 2}
+
+  has_many :zones
+  has_many :posts, through: :zones
+  has_many :comments
+  has_many :goods
 end
