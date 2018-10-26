@@ -1,0 +1,24 @@
+<h1>Edit a zone</h1>
+
+<%= simple_form_for([@user, @zone]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title
+                %>
+   <%= f.input :latitude
+                %>
+  <%= f.input :longtitude
+                %>
+  <%= f.input :radius
+                %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "create a zone" %>
+  </div>
+<% end %>
+
+<h2>Edit related interests</h2>
+
+<!-- Here we should be able to choose interest tags related to the zone -->

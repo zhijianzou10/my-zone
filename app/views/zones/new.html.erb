@@ -1,0 +1,31 @@
+<h1>Create a zone</h1>
+
+<%= simple_form_for([@user, @zone]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :title,
+                required: true,
+                autofocus: true
+                %>
+   <%= f.input :latitude,
+                as: :float,
+                required: true,
+                autofocus: true
+                %>
+  <%= f.input :longtitude,
+                as: :float,
+                required: true,
+                autofocus: true
+                %>
+  <%= f.input :radius,
+                as: :integer,
+                required: true,
+                autofocus: true
+                %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "create a zone" %>
+  </div>
+<% end %>
