@@ -1,0 +1,38 @@
+.button_normal {
+    background-color: #1B6DA4; /* Green */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    font-size: 15px;
+    height:41px;
+    width:118px;
+    &:hover {
+      background-color:#286090;
+    }
+
+}
+
+.button_sign_in {
+    background-color: #1B6DA4; /* Green */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    font-size: 15px;
+    height:32px;
+    width:110px;
+    vertical-align: center;
+    &:hover {
+      background-color:#286090;
+    }
+}
+
