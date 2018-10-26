@@ -1,0 +1,43 @@
+.container-card-zone {
+  // background-color: green;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.card-zone {
+  // background-color: blue;
+  // border: 2px solid blue;
+  justify-content: space-around;
+  display: flex;
+}
+
+.zone-logo {
+  // background-color: red;
+  border-radius: 50%;
+  height: 49px;
+  width: 49px;
+  background-color: white;
+  border-radius: 50%;
+  height: 49px;
+  width: 49px;
+  border: 5px solid orange;
+}
+
+// .outer-circle {
+// }
+
+.zone-name {
+  // background-color: yellow;
+  // width: 50%;
+  margin-left: 20px;
+}
+
+.zone-name p {
+  font-weight: bold;
+}
+
+.name {
+  position: relative;
+  top: 25%;
+}
+
