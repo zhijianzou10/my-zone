@@ -1,0 +1,24 @@
+<%= simple_form_for([@user, @post]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :content,
+                required: true,
+                autofocus: true
+                %>
+    <%= f.association :zone,
+                collection: @user.zones,
+                as: :select,
+                required: true
+                %>
+    <%= f.association :interest_tag,
+                as: :radio_buttons,
+                required: true
+                %>
+<!-- Should only display interest tag belong to the zone -->
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "publish" %>
+  </div>
+<% end %>

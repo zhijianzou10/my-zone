@@ -1,0 +1,14 @@
+<%= simple_form_for(@user) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :firstname %>
+    <%= f.input :lastname %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "finish" %>
+  </div>
+<% end %>
+<!-- Seems that Devise has developped something to manage user's account, should drop this file later -->
+
