@@ -21,6 +21,7 @@ class PostsController < ApplicationController
 
   def edit
     @user = @post.user
+    @zone = @post.zone
     @post
   end
 
