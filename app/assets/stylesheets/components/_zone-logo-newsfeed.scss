@@ -1,0 +1,32 @@
+.card-zone-newsfeed {
+  // background-color: blue;
+  // border: 2px solid blue;
+  // justify-content: space-around;
+  display: flex;
+}
+
+.zone-logo-newsfeed {
+  // background-color: red;
+  border-radius: 50%;
+  height: 31px;
+  width: 31px;
+  background-color: white;
+  border-radius: 50%;
+  border: 5px solid orange;
+  margin-top: 0px;
+}
+
+.zone-name-newsfeed {
+  // background-color: yellow;
+  // width: 50%;
+  margin-left: 10px;
+}
+
+.zone-name-newsfeed p {
+  font-size: 12px;
+}
+
+.name-newsfeed {
+  position: relative;
+  top: 25%;
+}
