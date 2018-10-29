@@ -9,6 +9,7 @@
   max-width: 500px;
   display: flex;
   justify-content: flex-start;
+  position: relative;
 }
 
 .avatar-notifications{
@@ -33,4 +34,7 @@
 
 .edit-points a {
   color: #5C5C5C;
+  position: absolute;
+  right: 20px;
+  top: 20px;
 }

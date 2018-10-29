@@ -58,6 +58,17 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  max-width: 500px;
+  margin: 0 auto;
+  font-size: 35px;
+}
+
+.navbar_newsfeed_bottom i {
+  color: $dark-gray;
+}
+
+.navbar_newsfeed_bottom i:hover {
+  opacity: 0.8;
 }
 
 .navbar_right {
