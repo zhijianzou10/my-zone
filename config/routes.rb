@@ -4,13 +4,16 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/components', to: 'pages#components'
 
-  resources :users, only: [:edit, :update, :show] do
-    resources :zones, only: [:new, :create, :edit, :update, :destroy] do
+  resources :users, only: [:edit, :update, :show]
+
+  resources :zones, only: [:new, :create, :edit, :update, :destroy] do
       resources :zone_tags
+  end
+
+  resources :posts do
+    member do
+      post 'good'
     end
-    resources :posts do
-      resources :comments, only: [:new, :create, :destroy]
-      resources :goods, only: [:new, :create, :edit, :update]
-    end
+    resources :comments, only: [:new, :create]
   end
 end

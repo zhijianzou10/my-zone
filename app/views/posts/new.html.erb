@@ -1,4 +1,4 @@
-<%= simple_form_for([@user, @post]) do |f| %>
+<%= simple_form_for(@post) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -7,7 +7,7 @@
                 autofocus: true
                 %>
     <%= f.association :zone,
-                collection: @user.zones,
+                collection: current_user.zones,
                 as: :select,
                 required: true,
                 input_html: { id: "zone_choice"}

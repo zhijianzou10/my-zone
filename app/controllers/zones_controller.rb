@@ -13,7 +13,7 @@ class ZonesController < ApplicationController
     @zone = Zone.new(zone_params)
     @zone.user = current_user
     if @zone.save
-      redirect_to new_user_zone_zone_tag_path(@zone.user, @zone)
+      redirect_to new_zone_zone_tag_path(@zone)
     else
       render 'zones/new'
     end
