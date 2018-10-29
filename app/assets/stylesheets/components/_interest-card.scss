@@ -6,8 +6,8 @@
   // display: flex;
   // border: 2px solid blue;
   width: 80%;
-  min-height: 130px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  height: 0;
+  padding-bottom: 80%;
   background-size: cover !important;
   background-position: center;
   color: white;
@@ -21,15 +21,15 @@
   background-color: $blue;
   width: 100%;
   border-radius: 0px 0px 15px 15px;
-  height: 22px;
+  height: 28px;
   // background-size: cover;
 }
 
 .card-description h2 {
   text-align: center;
-  font-size: 12px;
+  font-size: 13px;
   margin-top: 0px;
-  padding-top: 3px;
+  padding-top: 6px;
 }
 
 .card-link:hover {
