@@ -27,6 +27,15 @@
   margin: 0px auto auto 0px;
 }
 
+.tag_zone a {
+  color:white;
+  text-decoration: none;
+  :hover {
+    text-decoration: none;
+    background-color:#286090;
+  }
+}
+
 .zone_left {
   background-color: white;
   color: black;
