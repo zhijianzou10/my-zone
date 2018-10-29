@@ -66,6 +66,137 @@
 
  </div>
 
+<h1>Main Card with dropdown</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="main-card-newsfeed">
+
+        <!-- AVATAR -->
+        <div class="avatar-interest-newsfeed">
+          <a href="#">
+            <%= image_tag("benoit rond.jpg", class:"avatar_interest")%>
+          </a>
+        </div>
+
+        <!-- CARD ZONE -->
+        <a href="#">
+          <div class="card-zone-newsfeed">
+            <div class="zone-logo-newsfeed">
+            </div>
+            <div class="zone-name-newsfeed">
+              <div class="name-newsfeed">
+                <p>Zone 1</p>
+              </div>
+            </div>
+          </div>
+        </a>
+
+
+        <!-- PARAMETERS -->
+        <div class="dropdown points">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <i class="fas fa-ellipsis-h"></i>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#">Edit</a></li>
+          <li><a href="#">Delete</a></li>
+        </ul>
+      </div>
+
+        <!-- BANDEAU INTEREST -->
+        <div class="bandeau-interest">
+          <p>Interest</p>
+        </div>
+        <div id="triangle"></div>
+
+        <!-- Name -->
+        <a href="#">
+          <p id="full-name-post">User name</p>
+        </a>
+        <!-- Time spent -->
+        <p id="time-spent-post">XX min.</p>
+        <!-- message -->
+        <p id="post-message">This is my post message</p>
+
+        <!-- PHOTO -->
+         <%= image_tag("euratech.jpg", id:"post-picture-newsfeed")%>
+
+        <!-- GOODS & COMMENTS RESULTS -->
+          <div class="interaction-results-wrapper">
+
+            <a href="#">
+              <p id= "interaction-results-good">X goods</p>
+            </a>
+
+            <a href="#">
+              <p id= "interaction-results-comment">X comments</p>
+            </a>
+          </div>
+
+
+        <!-- DIVIDER -->
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="line"></div>
+          </div>
+        </div>
+
+        <!-- GOOD COMMENT SHARE INTERATIONS -->
+
+
+        <div class="interactions-buttons">
+
+          <div id="good">
+            <a href="#">
+              <div class="row interaction-row">
+                <div class="col-xs-3">
+                  <i class="far fa-thumbs-up"></i>
+                </div>
+                <div class="col-xs-3">
+                  <p>Good</p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div id="comment">
+            <a href="#">
+              <div class="row interaction-row">
+                <div class="col-xs-3">
+                  <i class="far fa-comment-dots"></i>
+                </div>
+                <div class="col-xs-3">
+                  <p>Comment</p>
+
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div id="share">
+            <a href="#">
+              <div class="row interaction-row">
+                <div class="col-xs-3">
+
+                  <i class="far fa-share-square"></i>
+                </div>
+                <div class="col-xs-3">
+                  <p>Share</p>
+
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <h1>Main Card</h1>
 
 <div class="container">
