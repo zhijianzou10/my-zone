@@ -115,7 +115,6 @@
 <h1>Avatar navbar</h1>
 <%= image_tag("logo", class:"avatar_navbar")%>
 
-
 <h1>LOGO ZONE</h1>
 
 <div class="container container-card-zone">
@@ -207,13 +206,91 @@
             <h2>Sport</h2>
           </div>
 
-
         <a class="card-link" href="#" ></a>
       </div>
     </div>
   </div>
 </div>
 
+<h1>Navbar sign up</h1>
+<div class="row">
+  <div class="col-xs-4">
+    <div class="navbar_signup">
+      <h1>MyZone</h1>
+        <div class="navbar_right">
+          <a href="#">Sign in</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!-- Ces codes sont des espaces -->
+          <a href="#">Sign up</a>&nbsp;&nbsp;&nbsp;
+        </div>
+    </div>
+  </div>
+</div>
 
-<h1>Add all components here</h1>
 
+<h1>Navbar enter addresse</h1>
+<div class="row">
+  <div class="col-xs-4">
+    <div class="navbar_enter_addresse">
+      <h3>Enter addresse</h3>
+    </div>
+  </div>
+</div>
+
+<h1>Navbar newsfeed home</h1>
+<div class="row">
+  <div class="col-xs-4">
+    <div class="navbar_newsfeed">
+      <h1>MyZone</h1>
+        <div class="navbar_right">
+          <%= link_to href: '' do %>
+          <%= image_tag 'benoit.jpg', class:"avatar_navbar" %>
+          <% end %>&nbsp;&nbsp;&nbsp;
+          <%= link_to href: '' do %>
+          <%= image_tag 'logout', height:29, weight:29 %>
+          <% end %>&nbsp;&nbsp;&nbsp;
+        </div>
+    </div>
+  </div>
+</div>
+
+<h1>Navbar newsfeed bottom</h1>
+<div class="row">
+  <div class="col-xs-4">
+    <div class="navbar_newsfeed_bottom">
+          <%= link_to href: '' do %>
+          <%= image_tag 'home', height:32, weight:32 %>
+          <% end %>
+          <%= link_to href: '' do %>
+          <%= image_tag 'chat', height:32, weight:32 %>
+          <% end %>
+          <%= link_to href: '' do %>
+          <%= image_tag 'notification', height:32, weight:32 %>
+          <% end %>
+    </div>
+  </div>
+</div>
+
+<h1>Button sign in</h1>
+<%= link_to "Sign in", href="#" , class: 'button_sign_in' %>
+
+<h1>Normal Button</h1>
+<%= link_to "button", href="#" , class: 'button_normal' %>
+
+<h1>Search on map</h1>
+<div class="row map_bar">
+  <div class="col-xs-3">
+    <%= form_tag href="#", method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+          class: "form-control",
+          placeholder: "Type an address"
+      %>
+    <% end %>
+  </div>
+</div>
+
+<%# <h1>Login input</h1>
+<%#<%= simple_form_for @user do |f| %>
+ <%# <%= f.input :email, placeholder: 'user@gmail.com' %>
+ <%# <%= f.input :password %>
+ <%# <%= f.button :submit %>
+<%#<% end %>

@@ -23,7 +23,7 @@
                 input_html: { autocomplete: "lastname" } %>
     <%= f.input :gender,
                 as: :radio_buttons,
-                collection: [['0', 'male'], ['1', 'female']],
+                collection: [[:male, 'male'], [:female, 'female'], [:other, 'other']],
                 label_method: :second,
                 value_method: :first,
                 required: true,

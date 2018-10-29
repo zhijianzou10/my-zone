@@ -1,2 +1,14 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+
+<% if user_signed_in? %>
+  <h1><%= current_user.id %></h1>
+  <%= link_to "Publish Post", new_user_post_path(current_user) %>
+  <%= link_to "Avatar", user_path(current_user) %>
+  <% Post.all.each do |post| %>
+<!-- Here should be all the posts published in the zone (whose epicenter is inside the zone)
+ -->
+    <p><%= post.content %></p>
+  <% end %>
+<% end  %>
