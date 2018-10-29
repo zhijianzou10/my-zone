@@ -4,7 +4,7 @@
 
 <% if user_signed_in? %>
   <h1><%= current_user.id %></h1>
-  <%= link_to "Publish Post", new_user_post_path(current_user) %>
+  <%= link_to "Publish Post", new_post_path %>
   <%= link_to "Avatar", user_path(current_user) %>
   <% Post.all.each do |post| %>
 <!-- Here should be all the posts published in the zone (whose epicenter is inside the zone)
@@ -12,27 +12,33 @@
     <p><%= post.content %></p>
     <p><%= post.photo if post.photo.blank? == false %></p>
     <%= pluralize post.comments.size, "comment" %>
-    <%= pluralize post.goods.size, "good" %>
+    <%= pluralize post.goods.where(is_good: true).size, "good" %>
+
+    <%= link_to good_post_path(post, is_good: true), method: :post, remote: true do %>
+      <i class="fas fa-thumbs-up"></i>
+    <% end %>
+
     <ul>
       <% post.comments.order(created_at: :desc).first(3).each do |comment|  %>
       <li>
         <%= comment.user.id %> | <%= comment.user.firstname %> | <%= comment.user.lastname %>
         <%= comment.content %>
+        <%= comment.photo if comment.photo.blank? == false %>
       </li>
       <% end  %>
     </ul>
-<!--     <%= link_to "Add a good", new_user_post_good_path(post.user, post) %> -->
-    <div class="commentForm">
+ <!--    <div class="commentForm">
       <% comment = Comment.new %>
-      <%= simple_form_for([post.user, post, comment], remote: true) do |form| %>
+      <%= simple_form_for([post, comment], remote: true) do |form| %>
         <%= form.input :content,
                       required: true,
                       autofocus: true %>
         <%= form.input :photo %>
-        <%= form.hidden_field :user_id, value: post.user.id %>
+        <%= form.hidden_field :user_id, value: current_user.id %>
         <%= form.hidden_field :post_id, value: post.id %>
-        <%= form.button :submit %>
+        <%= form.button :submit, class: "submit_comment" %>
       <% end %>
-    </div>
+    </div> -->
+
   <% end %>
 <% end  %>

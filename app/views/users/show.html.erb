@@ -1,23 +1,23 @@
 <p> Firstname: <%= @user.firstname %></p>
 <p> Lastname: <%= @user.lastname %></p>
 <p><%= link_to "Edit my profile", edit_user_path(@user) %></p>
-<%= link_to "New Zone", new_user_zone_path(@user) %>
-<%= link_to "New Post", new_user_post_path(@user) %>
+<%= link_to "New Zone", new_zone_path %>
+<%= link_to "New Post", new_post_path %>
 <% if current_user == @user %>
   <ul>
     <h1>Zones</h1>
       <% @user.zones.each do |zone| %>
         <li><%= zone.title %> </li>
-        <%= link_to "Edit", edit_user_zone_path(@user, zone) %>
-        <%= link_to "Delete", user_zone_path(@user, zone), method: :delete %>
+        <%= link_to "Edit", edit_zone_path(zone) %>
+        <%= link_to "Delete", zone_path(zone), method: :delete %>
       <% end %>
   </ul>
   <ul>
     <h1>Posts</h1>
       <% @user.posts.each do |post| %>
         <li><%= post.content %> | <%= post.zone.title %> | <%= post.interest_tag.title %></li>
-        <%= link_to "Edit", edit_user_post_path(@user, post) %>
-        <%= link_to "Delete", user_post_path(@user, post), method: :delete %>
+        <%= link_to "Edit", edit_post_path(post) %>
+        <%= link_to "Delete", post_path(post), method: :delete %>
       <% end %>
   </ul>
 <% else  %>
