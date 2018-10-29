@@ -9,14 +9,18 @@
     <%= f.association :zone,
                 collection: @user.zones,
                 as: :select,
-                required: true
+                required: true,
+                input_html: { id: "zone_choice"}
                 %>
+    </div>
+    <div id='interest_tags_with_zone'>
     <%= f.association :interest_tag,
                 as: :radio_buttons,
                 required: true
                 %>
+    </div>
 <!-- Should only display interest tag belong to the zone -->
-  </div>
+<script src='new'></script>
 
   <div class="form-actions">
     <%= f.button :submit, "publish" %>

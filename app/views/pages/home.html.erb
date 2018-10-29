@@ -10,5 +10,29 @@
 <!-- Here should be all the posts published in the zone (whose epicenter is inside the zone)
  -->
     <p><%= post.content %></p>
+    <p><%= post.photo if post.photo.blank? == false %></p>
+    <%= pluralize post.comments.size, "comment" %>
+    <%= pluralize post.goods.size, "good" %>
+    <ul>
+      <% post.comments.order(created_at: :desc).first(3).each do |comment|  %>
+      <li>
+        <%= comment.user.id %> | <%= comment.user.firstname %> | <%= comment.user.lastname %>
+        <%= comment.content %>
+      </li>
+      <% end  %>
+    </ul>
+<!--     <%= link_to "Add a good", new_user_post_good_path(post.user, post) %> -->
+    <div class="commentForm">
+      <% comment = Comment.new %>
+      <%= simple_form_for([post.user, post, comment], remote: true) do |form| %>
+        <%= form.input :content,
+                      required: true,
+                      autofocus: true %>
+        <%= form.input :photo %>
+        <%= form.hidden_field :user_id, value: post.user.id %>
+        <%= form.hidden_field :post_id, value: post.id %>
+        <%= form.button :submit %>
+      <% end %>
+    </div>
   <% end %>
 <% end  %>
