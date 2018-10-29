@@ -1,8 +1,4 @@
-.col-xs-4 {
-  // background-color: green;
-}
-
-.card {
+.interest-card {
   // display: flex;
   // border: 2px solid blue;
   width: 80%;
@@ -15,7 +11,12 @@
   border-radius: 15px;
 }
 
+.interest-card:hover {
+  opacity: 0.8;
+}
+
 .card-description {
+  display: flex;
   position: absolute;
   bottom: 0px;
   background-color: $blue;
@@ -23,10 +24,13 @@
   border-radius: 0px 0px 15px 15px;
   height: 28px;
   // background-size: cover;
+  // border-top: 1px solid $very-light-gray;
 }
 
 .card-description h2 {
-  text-align: center;
+  margin: 0 auto;
+  align-items: center;
+  // text-align: center;
   font-size: 13px;
   margin-top: 0px;
   padding-top: 6px;
@@ -34,4 +38,8 @@
 
 .card-link:hover {
   opacity: 0.1;
+}
+
+.container-card-zone p {
+  color: #5C5C5C;
 }
