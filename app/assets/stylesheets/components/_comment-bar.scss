@@ -1,0 +1,32 @@
+.comment-bar {
+  display: flex;
+  height: 49px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border: 1px solid $very-light-gray;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#comment-input {
+  border-radius: 5px;
+  border: 0;
+  margin-left: 0px;
+  width: 360px;
+  background-color: $very-light-gray;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.comment-photo-button {
+  font-size: 20px;
+}
+
+.comment-photo-button a {
+  color: #5C5C5C;
+}
+
+.comment-photo-button a:hover {
+  opacity: 0.8;
+}

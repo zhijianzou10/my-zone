@@ -1,3 +1,50 @@
+<h1>Notification Card</h1>
+
+ <div class="notification-card">
+   <!-- AVATAR -->
+
+   <div class="row">
+     <div class="col-xs-2">
+      <div class="avatar-notifications">
+        <a href="#">
+          <%= image_tag("benoit rond.jpg", class:"avatar_interest")%>
+        </a>
+      </div>
+     </div>
+   </div>
+
+
+   <!-- NAME -->
+   <div class="row">
+     <div class="col-xs-9">
+       <div>
+        <a href="#">
+          <p id="full-name-notification"><strong>User name</strong> liked your post</p>
+        </a>
+       </div>
+
+   <!-- HOUR -->
+      <div>
+        <p id="notification-time-spent">Xh</p>
+      </div>
+
+     </div>
+   </div>
+
+
+  <!-- PARAMETERS -->
+  <div class="row">
+    <div class="col-xs-1">
+      <div class="edit-points">
+        <a href="#">
+          <i class="fas fa-ellipsis-h"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+ </div>
+
 <h1>Main Card</h1>
 
 <div class="container">
@@ -7,19 +54,23 @@
 
         <!-- AVATAR -->
         <div class="avatar-interest-newsfeed">
-        <%= image_tag("benoit rond.jpg", class:"avatar_interest")%>
+          <a href="#">
+            <%= image_tag("benoit rond.jpg", class:"avatar_interest")%>
+          </a>
         </div>
 
         <!-- CARD ZONE -->
-        <div class="card-zone-newsfeed">
-          <div class="zone-logo-newsfeed">
-          </div>
-          <div class="zone-name-newsfeed">
-            <div class="name-newsfeed">
-              <p>Zone 1</p>
+        <a href="#">
+          <div class="card-zone-newsfeed">
+            <div class="zone-logo-newsfeed">
+            </div>
+            <div class="zone-name-newsfeed">
+              <div class="name-newsfeed">
+                <p>Zone 1</p>
+              </div>
             </div>
           </div>
-        </div>
+        </a>
 
         <!-- BANDEAU INTEREST -->
         <div class="bandeau-interest">
@@ -28,7 +79,9 @@
         <div id="triangle"></div>
 
         <!-- Name -->
-        <p id="full-name-post">User name</p>
+        <a href="#">
+          <p id="full-name-post">User name</p>
+        </a>
         <!-- Time spent -->
         <p id="time-spent-post">XX min.</p>
         <!-- message -->
@@ -38,8 +91,17 @@
          <%= image_tag("euratech.jpg", id:"post-picture-newsfeed")%>
 
         <!-- GOODS & COMMENTS RESULTS -->
-          <p id= "interaction-results-good">X goods</p>
-          <p id= "interaction-results-comment">X comments</p>
+          <div class="interaction-results-wrapper">
+
+            <a href="#">
+              <p id= "interaction-results-good">X goods</p>
+            </a>
+
+            <a href="#">
+              <p id= "interaction-results-comment">X comments</p>
+            </a>
+          </div>
+
 
         <!-- DIVIDER -->
 
@@ -55,45 +117,45 @@
         <div class="interactions-buttons">
 
           <div id="good">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="far fa-thumbs-up"></i>
-
+            <a href="#">
+              <div class="row interaction-row">
+                <div class="col-xs-3">
+                  <i class="far fa-thumbs-up"></i>
+                </div>
+                <div class="col-xs-3">
+                  <p>Good</p>
+                </div>
               </div>
-              <div class="col-xs-3">
-                <p>Good</p>
-              </div>
-
-            </div>
+            </a>
           </div>
 
           <div id="comment">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="far fa-comment-dots"></i>
-              </div>
-              <div class="col-xs-3">
-                <p>Comment</p>
+            <a href="#">
+              <div class="row interaction-row">
+                <div class="col-xs-3">
+                  <i class="far fa-comment-dots"></i>
+                </div>
+                <div class="col-xs-3">
+                  <p>Comment</p>
 
+                </div>
               </div>
-            </div>
-            <div>
-            </div>
-            <div>
-            </div>
+            </a>
           </div>
 
           <div id="share">
-            <div class="row">
-              <div class="col-xs-3">
+            <a href="#">
+              <div class="row interaction-row">
+                <div class="col-xs-3">
 
-                <i class="far fa-share-square"></i>
-              </div>
-              <div class="col-xs-3">
-                <p>Share</p>
+                  <i class="far fa-share-square"></i>
+                </div>
+                <div class="col-xs-3">
+                  <p>Share</p>
 
+                </div>
               </div>
-            </div>
+            </a>
           </div>
 
         </div>
@@ -102,6 +164,51 @@
   </div>
 </div>
 
+<h1>POST COMMENT</h1>
+
+<div class="comment-bar">
+
+  <!-- ROW AVATAR -->
+  <div class="avatar-comment">
+    <a href="#">
+      <span class="row">
+        <span class="col-xs-1">
+          <%= image_tag("logo", class:"avatar_navbar")%>
+        </span>
+      </span>
+    </a>
+  </div>
+
+  <!-- ROW COMMENT -->
+
+  <div class="comment-input">
+    <a href="#">
+      <span class="row">
+          <%= form_tag href="#", method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+              id: "comment-input",
+              placeholder: "Your comment..."
+          %>
+        <% end %>
+        </span>
+      </span>
+    </a>
+  </div>
+
+  <!-- ROW PICTURE PHOTO -->
+
+  <div class="comment-photo-button">
+    <a href="#">
+      <span class="row">
+        <span class="col-xs-1">
+          <i class="fas fa-camera"></i>
+        </span>
+      </span>
+    </a>
+  </div>
+
+</div>
 
 <h1>Avatar post</h1>
 <%= image_tag("logo", class:"avatar_post")%>
