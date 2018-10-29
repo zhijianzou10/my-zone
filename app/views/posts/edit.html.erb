@@ -10,8 +10,9 @@
                 collection: @user.zones,
                 as: :select,
                 required: true
-                %>
+                 %>
     <%= f.association :interest_tag,
+                collection: @zone.interest_tags,
                 as: :radio_buttons,
                 required: true
                 %>
