@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     resources :zones, only: [:new, :create, :edit, :update, :destroy] do
       resources :zone_tags
     end
-    resources :posts
+    resources :posts do
+      resources :comments, only: [:new, :create, :destroy]
+      resources :goods, only: [:new, :create, :edit, :update]
+    end
   end
 end
