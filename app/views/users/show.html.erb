@@ -1,3 +1,250 @@
+
+<!-- NAVBAR -->
+<div class="row">
+  <div class="col-xs-12">
+    <div class="navbar_newsfeed">
+      <h1>MyZone</h1>
+        <div class="navbar_right">
+          <%= link_to href: '' do %>
+          <%= image_tag 'benoit.jpg', class:"avatar_navbar" %>
+          <% end %>&nbsp;&nbsp;&nbsp;
+          <%= link_to href: '' do %>
+          <%= image_tag 'logout', height:29, weight:29 %>
+          <% end %>&nbsp;&nbsp;&nbsp;
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- BANNER -->
+<div class="container_banner" style="background-image: url('<%= image_path('wave') %>')">
+<!-- AVATAR -->
+  <%= image_tag("logo", class:"avatar_profile")%>
+</div>
+<!-- -- -->
+
+<div class="newsfeed-container">
+
+  <!-- BUTTON -->
+  <%= link_to "My Zones", href="#" , class: 'button_zones' %>
+  <!-- -- -->
+
+  <!-- ZONES CARD -->
+    <!-- CARD 1 -->
+  <div class="container-profile-card">
+    <div class="profile-card">
+      <div class="zone_left">
+        <div class="tag_zone">
+          <a href=""><p>Zone 1</p></a>
+        </div>
+        <div class="interest_margin small_line">
+          <b><p>Interests:</p></b> <br>
+          <p class="gray">Sports</p> <br>
+          <p class="gray">Video Games</p> <br>
+          <p class="gray">Music</p> <br>
+        </div>
+      </div>
+
+      <div class="zone_right">
+        <%= image_tag("zoneprofile", class:"zonepic" )%>
+      </div>
+    </div>
+    <!-- CARD 2 -->
+    <div class="profile-card">
+      <div class="zone_left">
+        <div class="tag_zone">
+          <a href=""><p>Zone 1</p></a>
+        </div>
+        <div class="interest_margin small_line">
+          <b><p>Interests:</p></b> <br>
+          <p class="gray">Sports</p> <br>
+          <p class="gray">Video Games</p> <br>
+          <p class="gray">Music</p> <br>
+        </div>
+      </div>
+
+      <div class="zone_right">
+        <%= image_tag("zoneprofile", class:"zonepic" )%>
+      </div>
+    </div>
+  </div>
+  <!-- -- -->
+
+  <!-- WRITE A POST -->
+  <div class="write-post-card">
+    <!-- AVATAR -->
+    <div class="row">
+      <div class="col-xs-1">
+        <div class="write-post-avatar">
+          <%= image_tag("logo", class:"avatar_post")%>
+        </div>
+      </div>
+    </div>
+    <!-- WRITE  -->
+    <div class="row">
+      <div class="cols-xs-11">
+        <a href="#">
+          <div class="write-post-message">
+            <p>Write a post...</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- -- -->
+
+  <!-- MAIN CARD -->
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="main-card-newsfeed">
+
+          <!-- AVATAR -->
+          <div class="avatar-interest-newsfeed">
+            <a href="#">
+              <%= image_tag("benoit rond.jpg", class:"avatar_interest")%>
+            </a>
+          </div>
+
+          <!-- CARD ZONE -->
+          <a href="#">
+            <div class="card-zone-newsfeed">
+              <div class="zone-logo-newsfeed">
+              </div>
+              <div class="zone-name-newsfeed">
+                <div class="name-newsfeed">
+                  <p>Zone 1</p>
+                </div>
+              </div>
+            </div>
+          </a>
+
+
+          <!-- PARAMETERS -->
+          <div class="dropdown points">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <i class="fas fa-ellipsis-h"></i>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="#">Edit</a></li>
+            <li><a href="#">Delete</a></li>
+          </ul>
+        </div>
+
+          <!-- BANDEAU INTEREST -->
+          <div class="bandeau-interest">
+            <p>Interest</p>
+          </div>
+          <div id="triangle"></div>
+
+          <!-- Name -->
+          <a href="#">
+            <p id="full-name-post">User name</p>
+          </a>
+          <!-- Time spent -->
+          <p id="time-spent-post">XX min.</p>
+          <!-- message -->
+          <p id="post-message">This is my post message</p>
+
+          <!-- PHOTO -->
+           <%= image_tag("euratech.jpg", id:"post-picture-newsfeed")%>
+
+          <!-- GOODS & COMMENTS RESULTS -->
+            <div class="interaction-results-wrapper">
+
+              <a href="#">
+                <p id= "interaction-results-good">X goods</p>
+              </a>
+
+              <a href="#">
+                <p id= "interaction-results-comment">X comments</p>
+              </a>
+            </div>
+
+
+          <!-- DIVIDER -->
+
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="line"></div>
+            </div>
+          </div>
+
+          <!-- GOOD COMMENT SHARE INTERATIONS -->
+
+
+          <div class="interactions-buttons">
+
+            <div id="good">
+              <a href="#">
+                <div class="row interaction-row">
+                  <div class="col-xs-3">
+                    <i class="far fa-thumbs-up"></i>
+                  </div>
+                  <div class="col-xs-3">
+                    <p>Good</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div id="comment">
+              <a href="#">
+                <div class="row interaction-row">
+                  <div class="col-xs-3">
+                    <i class="far fa-comment-dots"></i>
+                  </div>
+                  <div class="col-xs-3">
+                    <p>Comment</p>
+
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div id="share">
+              <a href="#">
+                <div class="row interaction-row">
+                  <div class="col-xs-3">
+
+                    <i class="far fa-share-square"></i>
+                  </div>
+                  <div class="col-xs-3">
+                    <p>Share</p>
+
+                  </div>
+                </div>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- -- -->
+
+  <!-- NAVBAR BOTTOM -->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="navbar_newsfeed_bottom navbar-fixed-bottom">
+            <%= link_to href: '' do %>
+              <i class="fas fa-home"></i>
+            <% end %>
+            <%= link_to href: '' do %>
+              <i class="fas fa-comment-dots"></i>
+            <% end %>
+            <%= link_to href: '' do %>
+              <i class="fas fa-bell"></i>
+            <% end %>
+      </div>
+    </div>
+  </div>
+  <!-- -- -->
+</div>
+
+
 <p> Firstname: <%= @user.firstname %></p>
 <p> Lastname: <%= @user.lastname %></p>
 <p><%= link_to "Edit my profile", edit_user_path(@user) %></p>
