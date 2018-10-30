@@ -8,50 +8,50 @@
 
 <!-- SIGNED IN  -->
 <!-- NAVBAR -->
-<div class="row">
-  <div class="col-xs-12">
-    <div class="navbar_newsfeed">
-      <h1>MyZone</h1>
-        <div class="navbar_right">
-          <%= link_to user_path(current_user) do %>
-          <%= image_tag 'benoit.jpg', class:"avatar_navbar" %>
-          <% end %>&nbsp;&nbsp;&nbsp;
-          <%= link_to href: '' do %>
-          <%= image_tag 'logout', height:29, weight:29 %>
-          <% end %>&nbsp;&nbsp;&nbsp;
-        </div>
+<div class="navbar_newsfeed">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>MyZone</h1>
+          <div class="navbar_right">
+            <%= link_to user_path(current_user) do %>
+            <%= image_tag 'benoit.jpg', class:"avatar_navbar" %>
+            <% end %>&nbsp;&nbsp;&nbsp;
+            <%= link_to href: '' do %>
+            <%= image_tag 'logout', height:29, weight:29 %>
+            <% end %>&nbsp;&nbsp;&nbsp;
+          </div>
+      </div>
     </div>
   </div>
 </div>
 
+
 <!-- --  -->
   <!-- WRITE A POST -->
-  <div class="write-post-card">
-    <!-- AVATAR -->
-    <div class="row">
-      <div class="col-xs-1">
-        <div class="write-post-avatar">
-          <%= image_tag("logo", class:"avatar_post")%>
-        </div>
-      </div>
-    </div>
-    <!-- WRITE  -->
-    <div class="row">
-      <div class="cols-xs-11">
-        <a href="#">
-          <div class="write-post-message">
-            <p>
-            <%= link_to "Write a post...", new_post_path %>
-            </p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
+
   <!-- -- -->
 
 <!-- MAIN CARD -->
   <div class="container">
+    <div class="row write-post-card">
+      <!-- AVATAR -->
+        <div class="col-xs-1">
+          <div class="write-post-avatar">
+            <%= image_tag("logo", class:"avatar_post")%>
+          </div>
+        </div>
+      <!-- WRITE  -->
+        <div class="cols-xs-11">
+          <a href="#">
+            <div class="write-post-message">
+              <p>
+              <%= link_to "Write a post...", new_post_path %>
+              </p>
+            </div>
+          </a>
+        </div>
+    </div>
     <div class="row">
       <div class="col-xs-12">
         <div class="main-card-newsfeed">
@@ -170,21 +170,24 @@
   <!-- -- -->
 
   <!-- NAVBAR BOTTOM -->
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="navbar_newsfeed_bottom navbar-fixed-bottom">
-            <%= link_to href: '' do %>
-              <i class="fas fa-home"></i>
-            <% end %>
-            <%= link_to href: '' do %>
-              <i class="fas fa-comment-dots"></i>
-            <% end %>
-            <%= link_to href: '' do %>
-              <i class="fas fa-bell"></i>
-            <% end %>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="navbar_newsfeed_bottom navbar-fixed-bottom">
+              <%= link_to href: '' do %>
+                <i class="fas fa-home"></i>
+              <% end %>
+              <%= link_to href: '' do %>
+                <i class="fas fa-comment-dots"></i>
+              <% end %>
+              <%= link_to href: '' do %>
+                <i class="fas fa-bell"></i>
+              <% end %>
+        </div>
       </div>
     </div>
   </div>
+
   <!-- -- -->
 
   <h1><%= current_user.id %></h1>

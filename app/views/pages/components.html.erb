@@ -320,47 +320,54 @@
 
 <div class="comment-bar">
 
-  <!-- ROW AVATAR -->
+  <!--  AVATAR -->
   <div class="avatar-comment">
-    <a href="#">
-      <span class="row">
+    <span class="row">
+      <a href="#">
         <span class="col-xs-1">
           <%= image_tag("logo", class:"avatar_navbar")%>
         </span>
-      </span>
-    </a>
+      </a>
   </div>
 
-  <!-- ROW COMMENT -->
+  <!-- COMMENT -->
 
   <div class="comment-input">
     <a href="#">
-      <span class="row">
+      <span class="col-xs-10">
           <%= form_tag href="#", method: :get do %>
           <%= text_field_tag :query,
             params[:query],
               id: "comment-input",
               placeholder: "Your comment..."
           %>
-        <% end %>
+          <% end %>
         </span>
       </span>
     </a>
   </div>
 
-  <!-- ROW PICTURE PHOTO -->
+  <!-- PICTURE PHOTO -->
 
   <div class="comment-photo-button">
     <a href="#">
-      <span class="row">
         <span class="col-xs-1">
           <i class="fas fa-camera"></i>
         </span>
+      </span>
       </span>
     </a>
   </div>
 
 </div>
+
+<h1>ALL COMMENTS</h1>
+
+<div class="all-comments">
+
+</div>
+
+
 
 <h1>Avatar post</h1>
 <%= image_tag("logo", class:"avatar_post")%>

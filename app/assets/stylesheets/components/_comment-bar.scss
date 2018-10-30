@@ -1,7 +1,7 @@
 .comment-bar {
   display: flex;
   height: 49px;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   background-color: white;
   border: 1px solid $very-light-gray;
@@ -13,7 +13,7 @@
   border-radius: 5px;
   border: 0;
   margin-left: 0px;
-  width: 360px;
+  width: 330px;
   background-color: $very-light-gray;
   font-size: 14px;
   padding-left: 10px;
@@ -29,4 +29,8 @@
 
 .comment-photo-button a:hover {
   opacity: 0.8;
+}
+
+.avatar_navbar {
+
 }
