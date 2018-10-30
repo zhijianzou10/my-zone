@@ -502,12 +502,13 @@
 </div>
 
 <h1>Navbar newsfeed home</h1>
+<!-- NAVBAR -->
 <div class="row">
   <div class="col-xs-12">
     <div class="navbar_newsfeed">
       <h1>MyZone</h1>
         <div class="navbar_right">
-          <%= link_to href: '' do %>
+          <%= link_to user_path(current_user) do %>
           <%= image_tag 'benoit.jpg', class:"avatar_navbar" %>
           <% end %>&nbsp;&nbsp;&nbsp;
           <%= link_to href: '' do %>
@@ -517,6 +518,7 @@
     </div>
   </div>
 </div>
+<!-- --  -->
 
 <h1>Navbar newsfeed bottom</h1>
 <div class="row">
