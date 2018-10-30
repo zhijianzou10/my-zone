@@ -1,7 +1,9 @@
+
 <h1>Pages#home</h1>
 
 
 <p>Find me in app/views/pages/home.html.erb</p>
+
 
 
 <% if user_signed_in? %>
@@ -267,6 +269,101 @@
 
 
   <% end %>
-  <% else %>
+
+  <% else %> <!-- user without account -->
+<!-- Page 1 -->
+<!-- navbar -->
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="navbar_signup">
+        <h1>MyZone</h1>
+          <div class="navbar_right">
+            <a href="#">Sign in</a>&nbsp;&nbsp;&nbsp; <!-- Ces codes sont des espaces -->
+            <a href="#">Sign up</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- content -->
+  <div class="banner_landin" style="background-image: linear-gradient(-225deg, rgba(196, 196, 196, 0.8) 50%, rgba(196, 196, 196, 0.8) 50%), url(<%= image_path 'background_signin'%>);">
+    <div class="banner_content">
+      <h5>Get connected in local</h5>
+        <br>
+          <br>
+      <a href="" class="button_sign_in">Sign up</a>
+    </div>
+  </div>
+  <!-- <div class="container_landin_create">
+    <div class="container_landin_create_left">
+      <div></div>
+      <div><%= image_tag 'icon_landin', class:"icon_landin" %></div>
+    </div>
+    <div class="container_landin_create_middle">
+      <h4><b>Create your zone(s)</b></h4>
+      <h4>(private)</h4>
+    </div>
+    <div class="container_landin_create_right">
+      <%= image_tag 'map_signin_example', style:"border-radius:15px"%>
+    </div>
+  </div> -->
+<!-- Page à afficher en scroll   -->
+<!-- define interests -->
+  <!-- <div class="container_landin_create">
+      <div class="container_landin_create_left">
+        <div></div>
+        <div><%= image_tag 'scrollup', class:"icon_scroll" %></div>
+      </div>
+      <div class="container_landin_create_middle">
+        <h4><b>Define your zone's interests</b></h4>
+      </div>
+      <div class="container_landin_create_right">
+        <%= image_tag 'map_signin_example', style:"border-radius:15px"%>
+      </div>
+    </div> -->
+
+
+<!-- you are set -->
+<!--   <div class="container_landin_create">
+      <div class="container_landin_set_left">
+        <div></div>
+        <div><%= image_tag 'scrollup', class:"icon_scroll" %></div>
+      </div>
+      <div class="container_landin_create_middle">
+        <h4><b>Define your zone's interests</b></h4>
+      </div>
+      <div class="container_landin_create_right">
+        <%= image_tag 'map_signin_example', style:"border-radius:15px"%>
+      </div>
+    </div> -->
+
+  <div class="banner_introduction">
+    <%= image_tag 'circle', class:"icon_circle"%>
+    <h2>Create your zones</h2>
+    <%= image_tag 'zone', class:"photo_landin"%>
+  </div>
+
+  <div class="banner_introduction">
+    <%= image_tag 'circle', class:"icon_circle"%>
+    <h2>Define your zone's interests</h2>
+    <%= image_tag 'zone1', class:"photo_landin"%>
+  </div>
+
+   <div class="banner_introduction">
+    <%= image_tag 'circle', class:"icon_circle"%>
+      <h2>You're all set!</h2>
+      <%= image_tag 'newsfeed', class:"photo_landin"%>
+  </div>
+
+  <div class="banner_introduction_last">
+      <h2>You're all set!</h2>
+      <h6>You're connected with people who share the same interests in your zones!</h6>
+      <br>
+      <a href="" class="button_sign_in">Sign up</a>
+      <br>
+  </div>
+
 
 <% end  %>
+
