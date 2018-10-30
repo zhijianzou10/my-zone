@@ -36,7 +36,7 @@ class PostsController < ApplicationController
   def destroy
     @user = current_user
     @post.destroy
-    redirect_to  user_path(@user)
+    redirect_to user_path(@user)
   end
 
   def good

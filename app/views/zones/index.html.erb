@@ -1,0 +1,19 @@
+<ul>
+   <% @zones.each do |zone| %>
+  <li>
+    <%= zone.title %> | <%= zone.latitude %> | <%= zone.longtitude %> | <%= zone.radius %>
+    <li>
+      <% zone.interest_tags.each do |interest_tag| %>
+      <%= interest_tag.title %>
+    <% end  %>
+    </li>
+
+    <%= link_to "Edit", edit_zone_path(zone) %>
+    <%= link_to "Delete", zone_path(zone), method: :delete %>
+  </li>
+  <% end %>
+</ul>
+
+<p><%= link_to "Add a zone", new_zone_path %></p>
+<p><%= link_to "Finish and back to my profile", user_path(@user) %></p>
+

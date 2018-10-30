@@ -11,12 +11,39 @@
  -->
     <p><%= post.content %></p>
     <p><%= post.photo if post.photo.blank? == false %></p>
-    <%= pluralize post.comments.size, "comment" %>
-    <%= pluralize post.goods.where(is_good: true).size, "good" %>
+    <p id="comment_counter"><%= pluralize post.comments.size, "comment" %></p>
+    <p><span id="good_counter_<%= post.id %>"><%= post.goods.where(is_good: true).size %></span> good</p>
 
     <%= link_to good_post_path(post, is_good: true), method: :post, remote: true do %>
-      <i class="fas fa-thumbs-up"></i>
+      <i class="fas fa-thumbs-up" id="submmit_good" onclick="sendTheAJAX()"></i>
+      <span id="test1"></span>
     <% end %>
+
+    <script>
+      var b = 1;
+      function sendTheAJAX(){
+        if (b%2 === 1) {
+          document.getElementById('good_counter_<%= post.id %>').textContent = parseInt(document.getElementById('good_counter').textContent) + 1
+        }
+        else {
+          document.getElementById('good_counter_<%= post.id %>').textContent = parseInt(document.getElementById('good_counter').textContent) - 1
+        };
+        b += 1;
+      }
+    </script>
+
+    <%= link_to "Add comment", '#', class: "add_comment", data: { 'post-id' => post.id } %>
+
+    <div class="commentForm" style="display: none" data-post-id="<%= post.id %>">
+      <%= simple_form_for([post, Comment.new], remote: true) do |form| %>
+        <%= form.input :content,
+                      required: true,
+                      autofocus: true %>
+        <%= form.input :photo %>
+        <%= form.button :submit, class: "submit_comment" %>
+      <% end %>
+    </div>
+
 
     <ul>
       <% post.comments.order(created_at: :desc).first(3).each do |comment|  %>
@@ -27,18 +54,6 @@
       </li>
       <% end  %>
     </ul>
- <!--    <div class="commentForm">
-      <% comment = Comment.new %>
-      <%= simple_form_for([post, comment], remote: true) do |form| %>
-        <%= form.input :content,
-                      required: true,
-                      autofocus: true %>
-        <%= form.input :photo %>
-        <%= form.hidden_field :user_id, value: current_user.id %>
-        <%= form.hidden_field :post_id, value: post.id %>
-        <%= form.button :submit, class: "submit_comment" %>
-      <% end %>
-    </div> -->
 
   <% end %>
 <% end  %>

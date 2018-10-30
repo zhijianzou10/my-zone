@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:edit, :update, :show]
 
-  resources :zones, only: [:new, :create, :edit, :update, :destroy] do
+  resources :zones, only: [:new, :create, :edit, :update, :destroy, :index] do
       resources :zone_tags
   end
 
