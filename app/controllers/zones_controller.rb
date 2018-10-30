@@ -23,12 +23,13 @@ class ZonesController < ApplicationController
   def edit
     @user = @zone.user
     @zone
+    @zone_tags = @zone.zone_tags
   end
 
   def update
     @user = @zone.user
     if @zone.update(zone_params)
-      redirect_to zones_path
+      redirect_to edit_zone_zone_tag_path(@zone)
     else
       render 'zones/edit'
     end
