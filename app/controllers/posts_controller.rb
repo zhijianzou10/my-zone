@@ -20,23 +20,38 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @user = @post.user
+    @user = current_user
     @zone = @post.zone
     @post
   end
 
   def update
     if @post.update(post_params)
-      redirect_to root_path
+      redirect_to user_path(@post.user)
     else
       render 'edit'
     end
   end
 
   def destroy
-    @user = @post.user
+    @user = current_user
     @post.destroy
-    redirect_to  user_path(@user)
+    redirect_to user_path(@user)
+  end
+
+  def good
+    if Good.find_by_user_id_and_post_id(current_user.id, params[:id]) == nil
+      Good.create(post_id: params[:id], user_id: current_user.id, is_good: params[:is_good])
+      redirect_to root_path
+    elsif
+      good = Good.find_by_user_id_and_post_id(current_user.id, params[:id])
+      if good.is_good == true
+        good.update(is_good: false)
+      else
+        good.update(is_good: true)
+      end
+      redirect_to root_path
+    end
   end
 
   private

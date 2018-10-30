@@ -5,11 +5,14 @@
     <%= f.input :interest_tag, collection: InterestTag.all,
                 as: :check_boxes,
                 required: true, include_blank: false, include_hidden: false,
+                selected: :@original_zone_tags,
                 input_html: { multi: true }
                 %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "finish" %>
+    <%= f.button :submit, "Finish editing" %>
   </div>
 <% end %>
+
+

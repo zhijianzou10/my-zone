@@ -27,6 +27,21 @@
   text-decoration: underline;
 }
 
+.points {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  border: none;
+  border: 0;
+  background-color: white;
+  border: none;
+  > button {
+    border: none;
+  } a {
+    font-size: 10px;
+  }
+}
+
 .bandeau-interest {
   background-color: $blue;
   color: white;

@@ -1,7 +1,8 @@
 class ZonesController < ApplicationController
   before_action :set_zone, only: [:edit, :update, :destroy]
   def index
-    @zones = Zone.all
+    @user = current_user
+    @zones = @user.zones
   end
 
   def new
@@ -13,7 +14,7 @@ class ZonesController < ApplicationController
     @zone = Zone.new(zone_params)
     @zone.user = current_user
     if @zone.save
-      redirect_to new_user_zone_zone_tag_path(@zone.user, @zone)
+      redirect_to new_zone_zone_tag_path(@zone)
     else
       render 'zones/new'
     end
@@ -22,12 +23,13 @@ class ZonesController < ApplicationController
   def edit
     @user = @zone.user
     @zone
+    @zone_tags = @zone.zone_tags
   end
 
   def update
     @user = @zone.user
     if @zone.update(zone_params)
-      redirect_to user_path(@user)
+      redirect_to edit_zone_zone_tag_path(@zone)
     else
       render 'zones/edit'
     end
