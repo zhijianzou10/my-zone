@@ -1,150 +1,210 @@
 .main-card-newsfeed {
-  background-color: white;
-  border: 1px solid $very-light-gray;
-  // height: 396px;
-  max-width: 500px;
+  background: #FFFFFF;
   position: relative;
-  margin: 0 auto;
 }
 
-.avatar-interest-newsfeed {
-  position: absolute;
-  top: 25px;
-  left: 10px;
-}
+.main-card-newsfeed--header {
+  display: flex;
+  padding: 20px 10px 10px 10px;
 
-// .avatar-interest-newsfeed:hover {
-//   border-radius: 2px solid red;
-// }
+  > .bandeau-interest {
+    background-color: $blue;
+    color: white;
+    font-weight: bold;
+    font-size: 11px;
+    width: 74px;
+    border-bottom-right-radius: 5px;
+    padding-left: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 
-.card-zone-newsfeed {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-}
-
-.card-zone-newsfeed:hover {
-  text-decoration: underline;
-}
-
-.points {
-  position: absolute;
-  top: 40px;
-  right: 10px;
-  border: none;
-  border: 0;
-  background-color: white;
-  border: none;
-  > button {
-    border: none;
-  } a {
-    font-size: 10px;
+  > .avatar {
+    margin-right: 10px;
   }
 }
 
-.bandeau-interest {
-  background-color: $blue;
-  color: white;
-  font-weight: bold;
-  font-size: 11px;
-  width: 74px;
+.main-card-newsfeed--body {
+  margin-bottom: 20px;
+
+  > .post-content {
+    padding: 0 10px;
+  }
+
+  > .post-picture {
+    width: 100%;
+  }
 }
 
-.bandeau-interest p {
-  padding-left: 10px;
+.main-card-newsfeed--interactions {
+  margin-bottom: 10px;
 }
 
-.bandeau-interest {
- border-radius: 0px 0px 5px 0px;
+.divider {
+  margin: 0 20px;
 }
 
-#full-name-post {
-  color: $blue;
-  position: absolute;
-  left: 75px;
-  top: 40px;
-  font-size: 14px;
-}
+.main-card-newsfeed--actions {
 
-#full-name-post:hover{
-  text-decoration: underline;
-}
-
-#time-spent-post {
-  position: absolute;
-  left: 75px;
-  top: 55px;
-  font-size: 11px;
-  color: light-gray;
-}
-
-#post-message {
-  position: absolute;
-  left: 10px;
-  top: 87px;
-  font-size: 14px;
-}
-
-#post-picture-newsfeed {
-  position: absolute;
-  top: 110px;
-  height: 232px;
-  width: 100%;
-  border: 1px solid rgba(0, 0, 0, .1);
-
-}
-
-.interaction-results-wrapper p:hover{
-  text-decoration: underline;
-}
-
-.interaction-results {
-  position: absolute;
-  top: 340px;
-  font-size: 11px;
-}
-
-#interaction-results-good {
-  position: absolute;
-  top: 345px;
-  left: 10px;
-  font-size: 11px;
-}
-
-#interaction-results-comment {
-  position: absolute;
-  top: 345px;
-  left: 60px;
-  font-size: 11px;
-}
-
-.line {
-  position: absolute;
-  top: 340px;
-  width: 100%;
-  border-bottom: 1px solid $very-light-gray;
-  margin: 0 auto;
-}
-
-.interactions-buttons {
   display: flex;
-  margin-top: 350px;
   justify-content: space-around;
+  padding: 10px 20px;
+
+  >.action-item {
+    font-size: 15px;
+    color: #5C5C5C;
+  }
 }
 
-.interactions-buttons {
-  font-size: 15px;
-  padding-top: 5px;
-}
 
-.interactions-buttons a {
-  color: #5C5C5C;
-}
+// .main-card-newsfeed {
+//   background-color: white;
+//   border: 1px solid $very-light-gray;
+//   // height: 396px;
+//   max-width: 500px;
+//   position: relative;
+//   margin: 0 auto;
+// }
 
-.interactions-buttons p:hover {
-  text-decoration: underline;
-}
+// .avatar-interest-newsfeed {
+//   position: absolute;
+//   top: 25px;
+//   left: 10px;
+// }
 
-.interaction-row:hover {
-  background-color: $very-light-gray;
-}
+// // .avatar-interest-newsfeed:hover {
+// //   border-radius: 2px solid red;
+// // }
+
+// .card-zone-newsfeed {
+//   position: absolute;
+//   right: 10px;
+//   top: 10px;
+// }
+
+// .card-zone-newsfeed:hover {
+//   text-decoration: underline;
+// }
+
+// .points {
+//   position: absolute;
+//   top: 40px;
+//   right: 10px;
+//   border: none;
+//   border: 0;
+//   background-color: white;
+//   border: none;
+//   > button {
+//     border: none;
+//   } a {
+//     font-size: 10px;
+//   }
+// }
+
+// .bandeau-interest {
+//   background-color: $blue;
+//   color: white;
+//   font-weight: bold;
+//   font-size: 11px;
+//   width: 74px;
+// }
+
+// .bandeau-interest p {
+//   padding-left: 10px;
+// }
+
+// .bandeau-interest {
+//  border-radius: 0px 0px 5px 0px;
+// }
+
+// #full-name-post {
+//   color: $blue;
+//   position: absolute;
+//   left: 75px;
+//   top: 40px;
+//   font-size: 14px;
+// }
+
+// #full-name-post:hover{
+//   text-decoration: underline;
+// }
+
+// #time-spent-post {
+//   position: absolute;
+//   left: 75px;
+//   top: 55px;
+//   font-size: 11px;
+//   color: light-gray;
+// }
+
+// #post-message {
+//   position: absolute;
+//   left: 10px;
+//   top: 87px;
+//   font-size: 14px;
+// }
+
+// #post-picture-newsfeed {
+//   position: absolute;
+//   top: 110px;
+//   height: 232px;
+//   width: 100%;
+//   border: 1px solid rgba(0, 0, 0, .1);
+
+// }
+
+// .interaction-results-wrapper p:hover{
+//   text-decoration: underline;
+// }
+
+// .interaction-results {
+//   position: absolute;
+//   top: 340px;
+//   font-size: 11px;
+// }
+
+// #interaction-results-good {
+//   position: absolute;
+//   top: 345px;
+//   left: 10px;
+//   font-size: 11px;
+// }
+
+// #interaction-results-comment {
+//   position: absolute;
+//   top: 345px;
+//   left: 60px;
+//   font-size: 11px;
+// }
+
+// .line {
+//   position: absolute;
+//   top: 340px;
+//   width: 100%;
+//   border-bottom: 1px solid $very-light-gray;
+//   margin: 0 auto;
+// }
+
+// .interactions-buttons {
+//   display: flex;
+//   margin-top: 350px;
+//   justify-content: space-around;
+// }
+
+// .interactions-buttons {
+//   font-size: 15px;
+//   padding-top: 5px;
+// }
+
+// .interactions-buttons a {
+//   color: #5C5C5C;
+// }
+
+// .interactions-buttons p:hover {
+//   text-decoration: underline;
+// }
+
+// .interaction-row:hover {
+//   background-color: $very-light-gray;
+// }
