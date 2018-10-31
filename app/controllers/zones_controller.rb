@@ -14,7 +14,7 @@ class ZonesController < ApplicationController
     @zone = Zone.new(zone_params)
     @zone.user = current_user
     if @zone.save
-      redirect_to new_zone_zone_tag_path(@zone)
+      redirect_to root_path
     else
       render 'zones/new'
     end
@@ -29,7 +29,7 @@ class ZonesController < ApplicationController
   def update
     @user = @zone.user
     if @zone.update(zone_params)
-      redirect_to edit_zone_zone_tag_path(@zone)
+      redirect_to zones_path
     else
       render 'zones/edit'
     end
@@ -38,7 +38,7 @@ class ZonesController < ApplicationController
   def destroy
     @user = @zone.user
     @zone.destroy
-    redirect_to user_path(@user)
+    redirect_to zones_path
   end
 
   private
@@ -47,6 +47,6 @@ class ZonesController < ApplicationController
   end
 
   def zone_params
-    params.require(:zone).permit(:address, :radius, :title)
+    params.require(:zone).permit(:address, :radius, :title, interest_tag_ids:[])
   end
 end

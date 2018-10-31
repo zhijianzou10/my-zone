@@ -17,6 +17,9 @@
                 required: true,
                 autofocus: true
                 %>
+  <%= f.association :interest_tags,
+                as: :check_boxes,
+                required: true %>
   </div>
 
   <div class="form-actions">
