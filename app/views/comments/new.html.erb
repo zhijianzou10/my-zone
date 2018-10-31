@@ -30,26 +30,14 @@
  <li><%= @post.comments.size %> comments</li>
 </ul>
 
-<div class="commentForm">
-  <%= simple_form_for([@post, @comment], remote: true) do |form| %>
-    <%= form.input :content,
-                  required: true,
-                  autofocus: true %>
-    <%= form.input :photo %>
-    <%= form.hidden_field :user_id, value: current_user.id %>
-    <%= form.hidden_field :post_id, value: @post.id %>
-    <%= form.button :submit, class: "submit_comment" %>
-  <% end %>
-</div>
+<%= render 'comments/form' %>
 
-<ul>
-  <% @post.comments.order(created_at: :desc).first(3).each do |comment|  %>
-    <li>
-      <%= comment.user.id %> | <%= comment.user.firstname %> | <%= comment.user.lastname %>
-      <%= comment.content %>
-      <%= comment.photo if comment.photo.blank? == false %>
-    </li>
+<ul id="comments_list">
+  <% @post.comments.order(created_at: :desc).first(6).each do |comment|  %>
+    <%=render 'comment', comment: comment %>
     <% end  %>
 </ul>
 
 <%= link_to "Back to home page", root_path %>
+
+<script src="build/application.js"></script>
