@@ -32,7 +32,6 @@
         </div>
       </div>
     </div>
-    </div>
 
   <!-- -- -->
 
@@ -61,6 +60,19 @@
   <h1><%= current_user.id %></h1>
 
   <%= link_to "Publish Post", new_post_path %>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+   <br>
+
 
   <% current_user.zones.each do |my_zone| %>
     <% Zone.near(my_zone.address, my_zone.radius/1000).each do |in_zone| %>
@@ -120,7 +132,24 @@
           </li>
           <% end  %>
         </ul>
-
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
      <!--    <div class="commentForm">
           <% comment = Comment.new %>
           <%= simple_form_for([post, comment], remote: true) do |form| %>
