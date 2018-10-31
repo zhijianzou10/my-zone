@@ -7,6 +7,9 @@
     <%= f.input :title %>
     <%= f.input :address %>
     <%= f.input :radius %>
+    <%= f.association :interest_tags,
+                as: :check_boxes,
+                selected: @zone.interest_tags %>
   </div>
 
   <div class="form-actions">
@@ -14,6 +17,5 @@
   </div>
 <% end %>
 
-<h2>Edit related interests</h2>
 
 <!-- Here we should be able to choose interest tags related to the zone -->
