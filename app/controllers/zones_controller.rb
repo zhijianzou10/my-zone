@@ -47,6 +47,6 @@ class ZonesController < ApplicationController
   end
 
   def zone_params
-    params.require(:zone).permit(:latitude, :longtitude, :radius, :title)
+    params.require(:zone).permit(:address, :radius, :title)
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_25_131733) do
+ActiveRecord::Schema.define(version: 2018_10_30_131946) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(version: 2018_10_25_131733) do
 
   create_table "zones", force: :cascade do |t|
     t.float "latitude"
-    t.float "longtitude"
+    t.float "longitude"
     t.integer "radius"
     t.text "title"
     t.text "address"
