@@ -1,0 +1,5 @@
+<li>
+      <%= comment.user.id %> | <%= comment.user.firstname %> | <%= comment.user.lastname %> | <%= comment.id %> |
+      <%= comment.content %>
+      <%= comment.photo if comment.photo.blank? == false %>
+    </li>

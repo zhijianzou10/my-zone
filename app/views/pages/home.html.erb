@@ -232,7 +232,7 @@
 
         <%= link_to "Add comment", new_post_comment_path(post.id), class: "add_comment", data: { 'post-id' => post.id } %>
 
-        <div class="commentForm" style="display: none" data-post-id="<%= post.id %>">
+<!--         <div class="commentForm" style="display: none" data-post-id="<%= post.id %>">
           <%= simple_form_for([post, Comment.new], remote: true) do |form| %>
             <%= form.input :content,
                           required: true,
@@ -240,7 +240,7 @@
             <%= form.input :photo %>
             <%= form.button :submit, class: "submit_comment" %>
           <% end %>
-        </div>
+        </div> -->
 
         <ul>
           <% post.comments.order(created_at: :desc).first(3).each do |comment|  %>
