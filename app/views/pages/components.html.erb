@@ -1,3 +1,5 @@
+<div class="container">
+
 <h1>Write post card</h1>
 
 <div class="write-post-card">
@@ -198,169 +200,72 @@
 </div>
 
 <h1>Main Card</h1>
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="main-card-newsfeed">
-
-        <!-- AVATAR -->
-        <div class="avatar-interest-newsfeed">
-          <a href="#">
-            <%= image_tag("benoit rond.jpg", class:"avatar_interest")%>
-          </a>
-        </div>
-
-        <!-- CARD ZONE -->
-        <a href="#">
-          <div class="card-zone-newsfeed">
-            <div class="zone-logo-newsfeed">
-            </div>
-            <div class="zone-name-newsfeed">
-              <div class="name-newsfeed">
-                <p>Zone 1</p>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <!-- BANDEAU INTEREST -->
-        <div class="bandeau-interest">
-          <p>Interest</p>
-        </div>
-        <div id="triangle"></div>
-
-        <!-- Name -->
-        <a href="#">
-          <p id="full-name-post">User name</p>
-        </a>
-        <!-- Time spent -->
-        <p id="time-spent-post">XX min.</p>
-        <!-- message -->
-        <p id="post-message">This is my post message</p>
-
-        <!-- PHOTO -->
-         <%= image_tag("euratech.jpg", id:"post-picture-newsfeed")%>
-
-        <!-- GOODS & COMMENTS RESULTS -->
-          <div class="interaction-results-wrapper">
-
-            <a href="#">
-              <p id= "interaction-results-good">X goods</p>
-            </a>
-
-            <a href="#">
-              <p id= "interaction-results-comment">X comments</p>
-            </a>
-          </div>
-
-
-        <!-- DIVIDER -->
-
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="line"></div>
-          </div>
-        </div>
-
-        <!-- GOOD COMMENT SHARE INTERATIONS -->
-
-
-        <div class="interactions-buttons">
-
-          <div id="good">
-            <a href="#">
-              <div class="row interaction-row">
-                <div class="col-xs-3">
-                  <i class="far fa-thumbs-up"></i>
-                </div>
-                <div class="col-xs-3">
-                  <p>Good</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div id="comment">
-            <a href="#">
-              <div class="row interaction-row">
-                <div class="col-xs-3">
-                  <i class="far fa-comment-dots"></i>
-                </div>
-                <div class="col-xs-3">
-                  <p>Comment</p>
-
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div id="share">
-            <a href="#">
-              <div class="row interaction-row">
-                <div class="col-xs-3">
-
-                  <i class="far fa-share-square"></i>
-                </div>
-                <div class="col-xs-3">
-                  <p>Share</p>
-
-                </div>
-              </div>
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </div>
+<div class="row">
+  <div class="col-md-6">
+      <%= render 'components/main_card' %>
   </div>
 </div>
+
+<h1>Divider</h1>
+<div class="row">
+  <div class="col-md-6">
+    <hr class="divider">
+  </div>
+</div>
+
+
 
 <h1>POST COMMENT</h1>
 
 <div class="comment-bar">
 
-  <!-- ROW AVATAR -->
+  <!--  AVATAR -->
   <div class="avatar-comment">
-    <a href="#">
-      <span class="row">
+    <span class="row">
+      <a href="#">
         <span class="col-xs-1">
           <%= image_tag("logo", class:"avatar_navbar")%>
         </span>
-      </span>
-    </a>
+      </a>
   </div>
 
-  <!-- ROW COMMENT -->
+  <!-- COMMENT -->
 
   <div class="comment-input">
     <a href="#">
-      <span class="row">
+      <span class="col-xs-10">
           <%= form_tag href="#", method: :get do %>
           <%= text_field_tag :query,
             params[:query],
               id: "comment-input",
               placeholder: "Your comment..."
           %>
-        <% end %>
+          <% end %>
         </span>
       </span>
     </a>
   </div>
 
-  <!-- ROW PICTURE PHOTO -->
+  <!-- PICTURE PHOTO -->
 
   <div class="comment-photo-button">
     <a href="#">
-      <span class="row">
         <span class="col-xs-1">
           <i class="fas fa-camera"></i>
         </span>
       </span>
+      </span>
     </a>
   </div>
+</div>
+
+<h1>ALL COMMENTS</h1>
+
+<div class="all-comments">
 
 </div>
+
+
 
 <h1>Avatar post</h1>
 <%= image_tag("logo", class:"avatar_post")%>
@@ -597,4 +502,6 @@
     <p>Learn to code with us in Berlin</p>
     <a class="btn btn-primary btn-lg">Start now</a>
   </div> -->
+</div>
+
 </div>

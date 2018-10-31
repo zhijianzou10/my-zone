@@ -1,0 +1,68 @@
+<div class="comment-bar">
+
+  <!--  AVATAR -->
+  <div class="avatar-comment">
+    <a href="#">
+      <%= image_tag("logo", class:"avatar_navbar")%>
+    </a>
+  </div>
+
+  <!-- COMMENT -->
+
+  <div class="comment-input">
+      <%= form_tag href="#", method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+          id: "comment-input",
+          placeholder: "Your comment..."
+      %>
+      <% end %>
+  </div>
+
+  <!-- PICTURE PHOTO -->
+
+  <div class="comment-photo-button">
+    <a href="#">
+      <i class="fas fa-camera"></i>
+    </a>
+  </div>
+</div>
+
+
+<!-- <div class="comment-bar">
+
+
+  <div class="avatar-comment">
+    <span class="row">
+      <a href="#">
+        <span class="col-xs-1">
+          <%= image_tag("logo", class:"avatar_navbar")%>
+        </span>
+      </a>
+  </div>
+
+  <div class="comment-input">
+    <a href="#">
+      <span class="col-xs-10">
+          <%= form_tag href="#", method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+              id: "comment-input",
+              placeholder: "Your comment..."
+          %>
+          <% end %>
+        </span>
+      </span>
+    </a>
+  </div>
+
+  <div class="comment-photo-button">
+    <a href="#">
+        <span class="col-xs-1">
+          <i class="fas fa-camera"></i>
+        </span>
+      </span>
+      </span>
+    </a>
+  </div>
+</div> -->

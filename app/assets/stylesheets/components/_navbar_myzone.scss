@@ -33,21 +33,6 @@
   justify-content: center;
 }
 
-.navbar_newsfeed {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: rgb(83, 205, 226);
-  transition: all 0.3s ease;
-  height: 66px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color:white;
-}
-
-.navbar_newsfeed h1, .navbar_enter_addresse h1, .navbar_signup h1 {
-  margin-left: 20px;
-}
-
 
 .navbar_newsfeed_bottom {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
@@ -58,7 +43,6 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  max-width: 500px;
   margin: 0 auto;
   font-size: 35px;
 }
@@ -71,6 +55,7 @@
   opacity: 0.8;
 }
 
+/*
 .navbar_right {
   display: flex;
   align-items: center;
@@ -78,12 +63,12 @@
   color: white;
 }
 
-
 .navbar_right a {
   color: white;
   text-decoration: none;
   font-size:16px;
 }
+*/
 
 .navbar_police_for_myzone {
   color:white;
@@ -156,3 +141,6 @@
   border-top: 1px solid #E6E6E6;
 }
 
+.navbar_enter_addresse h1, .navbar_signup h1 {
+  margin-left: 20px;
+}

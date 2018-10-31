@@ -5,28 +5,43 @@
   align-items: center;
   background-color: white;
   border: 1px solid $very-light-gray;
-  max-width: 500px;
   margin: 0 auto;
+  margin-bottom: 5px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
 }
 
-#comment-input {
-  border-radius: 5px;
-  border: 0;
-  margin-left: 0px;
-  width: 360px;
-  background-color: $very-light-gray;
+.comment-input {
+  flex: 1 0 auto;
+  // border-radius: 5px;
+  margin-left: 10px;
   font-size: 14px;
-  padding-left: 10px;
+    #comment-input {
+    background-color: $very-light-gray;
+    width: 95%;
+    border-radius: 5px;
+    border: 0;
+    padding-left: 10px;
+  }
 }
 
 .comment-photo-button {
   font-size: 20px;
+
 }
 
 .comment-photo-button a {
+  flex: 0 0 20%;
   color: #5C5C5C;
+  padding-right: 10px;
+  // width: 20%;
 }
 
 .comment-photo-button a:hover {
   opacity: 0.8;
+}
+
+.avatar_navbar {
+  flex: 0 0 20%;
+  margin-left: 10px;
+  // width: 20%;
 }
