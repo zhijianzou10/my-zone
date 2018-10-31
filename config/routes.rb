@@ -16,4 +16,8 @@ Rails.application.routes.draw do
     end
     resources :comments, only: [:new, :create]
   end
+
+
+
+  get '/test', to: 'pages#test'
 end
