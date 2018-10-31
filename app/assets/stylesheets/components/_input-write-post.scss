@@ -15,14 +15,14 @@
 }
 
 .write-post-message {
-  color: #5C5C5C;
   font-size: 12px;
   margin-top: 15px;
   margin-bottom: 0px;
   margin-left: 10px;
 }
 
-.write-post-message p {
+.write-post-message p a {
+  color: #5C5C5C;
   margin-left: 15px;
   font-size: 14px;
 }

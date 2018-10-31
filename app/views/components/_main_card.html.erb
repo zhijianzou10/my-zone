@@ -1,12 +1,16 @@
 <div class="main-card-newsfeed">
   <div class="main-card-newsfeed--header">
     <div class="bandeau-interest">
-      Interest
+      <%= post.interest_tag.title %>
     </div>
 
-    <a href="#" class="avatar">
-      <%= image_tag("benoit rond.jpg", class:"avatar_interest")%>
-    </a>
+    <%= link_to user_path(post.user), class:"avatar" do %>
+      <% if post.user.avatar_url.blank? == true %>
+        <%= image_tag("benoit rond.jpg", class:"avatar_post") %>
+      <% else %>
+        <%=  image_tag(post.user.avatar_url, class:"avatar_post") %>
+      <% end %>
+    <% end %>
 
     <a href="#">
       <div class="card-zone-newsfeed">
@@ -14,7 +18,7 @@
         </div>
         <div class="zone-name-newsfeed">
           <div class="name-newsfeed">
-            <p>Zone 1</p>
+            <p><%= post.zone.title %></p>
           </div>
         </div>
       </div>
@@ -22,43 +26,50 @@
 
     <div>
       <a href="#">
-        <p id="full-name-post">User name</p>
+        <p id="full-name-post"><%= post.user.firstname + ' ' + post.user.lastname %></p>
       </a>
       <!-- Time spent -->
-      <p id="time-spent-post">XX min.</p>
+      <p id="time-spent-post"><%= post.updated_at %></p>
     </div>
   </div>
 
   <div class="main-card-newsfeed--body">
     <p class="post-content">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque perspiciatis possimus saepe asperiores, corporis aspernatur adipisci doloribus laborum commodi rerum cupiditate exercitationem consequatur amet vitae aliquid quo hic enim dolor.
+      <%= post.content %>
     </p>
 
-    <%= image_tag("euratech.jpg", class:"post-picture") %>
+      <% if post.photo.blank? == true %>
+        <%= image_tag("euratech.jpg", class:"post-picture") %>
+      <% else %>
+        <%=  image_tag(post.photo, class:"post-picture") %>
+      <% end %>
+
   </div>
 
   <div class="main-card-newsfeed--interactions">
     <a href="#" class="interaction-results-good">
-      X goods
+      <%= post.goods.where(is_good: true).size %> goods
     </a>
 
     <a href="#" class="interaction-results-comment">
-      X comments
+      <%= pluralize post.comments.size, "comment" %>
     </a>
   </div>
 
   <hr class="divider">
 
   <div class="main-card-newsfeed--actions">
-    <a href="#" class="action-item good">
-      <i class="far fa-thumbs-up"></i>
-      Good
-    </a>
 
-    <a href="#" class="action-item comment">
+    <%= link_to good_post_path(post, is_good: true),class:"action-item good", method: :post, remote: true do %>
+          <i class="far fa-thumbs-up" id="submmit_good" onclick="sendTheAJAX()"></i>
+          <span id="test1"></span>
+          Good
+        <% end %>
+
+    <%= link_to new_post_comment_path(post.id), class: "add_comment action-item comment", data: { 'post-id' => post.id } do %>
       <i class="far fa-comment-dots"></i>
       Comment
-    </a>
+    <% end %>
 
     <a href="#" class="action-item share">
       <i class="far fa-share-square"></i>

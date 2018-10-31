@@ -4,9 +4,11 @@
     <%= image_tag("logo", class:"avatar_post")%>
   </div>
   <!-- WRITE POST  -->
-  <a href="#">
+
     <div class="write-post-message">
-      <p>Write a post...</p>
+      <p>
+        <%= link_to "Publish Post", new_post_path %>
+      </p>
+      <!-- <p>Write a post...</p> -->
     </div>
-  </a>
 </div>
