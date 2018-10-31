@@ -1,14 +1,23 @@
-import GMaps from 'gmaps/gmaps.js';
+// import GMaps from 'gmaps/gmaps.js';
+// import L from 'leaflet';
+
+// var map =  // LIGNE 14
+// map.addLayer(osmLayer);
+
 
 var mapElements = document.getElementsByClassName('zone_maps');
 Array.from(mapElements).forEach(mapElement => {
   var marker = JSON.parse(mapElement.dataset.marker);
   var div_id = JSON.parse(mapElement.dataset.marker).div_id;
-  if (mapElement) { // don't try to build a map if there's no div#map to inject in
-  var map = new GMaps({ div: div_id, lat: 0, lng: 0 });
-  map.addMarker(marker);
-  map.setCenter(marker.lat, marker.lng);
-  map.setZoom(14);
-  }
+  var zoneTitle = JSON.parse(mapElement.dataset.marker).title;
+  // don't try to build a map if there's no div#map to inject in
+  var map = L.map(div_id).setView([marker.lat, marker.lng], 16)
+  var ggRoadmap = new L.Google('ROADMAP');
+
+  map.addLayer(ggRoadmap);
+  L.marker([marker.lat, marker.lng]).addTo(map)
+    .bindPopup('This is your zone: ' + zoneTitle)
+    .openPopup();
+  L.circle([marker.lat, marker.lng], {radius: marker.radius}).addTo(map);
 });
 

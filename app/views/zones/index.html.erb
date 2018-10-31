@@ -1,12 +1,14 @@
 <ul>
-   <% @zones.each do |zone| %>
+   <% @zones.order(created_at: :desc).each do |zone| %>
   <li>
     <%= zone.title %> | <%= zone.latitude %> | <%= zone.longitude %> | <%= zone.radius %>
     <% marker =
      {
         lat: zone.latitude,
         lng: zone.longitude,
-        div_id: "#zone_map_#{zone.id}"#,
+        div_id: "zone_map_#{zone.id}",
+        radius: zone.radius,
+        title: zone.title
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       } %>
     <div
@@ -31,3 +33,4 @@
 <p><%= link_to "Add a zone", new_zone_path %></p>
 <p><%= link_to "Finish and back to my profile", user_path(@user) %></p>
 
+<%= javascript_pack_tag 'map' %>

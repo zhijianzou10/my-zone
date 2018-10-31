@@ -24,3 +24,4 @@
 //   addReview('<%= j render "reviews/show", review: @review %>');
 //   refreshForm('<%= j render "reviews/form", restaurant: @restaurant, review: Review.new %>');
 // <% end %>
+
