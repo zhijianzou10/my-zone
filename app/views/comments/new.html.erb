@@ -1,3 +1,15 @@
+<ul>
+ <li>Content:<%= @post.content %></li>
+ <li>Photo of post<%= @post.photo if @post.photo.blank? == false %></li>
+ <li>Zone title<%= @post.zone.title %></li>
+ <li>Zone interest<%= @post.interest_tag.title %></li>
+ <li>Post author avatar<%= @post.user.avatar_url %><%= link_to "Avatar", user_path(@post.user) %></li>
+ <li>Post author name<%= @post.user.firstname + ' ' + @post.user.lastname %></li>
+ <li>Post update time <%= @post.updated_at %></li>
+ <li><%= @post.goods.where(is_good: true).size %> goods</li>
+ <li><%= @post.comments.size %> comments</li>
+</ul>
+
 <div class="commentForm">
   <%= simple_form_for([@post, @comment], remote: true) do |form| %>
     <%= form.input :content,
@@ -9,3 +21,15 @@
     <%= form.button :submit, class: "submit_comment" %>
   <% end %>
 </div>
+
+<ul>
+  <% @post.comments.order(created_at: :desc).first(3).each do |comment|  %>
+    <li>
+      <%= comment.user.id %> | <%= comment.user.firstname %> | <%= comment.user.lastname %>
+      <%= comment.content %>
+      <%= comment.photo if comment.photo.blank? == false %>
+    </li>
+    <% end  %>
+</ul>
+
+<%= link_to "Back to home page", root_path %>

@@ -1,12 +1,12 @@
 
-function showCommentForm(e) {
-  e.preventDefault();
-  var postId = $(e.currentTarget).data().postId;
-  console.log("[data-post-id='" + postId + "']")
-  $(".commentForm[data-post-id='" + postId + "']").toggle();
-}
+// function showCommentForm(e) {
+//   e.preventDefault();
+//   var postId = $(e.currentTarget).data().postId;
+//   console.log("[data-post-id='" + postId + "']")
+//   $(".commentForm[data-post-id='" + postId + "']").toggle();
+// }
 
-$(".add_comment").click(showCommentForm);
+// $(".add_comment").click(showCommentForm);
 
 // $('#submit_good').on('click',function{
 //   console.log('100sss');
