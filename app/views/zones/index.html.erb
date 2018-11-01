@@ -1,7 +1,41 @@
-<ul>
+
+<!-- <div class="col-xs-12 col-lg-6 col-lg-offset-3"> -->
+
+
    <% @zones.order(created_at: :desc).each do |zone| %>
-  <li>
-    <%= zone.title %> | <%= zone.latitude %> | <%= zone.longitude %> | <%= zone.radius %>
+<!--     <%= zone.title %> | <%= zone.latitude %> | <%= zone.longitude %> | <%= zone.radius %> -->
+  <div class="container-zonelist">
+    <div class="card_zone_list">
+
+      <div class="zone_logo_list">
+      </div>
+      <div class="zone_name_list">
+        <h6><%= zone.title %></h6>
+      </div>
+
+
+    <div class="icon_zonelist">
+      <%= link_to new_zone_path do %>
+      <i class="fas fa-plus-square iconcolor"></i>
+      <% end %>
+    </div>
+
+
+    <div class="icon_zonelist">
+      <%= link_to edit_zone_path(zone) do %>
+      <i class="far fa-edit iconcolor"></i>
+      <% end %>
+    </div>
+
+
+    <div class="icon_zonelist">
+      <%= link_to zone_path(zone), method: :delete do %>
+      <i class="fa fa-trash iconcolor"></i>
+      <% end %>
+    </div>
+    </div>
+  <div>
+
     <% marker =
      {
         lat: zone.latitude,
@@ -11,11 +45,12 @@
         title: zone.title
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       } %>
+
     <div
       class="zone_maps";
       id="zone_map_<%= zone.id %>";
       style="width: 100%;
-      height: 600px;"
+      height: 177px;"
       data-marker="<%= marker.to_json %>"
     ></div>
     <li>
@@ -24,13 +59,10 @@
     <% end  %>
     </li>
 
-    <%= link_to "Edit", edit_zone_path(zone) %>
-    <%= link_to "Delete", zone_path(zone), method: :delete %>
-  </li>
   <% end %>
-</ul>
+</div>
 
-<p><%= link_to "Add a zone", new_zone_path %></p>
+
 <p><%= link_to "Finish and back to my profile", user_path(@user) %></p>
 
 <%= javascript_pack_tag 'map' %>
