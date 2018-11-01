@@ -24,13 +24,8 @@
   </head>
   <body>
     <%= render 'shared/flashes' %>
-    <%= render 'shared/navbar' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
-
-  <!--    <%= javascript_include_tag 'https://unpkg.com/leaflet@1.3.4/dist/leaflet.js' %>
-    <%= javascript_include_tag 'https://www.datavis.fr/assets/lib/leaflet/leaflet-google-correct-v1.js' %> -->
-
   </body>
 </html>

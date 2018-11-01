@@ -4,8 +4,9 @@
       <%= link_to user_path(current_user) do %>
       <%= image_tag 'benoit.jpg', class:"avatar_navbar" %>
       <% end %>&nbsp;&nbsp;&nbsp;
-      <%= link_to href: '' do %>
-      <%= image_tag 'logout.png', height:29, weight:29 %>
-      <% end %>&nbsp;&nbsp;&nbsp;
+      <a rel="nofollow" data-method="delete" href="/users/sign_out">
+        <%= image_tag 'logout.png', height:29, weight:29 %>&nbsp;&nbsp;&nbsp;
+      </a>
   </div>
 </div>
+
