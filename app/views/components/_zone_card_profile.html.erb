@@ -5,12 +5,12 @@
       <div class="zone_left">
         <div class="tag_zone">
           <a href="/zones#zone_map_<%= zone.id %>"><p><%= zone.title %></p>
-            </div>
+        </div>
             <div class="interest_margin small_line">
               <b><p>Interests:</p></b> <br>
               <p class="gray"><%= interest.title %></p> <br>
             </div>
-          </div>
+        </div>
 
           <div class="zone_right">
             <% marker =
@@ -29,23 +29,6 @@
            >
            </div>
         </a>
-
-
-      <div class="zone_right">
-         <% marker =
-     {
-        lat: zone.latitude,
-        lng: zone.longitude,
-        div_id: "zone_map_#{zone.id}",
-        radius: zone.radius,
-        title: zone.title
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
-      } %>
-        <div
-          class="zone_maps";
-          id="zone_map_<%= zone.id %>";
-          data-marker="<%= marker.to_json %>"
-        ></div>
 
       </div>
     </div>
