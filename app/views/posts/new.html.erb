@@ -1,32 +1,84 @@
 <%= render 'components/navbar_newsfeed' %>
 
-<%= render 'components/post_input' %>
 
-<%= simple_form_for(@post) do |f| %>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :content,
-                required: true,
-                autofocus: true
-                %>
-    <%= f.association :zone,
-                collection: current_user.zones,
-                as: :select,
-                required: true,
-                input_html: { id: "zone_choice"}
-                %>
-    </div>
-    <div id='interest_tags_with_zone'>
-    <%= f.association :interest_tag,
-                as: :radio_buttons,
-                required: true
-                %>
-    </div>
-<!-- Should only display interest tag belong to the zone -->
-<script src='new'></script>
+<!-- <div class="row">
 
-  <div class="form-actions">
-    <%= f.button :submit, "publish" %>
-  </div>
-<% end %>
+<div class="row">
+ <div class="col-md-6">
+  <hr class="divider">
+</div>
+</div> -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+
+      <div class="form-post">
+        <%= simple_form_for(@post) do |f| %>
+          <%= f.error_notification %>
+
+              <div class="row">
+                <div class="col-xs-12">
+
+                            <%= f.input :content,
+                                    required: true,
+                                    autofocus: true,
+                                    label: false,
+                                    placeholder: "write your post"
+                                    %>
+
+                </div>
+
+                <div class="col-xs-12">
+                  <div class="form-check">
+                    <div class="zone-select">
+                      <% current_user.zones.all.each do |zone| %>
+
+
+                          <input class="hidden" id="zone_choice" required="required" aria-required="true" type="radio" value="<%= zone.id %>" name="post[zone_id]">
+
+                          <label class="category-choice collection_radio_buttons" for="zone_choice">
+                            <%= zone.title %>
+
+                            <i class="far fa-check-square"></i>
+
+                          </label>
+
+                      <% end %>
+
+                  </div>
+                </div>
+
+                </div>
+
+
+                <div class="col-xs-12">
+
+                      <div id='interest_tags_with_zone'>
+                      <%= f.association :interest_tag,
+                                  as: :radio_buttons,
+                                  required: true
+                                  %>
+                      </div>
+
+                </div>
+
+
+                  <!-- Should only display interest tag belong to the zone -->
+                  <script src='new'></script>
+
+                    <div class="form-actions">
+                      <%= f.button :submit, "publish" %>
+                    </div>
+                  <% end %>
+
+              </div>
+
+
+      </div>
+
+
+
+
+
+

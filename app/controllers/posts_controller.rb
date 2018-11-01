@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   def new
     @user = current_user
     @post = Post.new
+    @zones = @user.zones
   end
 
   def create
