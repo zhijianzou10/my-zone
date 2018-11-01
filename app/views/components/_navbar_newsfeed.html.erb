@@ -7,7 +7,7 @@
       <%= link_to user_path(current_user), id:"avatar_nav" do %>
       <%= image_tag 'benoit.jpg', class:"avatar_navbar"%>
       <% end %>&nbsp;&nbsp;&nbsp;
-      <a rel="nofollow" data-method="delete" href="/users/sign_out">
+      <a rel="nofollow" id="logout_nav" data-method="delete" href="/users/sign_out">
         <%= image_tag 'logout.png', height:29, weight:29 %>&nbsp;&nbsp;&nbsp;
       </a>
   </div>

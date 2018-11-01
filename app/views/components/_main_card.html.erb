@@ -64,8 +64,10 @@
   <div class="main-card-newsfeed--actions">
 
     <%= link_to good_post_path(post, is_good: true),class:"action-item good", method: :post, remote: true do %>
+
           <i class="far fa-thumbs-up" id="submmit_good"></i>
          <span id="goodclick">Good</span>
+
         <% end %>
 
     <%= link_to new_post_comment_path(post.id), class: "add_comment action-item comment", data: { 'post-id' => post.id } do %>
