@@ -4,66 +4,64 @@
 <div class="container_banner" style="background-image: url('<%= image_path('wave') %>')">
 <!-- AVATAR -->
   <%= image_tag("logo", class:"avatar_profile")%>
+
+  <%= link_to "My Zones", zones_path , class: 'button_zones' %>
 </div>
-<!-- -- -->
 
 <% if current_user == @user %>
 
 <div class="newsfeed-container">
 
-  <!-- BUTTON -->
-  <%= link_to "My Zones", zones_path , class: 'button_zones' %>
-  <!-- -- -->
-
  <!--  <p><%= link_to "Edit my profile", edit_user_path(@user) %></p> -->
 
-  <ul>
+  <div>
       <% @user.zones.each do |zone| %>
         <% zone.interest_tags.each do |interest| %>
 
-          <div class="col-xs-6 col-lg-6 col-lg-offset-3">
+          <div class="col-xs-6 col-lg-3 col-lg-offset-3">
             <%= render 'components/zone_card_profile',zone: zone, interest: interest %>
           </div>
 
         <% end  %>
       <% end %>
+    </div>
+
+
+
+  <div>
+  <!-- NAVBAR BOTTOM -->
+    <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+      <%= render 'components/navbar_bottom' %>
+    </div>
+
+    <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+      <%= render 'components/input_write_post.html.erb' %>
+    </div>
+
+  <% @user.posts.each do |post| %>
+
+   <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+      <%= render 'components/main_card_dropdown', post: post %>
+    </div>
+
+ <!--    <li><%= post.content %> | <%= post.zone.title %> | <%= post.interest_tag.title %> <%= post.user.firstname %></li>
+
+    <ul>
+     <li>Content:<%= post.content %></li>
+     <li>Photo of post<%= post.photo if post.photo.blank? == false %></li>
+     <li>Zone title<%= post.zone.title %></li>
+     <li>Zone interest<%= post.interest_tag.title %></li>
+     <li>Post author avatar<%= post.user.avatar_url %><%= link_to "Avatar", user_path(post.user) %></li>
+     <li>Post author name<%= post.user.firstname + ' ' + post.user.lastname %></li>
+     <li>Post update time <%= post.updated_at %></li>
+     <li><%= post.goods.where(is_good: true).size %> goods</li>
+     <li><%= post.comments.size %> comments</li>
     </ul>
-  <ul>
 
-
-      <!-- NAVBAR BOTTOM -->
-        <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-          <%= render 'components/navbar_bottom' %>
-        </div>
-
-        <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-          <%= render 'components/input_write_post.html.erb' %>
-        </div>
-
-      <% @user.posts.each do |post| %>
-
-       <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-          <%= render 'components/main_card_dropdown', post: post %>
-        </div>
-
-     <!--    <li><%= post.content %> | <%= post.zone.title %> | <%= post.interest_tag.title %> <%= post.user.firstname %></li>
-
-        <ul>
-         <li>Content:<%= post.content %></li>
-         <li>Photo of post<%= post.photo if post.photo.blank? == false %></li>
-         <li>Zone title<%= post.zone.title %></li>
-         <li>Zone interest<%= post.interest_tag.title %></li>
-         <li>Post author avatar<%= post.user.avatar_url %><%= link_to "Avatar", user_path(post.user) %></li>
-         <li>Post author name<%= post.user.firstname + ' ' + post.user.lastname %></li>
-         <li>Post update time <%= post.updated_at %></li>
-         <li><%= post.goods.where(is_good: true).size %> goods</li>
-         <li><%= post.comments.size %> comments</li>
-        </ul>
-
-        <%= link_to "Edit", edit_post_path(post) %>
-        <%= link_to "Delete", post_path(post), method: :delete %> -->
-      <% end %>
-</ul>
+    <%= link_to "Edit", edit_post_path(post) %>
+    <%= link_to "Delete", post_path(post), method: :delete %> -->
+  <% end %>
+</div>
 <% else  %>
 <!--    <ul> -->
       <% @user.posts.each do |post| %>

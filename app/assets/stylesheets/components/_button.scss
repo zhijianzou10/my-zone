@@ -33,10 +33,9 @@
     font-size: 15px;
     height:41px;
     width:118px;
-    position: absolute;
     right: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    top: 200px;
+    position: absolute;
     &:hover {
       background-color:#286090;
       text-decoration:none;
@@ -44,7 +43,6 @@
     }
 
 }
-
 .button_sign_in {
     background-color: #1B6DA4; /* Green */
     border: none;
