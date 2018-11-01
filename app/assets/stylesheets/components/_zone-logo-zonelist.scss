@@ -1,0 +1,43 @@
+.card_zone_list {
+  // background-color: blue;
+  // border: 2px solid blue;
+  // justify-content: space-around;
+  display: flex;
+  align-items:center;
+  background-color: white;
+  height:80px;
+  // justify-content:space-around;
+
+}
+
+.zone_logo_list {
+  // background-color: red;
+  border-radius: 50%;
+  height: 49px;
+  width: 49px;
+  background-color: white;
+  border-radius: 50%;
+  border: 10px solid orange;
+  // margin-top: 0px;
+  margin-left:20px;
+  // margin-bottom: 15px;
+  // margin-top:15px;
+}
+
+.zone_name_list {
+  // background-color: yellow;
+  // width: 50%;
+  margin-left: 10px;
+
+}
+
+.zone_name_list h6 {
+  font-size: 18px;
+  font-weight:bold;
+}
+
+// .name_zonelist {
+//   position: relative;
+//   top: 25%;
+// }
+

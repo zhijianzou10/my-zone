@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:edit, :update, :destroy]
+  before_action :set_post, only: [:edit, :update, :destroy, :good]
   def index
     @posts = current_user.posts.all
   end
@@ -40,9 +40,9 @@ class PostsController < ApplicationController
   end
 
   def good
+
     if Good.find_by_user_id_and_post_id(current_user.id, params[:id]) == nil
       Good.create(post_id: params[:id], user_id: current_user.id, is_good: params[:is_good])
-      redirect_to root_path
     elsif
       good = Good.find_by_user_id_and_post_id(current_user.id, params[:id])
       if good.is_good == true
@@ -50,7 +50,10 @@ class PostsController < ApplicationController
       else
         good.update(is_good: true)
       end
-      redirect_to root_path
+    end
+    respond_to do |format|
+        format.html { redirect_to new_post_comment_path(@post.id) }
+        format.js
     end
   end
 
