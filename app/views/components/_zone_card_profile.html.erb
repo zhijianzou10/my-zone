@@ -30,6 +30,23 @@
            </div>
         </a>
 
+
+      <div class="zone_right">
+         <% marker =
+     {
+        lat: zone.latitude,
+        lng: zone.longitude,
+        div_id: "zone_map_#{zone.id}",
+        radius: zone.radius,
+        title: zone.title
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      } %>
+        <div
+          class="zone_maps";
+          id="zone_map_<%= zone.id %>";
+          data-marker="<%= marker.to_json %>"
+        ></div>
+
       </div>
     </div>
   </div>
