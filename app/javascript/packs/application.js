@@ -1,12 +1,12 @@
 import "bootstrap";
-import {inputAnimation} from "./input";
+// import {inputAnimation} from "./input";
 
 if(document.querySelector(".simple_form")) {
-  inputAnimation();
+  // inputAnimation();
 }
 
 if(document.querySelector(".simple_form")) {
-  closeAnimation();
+  // closeAnimation();
 }
 
 
