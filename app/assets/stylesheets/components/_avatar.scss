@@ -12,6 +12,14 @@
     border-radius: 50%;
 }
 
+#avatar_nav:hover {
+  text-decoration: none;
+}
+
+#logout_nav:hover {
+  text-decoration: none;
+}
+
 .avatar_profile {
     // vertical-align: middle;
     width: 119px;
@@ -19,7 +27,7 @@
     border-radius: 50%;
     border:5px solid #53CDE2;
     position: relative;
-    top: 25px;
+    top: 15px;
 }
 
 .avatar_interest {
