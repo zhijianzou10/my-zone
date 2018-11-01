@@ -1,0 +1,1 @@
+document.getElementById('good').innerText = "<%= pluralize @post.goods.where(is_good: true).size, 'goods'%>"
