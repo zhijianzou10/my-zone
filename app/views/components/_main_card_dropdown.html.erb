@@ -12,24 +12,34 @@
       <% end %>
     <% end %>
 
-
+    <a href="#">
       <div class="card-zone-newsfeed">
         <div class="zone-logo-newsfeed">
         </div>
         <div class="zone-name-newsfeed">
           <div class="name-newsfeed">
-
             <p><%= post.zone.title %></p>
           </div>
         </div>
       </div>
+    </a>
 
+      <!-- EDIT & DELETE DROPDOWN -->
+      <div class="dropdown points">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <i class="fas fa-ellipsis-h"></i>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><%= link_to "Edit", edit_post_path(post) %></li>
+          <li><%= link_to "Delete", post_path(post), method: :delete %></li>
+        </ul>
+      </div>
+      <!-- DROPDOWN -->
 
     <div>
-      <%= link_to user_path(post.user) do %>
+      <a href="#">
         <p id="full-name-post"><%= post.user.firstname + ' ' + post.user.lastname %></p>
-        <% end %>
-
+      </a>
       <!-- Time spent -->
       <p id="time-spent-post"><%= post.updated_at %></p>
     </div>

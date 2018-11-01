@@ -1,11 +1,20 @@
-<div class="commentForm">
-  <%= simple_form_for([@post, @comment], remote: true) do |form| %>
+
+<div class=" container_comment">
+  <div>
+    <%= image_tag("logo", class:"avatar_input")%>
+  </div>
+  <div class="simple_form">
+    <%= simple_form_for([@post, @comment], remote: true) do |form| %>
     <%= form.input :content,
-                  required: true,
-                  autofocus: true %>
-    <%= form.input :photo %>
+                required: true,
+                autofocus: true,
+                label: false %>
     <%= form.hidden_field :user_id, value: current_user.id %>
     <%= form.hidden_field :post_id, value: @post.id %>
-    <%= form.button :submit, class: "submit_comment", id:"click_refresh" %>
-  <% end %>
+    <%= form.button :submit, class: "button_normal", id:"click_refresh", value:"send" %>
+    <% end %>
+    </div>
 </div>
+
+
+

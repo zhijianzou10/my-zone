@@ -1,5 +1,21 @@
-<li>
-      <%= comment.user.id %> | <%= comment.user.firstname %> | <%= comment.user.lastname %> | <%= comment.id %> |
-      <%= comment.content %>
-      <%= comment.photo if comment.photo.blank? == false %>
-    </li>
+<div class="comment-read-container">
+
+  <!-- COMMENT 1 -->
+  <div class="comments">
+    <!--  AVATAR -->
+    <div class="avatar-comment">
+        <%= image_tag("logo", class:"avatar_navbar avatar_navbar_show")%>
+    </div>
+
+    <!-- COMMENT -->
+
+    <div class="comment-read" >
+      <p id="comment-read"><%= comment.content %></p>
+    </div>
+  </div>
+
+  <!-- COMMENT 2 -->
+</div>
+
+
+
