@@ -18,15 +18,10 @@
   <div>
     <% counter = 0 %>
       <% @user.zones.each do |zone| %>
-        <% zone.interest_tags.each do |interest| %>
-
         <% counter += 1 %>
-
           <div class="col-xs-6 col-lg-3 <%= 'col-lg-offset-3' if counter % 2 == 1 %>">
-            <%= render 'components/zone_card_profile',zone: zone, interest: interest %>
+            <%= render 'components/zone_card_profile',zone: zone %>
           </div>
-
-        <% end  %>
       <% end %>
     </div>
 
@@ -89,3 +84,4 @@
 
 </p>
 <!-- <p> <%= @user.posts %></p> -->
+<%= javascript_pack_tag 'user_map' %>
