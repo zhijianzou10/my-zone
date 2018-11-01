@@ -30,22 +30,8 @@
 
 
   <!-- NAVBAR BOTTOM -->
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="navbar_newsfeed_bottom navbar-fixed-bottom">
-              <%= link_to href: '' do %>
-                <i class="fas fa-home"></i>
-              <% end %>
-              <%= link_to href: '' do %>
-                <i class="fas fa-comment-dots"></i>
-              <% end %>
-              <%= link_to href: '' do %>
-                <i class="fas fa-bell"></i>
-              <% end %>
-        </div>
-      </div>
-    </div>
+  <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+    <%= render 'components/navbar_bottom' %>
   </div>
 
   <!-- -- -->
