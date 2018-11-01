@@ -7,11 +7,20 @@
   align-items: center;
   justify-content: space-between;
   color:white;
-  // margin-bottom: 5px;
-  > h1 {
-    margin-left: 20px;
-    font-size: 30px;
-  }
+}
+
+#logo_myzone_navbar h1 {
+  margin-left: 20px;
+  color: white;
+  font-size: 30px;
+}
+
+#logo_myzone_navbar:hover {
+  text-decoration: none;
+}
+
+#logo_myzone_navbar:focus {
+  text-decoration: none;
 }
 
 .navbar-right {
@@ -19,3 +28,5 @@
   align-items: center;
   justify-content: space-between;
 }
+
+
