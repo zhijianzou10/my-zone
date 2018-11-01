@@ -1,5 +1,7 @@
 const list = document.getElementById('comments_list');
 
-list.insertAdjacentHTML("beforeend", "<%= j render 'comment', comment: @comment %>")
+list.insertAdjacentHTML("afterbegin", "<%= j render 'comment', comment: @comment %>")
+
+// list.insertAdjacentHTML("afterbegin", "<%= j render 'components/comment_show', comment: @comment %>")
 
 

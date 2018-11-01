@@ -6,12 +6,22 @@
     </div>
 
     <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-      <%= render 'components/comment_show' %>
+
+
+
+      <div id="comments_list">
+        <% @post.comments.order(created_at: :desc).first(3).each do |comment|  %>
+        <%=render 'comment', comment: comment %>
+        <% end  %>
     </div>
 
-    <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-      <%= render 'components/comment_input' %>
+    <div><%= render 'comments/form' %></div>
+
     </div>
+
+   <!--  <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+
+    </div> -->
 
   </div>
 </div>
@@ -30,13 +40,7 @@
  <li><%= @post.comments.size %> comments</li>
 </ul>
 
-<%= render 'comments/form' %>
 
-<ul id="comments_list">
-  <% @post.comments.order(created_at: :desc).first(6).each do |comment|  %>
-    <%=render 'comment', comment: comment %>
-    <% end  %>
-</ul>
 
 <%= link_to "Back to home page", root_path %>
 
