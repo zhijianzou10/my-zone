@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
 
-
+  layout :layout_by_resource
 
   protected
 
@@ -14,5 +14,16 @@ class ApplicationController < ActionController::Base
 
   # def after_sign_in_path_for(resource)
   #    new_user_zone_path(current_user)
-  # end
+
+
+  private
+
+  def layout_by_resource
+    if devise_controller?
+      "devise"
+    else
+      "application"
+    end
+  end
+
 end
