@@ -59,7 +59,7 @@
 }
 
 .interest_block {
-  margin: 15px 15px 0px 15px;
+  margin: 15px 0px 0px 26px;
   height:90px;
   width:90px;
 }
@@ -83,7 +83,12 @@
 
 .zone_list_cards {
   display: flex;
-  justify-content:center;
+  flex-wrap: wrap;
+  align-items:center;
+  text-align:center;
+  // justify-content:space-around;
+
+  // justify-content:center;
 }
 
 .card_each_zone {
@@ -91,9 +96,16 @@
 
 }
 
-.interest_block_container {
-  width:100%;
-
+.title_zonelist {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  p {
+    font-weight:bold;
+    margin: 0px 0px;
+  }
 }
+
+
 
 
