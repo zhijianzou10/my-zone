@@ -2,17 +2,10 @@
 <!-- <div class="col-xs-12 col-lg-6 col-lg-offset-3"> -->
 
 
-<div class="navbar_newsfeed zonelist_bar">
-  <div class="blank">
-  </div>
-    <div>
+<div class="navbar_newsfeed title_zonelist">
+<!--   <div class="blank">
+  </div> -->
       <p>All your zones</p>
-    </div>
-  <div class="navbar_right">
-      <%= link_to user_path(current_user), id:"avatar_nav" do %>
-      <%= image_tag 'benoit.jpg', class:"avatar_navbar"%>
-      <% end %>&nbsp;&nbsp;&nbsp;
-  </div>
 </div>
 
 
@@ -58,7 +51,7 @@
         class="zone_maps";
         id="zone_map_<%= zone.id %>";
         style="width: 100%;
-        height: 177px;"
+        height: 250px;"
         data-marker="<%= marker.to_json %>"
       ></div>
 
