@@ -8,7 +8,7 @@
       <% if post.user.avatar_url.blank? == true %>
         <%= image_tag("benoit rond.jpg", class:"avatar_post") %>
       <% else %>
-        <%=  image_tag(post.user.avatar_url, class:"avatar_post") %>
+        <%=  cl_image_tag(post.user.avatar_url, class:"avatar_post") %>
       <% end %>
     <% end %>
 
@@ -40,10 +40,8 @@
       <%= post.content %>
     </p>
 
-      <% if post.photo.blank? == true %>
-        <%= image_tag("euratech.jpg", class:"post-picture") %>
-      <% else %>
-        <%=  image_tag(post.photo, class:"post-picture") %>
+      <% if post.photo.blank? == false %>
+        <%=  cl_image_tag(post.photo, class:"post-picture") %>
       <% end %>
 
   </div>
