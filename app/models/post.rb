@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  mount_uploader :photo, PhotoUploader
+
 
   belongs_to :user
   belongs_to :zone
@@ -7,4 +7,6 @@ class Post < ApplicationRecord
 
   has_many :comments, dependent: :destroy
   has_many :goods, dependent: :destroy
+
+  mount_uploader :photo, PhotoUploader
 end
