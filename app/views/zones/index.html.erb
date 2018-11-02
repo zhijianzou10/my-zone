@@ -2,15 +2,33 @@
 <!-- <div class="col-xs-12 col-lg-6 col-lg-offset-3"> -->
 
 
+<div class="navbar_newsfeed zonelist_bar">
+  <div class="blank">
+  </div>
+
+  <div>
+    <h1>All your zones</h1>
+  </div>
+
+  <div class="navbar_right">
+      <%= link_to user_path(current_user), id:"avatar_nav" do %>
+      <%= image_tag 'benoit.jpg', class:"avatar_navbar"%>
+      <% end %>&nbsp;&nbsp;&nbsp;
+  </div>
+</div>
+
+
    <% @zones.order(created_at: :desc).each do |zone| %>
 <!--     <%= zone.title %> | <%= zone.latitude %> | <%= zone.longitude %> | <%= zone.radius %> -->
   <div class="container-zonelist">
     <div class="card_zone_list">
-
+      <div class=zonelist_left>
       <div class="zone_logo_list">
       </div>
       <div class="zone_name_list">
-        <h6><%= zone.title %></h6>
+        <h1><%= zone.title %></h1>
+      </div>
+
       </div>
 
 
@@ -61,8 +79,9 @@
 
   <% end %>
 </div>
+<br>
+  <%= link_to "back to profile", user_path(@user) , class: 'button_normal', style:"margin-left:17px" %>
 
 
-<p><%= link_to "Finish and back to my profile", user_path(@user) %></p>
 
 <%= javascript_pack_tag 'map' %>
