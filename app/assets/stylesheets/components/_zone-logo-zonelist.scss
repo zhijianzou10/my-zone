@@ -31,9 +31,20 @@
 
 }
 
-.zone_name_list h6 {
-  font-size: 18px;
+.zone_name_list h1 {
+  font-size: 12px;
   font-weight:bold;
+}
+
+.zonelist_left {
+  width:200px;
+  display: flex;
+  align-items:center;
+  background-color: white;
+}
+
+.blank {
+  width:10px;
 }
 
 // .name_zonelist {
