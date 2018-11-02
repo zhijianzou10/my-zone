@@ -18,15 +18,11 @@
                                     label: false,
                                     placeholder: "write your post"
                                     %>
-
-                            <%= f.input :photo %>
-                            <%= f.input :photo_cache, as: :hidden %>
-                            <%= f.button :submit %>
-
-
-                            <!-- <i class="upload-photo fas fa-camera"></i> -->
+                                    <i class="upload-photo fas fa-camera"></i>
+                                    <%= f.file_field :photo,
+                                    required: false %>
+                                    <%= f.input :photo_cache, as: :hidden %>
                   </div>
-
 
                 </div>
 
