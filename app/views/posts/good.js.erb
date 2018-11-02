@@ -1,1 +1,5 @@
-document.getElementById('good').innerText = "<%= pluralize @post.goods.where(is_good: true).size, 'goods'%>"
+
+  var postId = <%= @post.id %>
+  var goodId = 'good-' + postId;
+  document.getElementById(goodId).innerText = "<%= pluralize @post.goods.where(is_good: true).size, 'goods'%>";
+

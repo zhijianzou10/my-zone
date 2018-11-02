@@ -50,8 +50,7 @@
 
   <div class="main-card-newsfeed--interactions">
     <a class="interaction-results-good" >
-     <!--  <% post.goods.where(is_good: true).size %> goods: still should add "=" -->
-     <span id="good"><%= post.goods.where(is_good: true).size %> goods</span>
+     <span id="good-<%= post.id %>" data-good=<%= post.id %>><%= post.goods.where(is_good: true).size %> goods</span>
     </a>
 
     <a href="#" class="interaction-results-comment" id="commentnumber">
