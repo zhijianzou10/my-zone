@@ -6,7 +6,7 @@
 
     <%= link_to user_path(post.user), class:"avatar" do %>
       <% if post.user.avatar_url.blank? == true %>
-        <%= image_tag("benoit rond.jpg", class:"avatar_post") %>
+        <%= image_tag("default-avatar.png", class:"avatar_post") %>
       <% else %>
         <%=  cl_image_tag(post.user.avatar_url, class:"avatar_post") %>
       <% end %>
