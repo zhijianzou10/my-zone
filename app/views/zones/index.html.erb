@@ -5,11 +5,9 @@
 <div class="navbar_newsfeed zonelist_bar">
   <div class="blank">
   </div>
-
-  <div>
-    <h1>All your zones</h1>
-  </div>
-
+    <div>
+      <p>All your zones</p>
+    </div>
   <div class="navbar_right">
       <%= link_to user_path(current_user), id:"avatar_nav" do %>
       <%= image_tag 'benoit.jpg', class:"avatar_navbar"%>
@@ -18,67 +16,75 @@
 </div>
 
 
-   <% @zones.order(created_at: :desc).each do |zone| %>
+<% @zones.order(created_at: :desc).each do |zone| %>
 <!--     <%= zone.title %> | <%= zone.latitude %> | <%= zone.longitude %> | <%= zone.radius %> -->
-  <div class="container-zonelist">
-    <div class="card_zone_list">
-      <div class=zonelist_left>
-      <div class="zone_logo_list">
+  <div class="card_each_zone">
+    <div class="container-zonelist">
+      <div class="card_zone_list">
+        <div class=zonelist_left>
+          <div class="zone_logo_list">
+          </div>
+          <div class="zone_name_list">
+            <h1><%= zone.title %></h1>
+          </div>
+        </div>
+        <div class="icon_zonelist">
+          <%= link_to new_zone_path do %>
+            <i class="fas fa-plus-square iconcolor"></i>
+          <% end %>
+        </div>
+        <div class="icon_zonelist">
+          <%= link_to edit_zone_path(zone) do %>
+            <i class="far fa-edit iconcolor"></i>
+          <% end %>
+        </div>
+        <div class="icon_zonelist">
+          <%= link_to zone_path(zone), method: :delete do %>
+            <i class="fa fa-trash iconcolor"></i>
+          <% end %>
+        </div>
       </div>
-      <div class="zone_name_list">
-        <h1><%= zone.title %></h1>
-      </div>
+    <div>
+      <% marker =
+       {
+          lat: zone.latitude,
+          lng: zone.longitude,
+          div_id: "zone_map_#{zone.id}",
+          radius: zone.radius,
+          title: zone.title
+          # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+        } %>
+      <div
+        class="zone_maps";
+        id="zone_map_<%= zone.id %>";
+        style="width: 100%;
+        height: 177px;"
+        data-marker="<%= marker.to_json %>"
+      ></div>
+
+      <div class="zone_list_cards">
+        <% zone.interest_tags.each do |interest_tag| %>
+
+              <div class="interest_block_container">
+                <div class="interest_block">
+                  <div>
+                    <%= image_tag interest_tag.photo, class:"interest_photo"%>
+                  </div>
+                  <div class="interest_title">
+                    <%= interest_tag.title %>
+                  </div>
+                </div>
+              </div>
+        <% end  %>
 
       </div>
 
-
-    <div class="icon_zonelist">
-      <%= link_to new_zone_path do %>
-      <i class="fas fa-plus-square iconcolor"></i>
-      <% end %>
-    </div>
-
-
-    <div class="icon_zonelist">
-      <%= link_to edit_zone_path(zone) do %>
-      <i class="far fa-edit iconcolor"></i>
-      <% end %>
-    </div>
-
-
-    <div class="icon_zonelist">
-      <%= link_to zone_path(zone), method: :delete do %>
-      <i class="fa fa-trash iconcolor"></i>
-      <% end %>
-    </div>
-    </div>
-  <div>
-
-    <% marker =
-     {
-        lat: zone.latitude,
-        lng: zone.longitude,
-        div_id: "zone_map_#{zone.id}",
-        radius: zone.radius,
-        title: zone.title
-        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
-      } %>
-
-    <div
-      class="zone_maps";
-      id="zone_map_<%= zone.id %>";
-      style="width: 100%;
-      height: 177px;"
-      data-marker="<%= marker.to_json %>"
-    ></div>
-    <li>
-      <% zone.interest_tags.each do |interest_tag| %>
-      <%= interest_tag.title %>
-    <% end  %>
-    </li>
+  </div>
 
   <% end %>
 </div>
+
+
 <br>
   <%= link_to "back to profile", user_path(@user) , class: 'button_normal', style:"margin-left:17px" %>
 
