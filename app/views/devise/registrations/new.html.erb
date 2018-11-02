@@ -1,39 +1,81 @@
-<h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="navbar_signup">
+      <h1>MyZone</h1>
+        <div class="navbar_right">
+          <a href="/users/sign_in">Sign in</a>&nbsp;&nbsp;&nbsp; <!-- Ces codes sont des espaces -->
+          <a href="/users/sign_up">Sign up</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+    </div>
+  </div>
+</div>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true ,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :firstname,
-                required: true,
-                input_html: { autocomplete: "firstname" } %>
-    <%= f.input :lastname,
-                required: true,
-                input_html: { autocomplete: "lastname" } %>
-    <%= f.input :gender,
-                as: :radio_buttons,
-                collection: [[:male, 'male'], [:female, 'female'], [:other, 'other']],
-                label_method: :second,
-                value_method: :first,
-                required: true,
-                input_html: { autocomplete: "gender" },
-                checked: true %>
+  <div class="banner_signup" style="background-image: linear-gradient(-225deg, rgba(196, 196, 196, 0.9) 50%, rgba(196, 196, 196, 0.9) 90%), url(<%= image_path 'background_signin.jpg'%>); background-size: cover;">
+
+<div class="container">
+  <div>
+    <h2 id="slogan"><em>Get connected in local</em></h2>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-lg-6 col-lg-offset-6">
+  <div class="sign-up-form">
+        <div class="signup-content">
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= f.error_notification %>
+
+            <div class="container-signup">
+        <h2>Sign up</h2>
+              <div class="form-inputs">
+                <%= f.input :email,
+                            required: true,
+                            autofocus: true ,
+                            placeholder: "john@gmail.com",
+                            input_html: { autocomplete: "email" }%>
+                <%= f.input :password,
+                            required: true,
+                            placeholder: "********",
+                            hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                            input_html: { autocomplete: "new-password" } %>
+                <%= f.input :password_confirmation,
+                            placeholder: "********",
+                            required: true,
+                            input_html: { autocomplete: "new-password" } %>
+                <%= f.input :firstname,
+                            placeholder: "John",
+                            required: true,
+                            input_html: { autocomplete: "firstname" } %>
+                <%= f.input :lastname,
+                            placeholder: "Smith",
+                            required: true,
+                            input_html: { autocomplete: "lastname" } %>
+                <%= f.input :gender,
+                            as: :radio_buttons,
+                            collection: [[:male, 'male'], [:female, 'female'], [:other, 'other']],
+                            label_method: :second,
+                            value_method: :first,
+                            required: true,
+                            input_html: { autocomplete: "gender" },
+                            checked: true %>
+              </div>
+
+              <div class="form-actions">
+                <%= f.button :submit, "Sign up", class: "bouton-sign-up button_normal"%>
+              </div>
+            <% end %>
+
+    </div>
+  </div>
+</div>
+
+            </div>
+        </div>
+
+
+        <%#= render "devise/shared/links" %>
+
+
+
+
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
