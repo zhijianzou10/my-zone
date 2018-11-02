@@ -52,3 +52,48 @@
 //   top: 25%;
 // }
 
+.interest_photo {
+  height: 90px;
+  width:90px;
+  border-radius:15px;
+}
+
+.interest_block {
+  margin: 15px 15px 0px 15px;
+  height:90px;
+  width:90px;
+}
+
+.interest_title {
+  margin-top: -23px;
+  background-color: #1B6DA4;
+  height:23px;
+  width:90px;
+  color:white;
+  position:absolute;
+  border-radius: 0px 0px 15px 15px;
+  text-align: center;
+  font-weight:bold;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  font-size: 10px;
+}
+
+.zone_list_cards {
+  display: flex;
+  justify-content:center;
+}
+
+.card_each_zone {
+  margin-bottom:85px;
+
+}
+
+.interest_block_container {
+  width:100%;
+
+}
+
+
