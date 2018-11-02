@@ -5,7 +5,13 @@
 
   <div class="navbar_right">
       <%= link_to user_path(current_user), id:"avatar_nav" do %>
-      <%= image_tag 'benoit.jpg', class:"avatar_navbar"%>
+
+        <% if @user.avatar_url.blank? %>
+          <%= image_tag("default-avatar.png", class:"avatar_navbar")%>
+        <% else %>
+          <%= cl_image_tag(@user.avatar_url) %>
+        <% end %>
+
       <% end %>&nbsp;&nbsp;&nbsp;
       <a rel="nofollow" id="logout_nav" data-method="delete" href="/users/sign_out">
         <%= image_tag 'logout.png', height:29, weight:29 %>&nbsp;&nbsp;&nbsp;

@@ -5,7 +5,7 @@
 <!-- AVATAR -->
 
   <% if @user.avatar_url.blank? %>
-    <%= image_tag("default-avatar", class:"avatar_profile")%>
+    <%= image_tag("default-avatar.png", class:"avatar_profile")%>
   <% else %>
     <%= cl_image_tag(@user.avatar_url) %>
   <% end %>

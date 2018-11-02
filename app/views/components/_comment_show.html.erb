@@ -5,7 +5,11 @@
     <!--  AVATAR -->
     <div class="avatar-comment">
       <a href="#">
-        <%= image_tag("logo.png", class:"avatar_navbar avatar_navbar_show")%>
+      <% if post.user.avatar_url.blank? == true %>
+        <%= cl_image_tag("default-avatar.png", class:"avatar_navbar avatar_navbar_show") %>
+      <% else %>
+        <%=  cl_image_tag(post.user.avatar_url, class:"avatar_navbar avatar_navbar_show") %>
+      <% end %>
       </a>
     </div>
 
