@@ -4,10 +4,10 @@
 <div class="container_banner" style="background-image: url('<%= image_path('wave.jpg') %>')">
 <!-- AVATAR -->
 
-  <% if user.avatar_url.blank? %>
+  <% if @user.avatar_url.blank? %>
     <%= image_tag("default-avatar", class:"avatar_profile")%>
   <% else %>
-    <%= cl_image_tag(user.avatar_url) %>
+    <%= cl_image_tag(@user.avatar_url) %>
   <% end %>
 
   <%= link_to "My Zones", zones_path , class: 'button_zones' %>

@@ -1,44 +1,25 @@
-<div class="row">
-   <div class="col-xs-12">
-     <div class="navbar_signup">
-       <h1>MyZone</h1>
-         <div class="navbar_right">
-           <a href="/users/sign_in">Sign in</a>&nbsp;&nbsp;&nbsp; <!-- Ces codes sont des espaces -->
-           <a href="/users/sign_up">Sign up</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         </div>
-     </div>
-   </div>
- </div>
-
-<div class="banner_signin" style="background-image: linear-gradient(-225deg, rgba(196, 196, 196, 0.9) 50%, rgba(196, 196, 196, 0.9) 90%), url(<%= image_path 'background_signin.jpg'%>);">
-    <div class="signin_content">
-      <div class="container_signin">
-        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="form-inputs labelclass">
-            <%= f.input :email, required: true, autofocus: true,
-                        input_html: { autocomplete: "email", class: "autolabel"} %>
-            <%= f.input :password,
-                        required: true,
-                        input_html: { autocomplete: "current-password" } %>
-            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-            <%= f.button :submit, class: "button_normal", value: "Log in" %>
-            <br>
-            <div>
-               <%= link_to "Forget your password?", new_user_password_path %>
-            </div>
-            <div>
-               <%= link_to "Create an account", new_user_registration_path %>
-            </div>
-
-
-
-
-
-        <!--     <div class="form-actions"> -->
-
-        <!--     </div> -->
-          </div>
-          <% end %>
+<div class="signin_content">
+  <div class="container_signin">
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-inputs labelclass">
+        <%= f.input :email, required: true, autofocus: true,
+                    input_html: { autocomplete: "email", class: "autolabel"} %>
+        <%= f.input :password,
+                    required: true,
+                    input_html: { autocomplete: "current-password" } %>
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <%= f.button :submit, class: "button_normal", value: "Log in" %>
+        <br>
+        <div>
+           <%= link_to "Forget your password?", new_user_password_path %>
         </div>
+        <div>
+           <%= link_to "Create an account", new_user_registration_path %>
+        </div>
+
+
+      </div>
+      <% end %>
     </div>
-  </div>
+</div>
+</div>

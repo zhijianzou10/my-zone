@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}&language=en&region=EU" %>
+
+    <title>TODO</title>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+  </head>
+  <body style="background-image: linear-gradient(-225deg, rgba(196, 196, 196, 0.9) 50%, rgba(196, 196, 196, 0.9) 90%), url(<%= image_path 'background_signin.jpg'%>); background-size: cover;">
+    <%= render 'components/navbar_sign_in' %>
+    <%= render 'shared/flashes' %>
+    <div class="container">
+
+      <div class="row">
+        <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
+
+  </body>
+</html>
