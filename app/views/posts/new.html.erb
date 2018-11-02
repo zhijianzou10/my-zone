@@ -1,14 +1,5 @@
 <%= render 'components/navbar_newsfeed' %>
 
-
-
-<!-- <div class="row">
-
-<div class="row">
- <div class="col-md-6">
-  <hr class="divider">
-</div>
-</div> -->
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-lg-6 col-lg-offset-3">
@@ -19,6 +10,7 @@
 
               <div class="row">
                 <div class="col-xs-12">
+                  <div class="input-write-post">
 
                             <%= f.input :content,
                                     required: true,
@@ -27,28 +19,32 @@
                                     placeholder: "write your post"
                                     %>
 
+                            <%#= f.input :photo %>
+                            <%#= f.input :photo_cache, as: :hidden %>
+                            <!-- <i class="upload-photo fas fa-camera"></i> -->
+                  </div>
+
+
                 </div>
 
                 <div class="col-xs-12">
-                  <div class="form-check">
-                    <div class="zone-select">
-                      <% current_user.zones.all.each do |zone| %>
+                  <div class="form-check zones">
+                    <% current_user.zones.all.each do |zone| %>
+                      <div class="zone-select">
 
 
-                          <input class="hidden" id="zone_choice" required="required" aria-required="true" type="radio" value="<%= zone.id %>" name="post[zone_id]">
+                        <input id="zone_choice_<%= zone.id %>" required="required" aria-required="true" type="radio" value="<%= zone.id %>" name="post[zone_id]">
 
-                          <label class="category-choice collection_radio_buttons" for="zone_choice">
+                        <label for="zone_choice_<%= zone.id %>">
+                          <div class="zone_logo_list2">
+                          </div>
+                          <div>
                             <%= zone.title %>
-
-                            <i class="far fa-check-square"></i>
-
-                          </label>
-
-                      <% end %>
-
+                          </div>
+                        </label>
+                      </div>
+                    <% end %>
                   </div>
-                </div>
-
                 </div>
 
 
@@ -61,7 +57,41 @@
                                   %>
                       </div>
 
+
+
                 </div>
+
+
+                <div class="col-xs-12">
+
+                  <div>
+
+                      <%#= f.association :zone,
+                       collection: current_user.zones,
+                       as: :radio_buttons,
+                       input_html: { id: "zone_choice"}
+                       %>
+
+                  </div>
+
+
+                </div>
+
+
+<!-- <fieldset class="form-group radio_buttons required post_zone">
+
+  <legend class="col-form-label pt-0">Zone <abbr title="required">*</abbr></legend>
+
+  <input type="hidden" name="post[zone_id]" value="">
+
+  <div class="form-check">
+    <input class="form-check-input radio_buttons required" id="zone_choice" required="required" aria-required="true" type="radio" value="2" name="post[zone_id]">
+
+    <label class="collection_radio_buttons" for="zone_choice">qldfdqf</label>
+
+  </div>
+
+</fieldset> -->
 
 
                   <!-- Should only display interest tag belong to the zone -->
