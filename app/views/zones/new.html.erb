@@ -1,37 +1,32 @@
 <h1>Create a zone</h1>
-<div class="container">
-  <div clqss="container_tagsformap">
-    <div class='col-xs-12'>
-        <%= simple_form_for([@zone]) do |f| %>
-        <%= f.error_notification %>
-        <div class="form-inputs">
-          <%= f.input :title,
-                        required: true,
-                        autofocus: true
-                        %>
-          <%= f.input :address,
-                        required: true,
-                        autofocus: true
-                        %>
-          <%= f.input :radius,
-                        as: :integer,
-                        required: true,
-                        autofocus: true
-                        %>
-          <%= f.association :interest_tags,
-                        as: :check_boxes,
-                        required: true %>
-        </div>
-        <div class="form-actions">
-          <%= f.button :submit, "create a zone" %>
-        </div>
-       <% end %>
-    </div>
-  </div>
-  </div>
+  <%= simple_form_for([@zone], html: {id: 'simple_form_creation_zone'}) do |f| %>
+  <%= f.error_notification %>
 
+    <%= f.input :title,
+                  required: true,
+                  autofocus: true
+                  %>
 
-  </div>
+    <%= f.input :address,
+                  required: true,
+                  autofocus: true
+                  %>
+    <%= f.input :radius,
+                  as: :integer,
+                  required: true,
+                  autofocus: true
+                  %>
+    <%= f.association :interest_tags,
+                  as: :check_boxes,
+                  required: true %>
+
+    <%= f.button :submit, "create a zone" %>
+
+ <% end %>
+
+<!--           <div id='creation_zone' style='height: 80vh; width:2000px;'>
+
+          </div> -->
 
 
 
