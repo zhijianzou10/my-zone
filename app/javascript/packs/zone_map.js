@@ -34,3 +34,4 @@ $('form').change(update);
 
 
 
+document.querySelectorAll("abbr").forEach( element => element.innerText = "");

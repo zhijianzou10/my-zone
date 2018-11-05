@@ -1,28 +1,46 @@
-<h1>Create a zone</h1>
+<div class="navbar_newsfeed title_zonelist">
+      <p>Create a zone</p>
+</div>
+
+<div class="container">
   <%= simple_form_for([@zone], html: {id: 'simple_form_creation_zone'}) do |f| %>
   <%= f.error_notification %>
 
     <%= f.input :title,
                   required: true,
+                  hint: false,
+                  as: :string,
+                  label: "Name your zone",
                   autofocus: true,
+
                   input_html: { data: { title: :title} }
                   %>
 
     <%= f.input :address,
+                  as: :string,
+                  hint: false,
                   required: true,
+                  label: "Type your address",
                   autofocus: true,
                   input_html: { data: { address: :address} }
                   %>
     <%= f.input :radius,
                   as: :integer,
+                  hint: false,
+                  label: "Choose the radius",
                   required: true,
                   autofocus: true,
                   input_html: { data: { radius: :radius} }
                   %>
 
-    <div id='creation_zone' style='height: 60vh; width:100vw;'>
+
+
+
+    <div id='creation_zone' style='height: 400px; width:100%;'>
 
     </div>
+
+
     <%= f.association :interest_tags,
                   as: :check_boxes,
                   required: true %>
@@ -31,11 +49,7 @@
 
  <% end %>
 
-
-
-
-
-
+</div>
 
 
 
