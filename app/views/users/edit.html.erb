@@ -1,13 +1,31 @@
-<%= simple_form_for(@user) do |f| %>
-  <%= f.error_notification %>
+<%= render 'components/navbar_newsfeed' %>
 
-  <div class="form-inputs">
-    <%= f.input :firstname %>
-    <%= f.input :lastname %>
-    <%= f.file_field :avatar_url %>
-  </div>
+<div class="col-xs-12 col-lg-6 col-lg-offset-3">
+  <%= render 'components/navbar_bottom' %>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "finish" %>
-  </div>
-<% end %>
+<div>
+
+</div>
+<div class="container_edit_profile">
+
+  <%= simple_form_for(@user) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="profile-elements">
+      <div class="form-inputs">
+        <%= f.input :firstname %>
+        <%= f.input :lastname %>
+        <p id="profile-picture-label">Profile picture</p>
+        <%= f.file_field :avatar_url %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "finish", class: "button_normal", id: "finish_edit_profile"%>
+      </div>
+    </div>
+
+  <% end %>
+
+</div>
+
