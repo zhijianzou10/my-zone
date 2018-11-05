@@ -40,7 +40,7 @@
       <%= render 'components/input_write_post.html.erb' %>
     </div>
 
-    <% @user.posts.each do |post| %>
+    <% @user.posts.order(updated_at: :desc).each do |post| %>
      <div class="col-xs-12 col-lg-6 col-lg-offset-3">
         <%= render 'components/main_card_dropdown', post: post %>
       </div>
