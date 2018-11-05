@@ -36,20 +36,31 @@
 
 
 
-    <div id='creation_zone' style='height: 400px; width:100%;'>
+    <div id='creation_zone' style='height: 250px; width:100%;'>
 
     </div>
 
 
-    <%= f.association :interest_tags,
-                  as: :check_boxes,
-                  required: true %>
 
-    <%= f.button :submit, "create a zone" %>
+    <div class="form-check zones_select">
+      <% @interest_tags.each do |interest| %>
+        <div class="interest-select">
+          <input id="interest_choice_<%= interest.id %>" required="required" aria-required="true" type="checkbox" value="<%= interest.id %>" name=interest.title >
+            <label for="interest_choice_<%= interest.id %>">
+              <%= image_tag interest.photo, class:"zone_photo" %>
+            <div>
+              <%= interest.title %>
+            </div>
+          </label>
+        </div>
+      <% end %>
+    </div>
+    <br>
+    <%= f.button :submit, "Create", class:"button_normal" %>
+  <% end %>
 
- <% end %>
+  </div>
 
-</div>
 
 
 
