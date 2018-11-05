@@ -42,7 +42,17 @@
         <p id="full-name-post"><%= post.user.firstname + ' ' + post.user.lastname %></p>
       </a>
       <!-- Time spent -->
-      <p id="time-spent-post"><%= post.updated_at %></p>
+      <p id="time-spent-post">
+        <% a = post.updated_at
+           b = Time.now
+           if (b - a) < 3600 %>
+            <%= pluralize(((b - a)/60).floor, 'min') %> ago
+        <% elsif (b - a)/3600 < 24 %>
+            <%= pluralize(((b -a)/3600).floor, 'hour') %> ago
+        <% else %>
+            <%= pluralize(((b -a)/3600/24).floor, 'day') %> ago
+        <% end %>
+      </p>
     </div>
   </div>
 
