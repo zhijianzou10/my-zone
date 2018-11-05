@@ -13,6 +13,7 @@
 
     <%= f.input :address,
     as: :string %>
+
     <%= f.input :radius %>
 
       <div id='creation_zone' class="zone-design" style='height: 250px; width:100%;'>
@@ -22,6 +23,7 @@
   <div class="container-interest-all">
       <div class="row">
       <% @interest_tags.each do |interest| %>
+
         <div class="col-xs-4">
           <div class="wrapper-card-interest">
             <input id="interest_choice_<%= interest.id %>" required="required" aria-required="true" type="checkbox" value="<%= interest.id %>" name=interest.title >
@@ -32,6 +34,7 @@
               </div>
             </label>
           </div>
+
         </div>
            <% end %>
       </div>
@@ -47,12 +50,5 @@
 
      </div>
       </div>
-
-
-
-
-
-
-
 
  <%= javascript_pack_tag 'zone_map' %>
