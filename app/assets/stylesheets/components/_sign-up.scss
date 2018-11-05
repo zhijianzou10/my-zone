@@ -1,30 +1,55 @@
-.sign-up-form {
-  // margin-top: 100px;
-  // background-color: light-gray;
-  height: 1000px;
-}
-
-.sign_up-content {
-  background-color: red;
-  // display: flex;
-}
-
-.bouton-sign-up {
-  // background-color: red;
-}
-
 .container-signup {
-  background-color:rgba(239, 239, 239, 0.9);
+  background-color:rgba(239, 239, 239, 0.8);
   border-radius: 5px;
-  height: 670px;
+  height: 550px;
   margin-top: 30px;
   padding: 20px;
   margin-bottom: 10px;
-  // width:80%;
+  h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
 }
 
 #slogan {
   color: white;
   text-align: center;
   margin-top: 40px;
+  font-size: 30px;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+
+.container_signin {
+  background-color:rgba(239, 239, 239, 0.8);
+  border-radius: 5px;
+  height: 355px;
+  margin-top: 30px;
+  padding: 20px;
+  margin-bottom: 10px;
+  h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
+}
+
+.container_forgot {
+  background-color:rgba(239, 239, 239, 0.8);
+  border-radius: 5px;
+  height: 170px;
+  margin-top: 30px;
+  padding: 20px;
+  margin-bottom: 10px;
+  // display: block;
+  h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+  }
 }
