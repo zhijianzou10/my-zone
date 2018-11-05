@@ -8,6 +8,7 @@ class ZonesController < ApplicationController
   def new
     @user = current_user
     @zone = Zone.new
+    @interest_tags = InterestTag.all
   end
 
   def create
@@ -24,6 +25,7 @@ class ZonesController < ApplicationController
     @user = @zone.user
     @zone
     @zone_tags = @zone.zone_tags
+    @interest_tags = InterestTag.all
   end
 
   def update

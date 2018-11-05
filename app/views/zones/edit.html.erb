@@ -2,6 +2,7 @@
       <p>Edit your zone</p>
 </div>
 
+<div class="container">
 <%= simple_form_for([@zone], html: {id: 'simple_form_creation_zone'}) do |f| %>
   <%= f.error_notification %>
 
@@ -9,18 +10,36 @@
     <%= f.input :title %>
     <%= f.input :address %>
     <%= f.input :radius %>
-  <div id='creation_zone' style='height: 60vh; width:100vw;'>
-
-  </div>
-    <%= f.association :interest_tags,
-                as: :check_boxes,
-                selected: @zone.interest_tags %>
+  <div id='creation_zone' style='height: 250px; width:100%;'>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "edit this zone" %>
-  </div>
-<% end %>
+
+<div class="form-check zones_select">
+      <% @interest_tags.each do |interest| %>
+        <div class="interest-select">
+          <input id="interest_choice_<%= interest.id %>" required="required" aria-required="true" type="checkbox" value="<%= interest.id %>" name=interest.title >
+            <label for="interest_choice_<%= interest.id %>">
+              <%= image_tag interest.photo, class:"zone_photo" %>
+            <div>
+              <%= interest.title %>
+            </div>
+          </label>
+        </div>
+         <% end %>
+    </div>
+
+
+    <br>
+    <%= f.button :submit, "Finish", class:"button_normal" %>
+    <% end %>
+
+     </div>
+      </div>
+
+
+
+
+
 
 
 
