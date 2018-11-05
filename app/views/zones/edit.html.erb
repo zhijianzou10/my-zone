@@ -1,12 +1,15 @@
 <h1>Edit a zone</h1>
 
-<%= simple_form_for([@zone]) do |f| %>
+<%= simple_form_for([@zone], html: {id: 'simple_form_creation_zone'}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :title %>
     <%= f.input :address %>
     <%= f.input :radius %>
+  <div id='creation_zone' style='height: 60vh; width:100vw;'>
+
+  </div>
     <%= f.association :interest_tags,
                 as: :check_boxes,
                 selected: @zone.interest_tags %>
@@ -18,4 +21,5 @@
 <% end %>
 
 
-<!-- Here we should be able to choose interest tags related to the zone -->
+
+ <%= javascript_pack_tag 'zone_map' %>
