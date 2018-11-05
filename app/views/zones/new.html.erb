@@ -4,18 +4,25 @@
 
     <%= f.input :title,
                   required: true,
-                  autofocus: true
+                  autofocus: true,
+                  input_html: { data: { title: :title} }
                   %>
 
     <%= f.input :address,
                   required: true,
-                  autofocus: true
+                  autofocus: true,
+                  input_html: { data: { address: :address} }
                   %>
     <%= f.input :radius,
                   as: :integer,
                   required: true,
-                  autofocus: true
+                  autofocus: true,
+                  input_html: { data: { radius: :radius} }
                   %>
+
+    <div id='creation_zone' style='height: 60vh; width:100vw;'>
+
+    </div>
     <%= f.association :interest_tags,
                   as: :check_boxes,
                   required: true %>
@@ -24,9 +31,7 @@
 
  <% end %>
 
-<!--           <div id='creation_zone' style='height: 80vh; width:2000px;'>
 
-          </div> -->
 
 
 
