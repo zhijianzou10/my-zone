@@ -3,7 +3,6 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-
       <div class="form-post">
         <%= simple_form_for(@post) do |f| %>
           <%= f.error_notification %>
@@ -12,29 +11,10 @@
                 <div class="col-xs-12">
                   <div class="input-write-post">
 
-<!--                     <%= f.input :content,
-                            required: true,
-                            autofocus: true,
-                            label: false,
-                            placeholder: "write your post1"
-                            %> -->
-<!--
-
-                            <%= f.file_field :photo,
-                            required: false %>
-                            <%= f.input :photo_cache, as: :hidden %> -->
-
                     <div class="form-group text required post_content image-upload-wrap">
-                      <textarea class="form-control text required" autofocus="autofocus" required="required" aria-required="true" placeholder="write your post2" name="post[content]" id="post_content">
+                      <textarea class="form-control text required" autofocus="autofocus" required="required" aria-required="true" placeholder="Write your post..." name="post[content]" id="post_content">
                       </textarea>
 
-
-<!--                             <input type="file" name="post[photo]" id="post_photo">
-
-
-                            <div class="form-group hidden post_photo_cache">
-                              <input class="form-control hidden" type="hidden" name="post[photo_cache]" id="post_photo_cache">
-                            </div> -->
 
                         <label for="post_photo">
                         <div class="image-upload">
@@ -42,10 +22,7 @@
                         </label>
                           <input type="file" name="post[photo]" id="post_photo"/>
                         </div>
-
-                  </div>
-
-
+                    </div>
                   </div>
                 </div>
 
@@ -53,14 +30,15 @@
                   <div class="form-check zones">
                     <% current_user.zones.all.each do |zone| %>
                       <div class="zone-select">
-
-
                         <input id="zone_choice_<%= zone.id %>" required="required" aria-required="true" type="radio" value="<%= zone.id %>" name="post[zone_id]">
-
                         <label for="zone_choice_<%= zone.id %>">
                           <div class="zone_logo_list2">
                           </div>
-                          <div>
+                          <% zone_data = {
+                            interest_tags: zone.interest_tags,
+                            zone_id: zone.id
+                          } %>
+                          <div class='zone_data' data-interests='<%= zone_data.to_json %>'>
                             <%= zone.title %>
                           </div>
                         </label>
@@ -72,54 +50,23 @@
 
                 <div class="col-xs-12">
                   <div class="wrapper-interest-write">
-                    <div id='interest_tags_with_zone'>
-                    <%= f.association :interest_tag,
+                    <div id='interest_tags_with_zone' data-zone-id>
+                  <%= f.association :interest_tag,
+                                # collection: Zone.find(z).interest_tags,
                                 as: :radio_buttons,
-                                # :label => false,
-                                # legend: false,
                                 label: :none,
                                 required: true
                                 %>
                     </div>
-                    <%= javascript_pack_tag 'edit_post' %>
-
-                  </div>
-
-
-<!--
-      <div class="zone_list_cards">
-        <%# current_user.interest_tags.each do |int| %>
-        <%# zone.interest_tags.each do |interest_tag| %>
-
-              <div class="interest_block_container">
-                <div class="interest_block">
-                  <div>
-                    <%#= image_tag interest_tag.photo, class:"interest_photo"%>
-                  </div>
-                  <div class="interest_title">
-                    <%#= interest_tag.title %>
                   </div>
                 </div>
-              </div>
-        <%# end  %>
-
-      </div> -->
-
-
-
-
-
-
-                </div>
-
-                  <!-- Should only display interest tag belong to the zone -->
-                  <script src='new'></script>
-
                     <div class="form-actions publish-button-wrapper">
                       <div class="publish_button">
                         <%= f.button :submit, "publish", class: "button_normal"%>
                       </div>
+
                     </div>
+
                   <% end %>
 
               <br>
@@ -134,8 +81,5 @@
 
 </div>
 
-
-
-
-
+<%= javascript_pack_tag 'edit_post' %>
 

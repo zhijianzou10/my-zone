@@ -19,7 +19,7 @@
           <% end %>
         <% end %>
 
-        <% array.uniq.each do |post| %>
+        <% array.sort_by{ |p| p.updated_at }.reverse.uniq.each do |post| %>
           <div class="col-xs-12 col-lg-6 col-lg-offset-3">
             <%= render 'components/main_card', post: post %>
           </div>
