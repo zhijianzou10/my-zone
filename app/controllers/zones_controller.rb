@@ -31,7 +31,7 @@ class ZonesController < ApplicationController
   def update
     @user = @zone.user
     if @zone.update(zone_params)
-      redirect_to zones_path
+      redirect_to zones_path(anchor: "zone_map_#{@zone.id}")
     else
       render 'zones/edit'
     end

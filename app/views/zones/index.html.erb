@@ -60,12 +60,12 @@
         <% zone.interest_tags.each do |interest_tag| %>
 
               <div class="interest_block_container">
-                <div class="interest_block">
-                  <div>
+                <div class="wrapper-card-interest">
+                  <div class="show_interest_all_zones">
                     <%= image_tag interest_tag.photo, class:"interest_photo"%>
-                  </div>
-                  <div class="interest_title">
-                    <%= interest_tag.title %>
+                    <div class="interest_title">
+                      <%= interest_tag.title %>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -85,3 +85,8 @@
 
 
 <%= javascript_pack_tag 'map' %>
+
+
+    <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+      <%= render 'components/navbar_bottom' %>
+    </div>
