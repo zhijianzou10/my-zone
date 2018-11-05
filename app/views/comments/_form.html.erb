@@ -1,7 +1,13 @@
 
 <div class=" container_comment">
   <div>
-    <%= image_tag("logo.png", class:"avatar_input")%>
+    <%= link_to user_path(@post.user) do %>
+      <% if @post.user.avatar_url.blank? == true %>
+        <%= image_tag("default-avatar.png", class:"avatar_navbar avatar_navbar_show") %>
+      <% else %>
+        <%=  cl_image_tag(@post.user.avatar_url, class:"avatar_navbar avatar_navbar_show") %>
+      <% end %>
+      <% end  %>
   </div>
   <div class="simple_form">
     <%= simple_form_for([@post, @comment], remote: true) do |form| %>

@@ -4,7 +4,13 @@
   <div class="comments">
     <!--  AVATAR -->
     <div class="avatar-comment">
-        <%= image_tag("logo.png", class:"avatar_navbar avatar_navbar_show")%>
+       <%= link_to user_path(comment.user) do %>
+        <% if comment.user.avatar_url.blank? == true %>
+          <%= image_tag("default-avatar.png", class:"avatar_navbar avatar_navbar_show") %>
+        <% else %>
+          <%=  cl_image_tag(comment.user.avatar_url, class:"avatar_navbar avatar_navbar_show") %>
+        <% end %>
+      <% end  %>
     </div>
 
     <!-- COMMENT -->

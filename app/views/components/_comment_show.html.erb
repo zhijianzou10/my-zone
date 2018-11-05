@@ -4,13 +4,13 @@
   <div class="comments">
     <!--  AVATAR -->
     <div class="avatar-comment">
-      <a href="#">
-      <% if post.user.avatar_url.blank? == true %>
-        <%= cl_image_tag("default-avatar.png", class:"avatar_navbar avatar_navbar_show") %>
-      <% else %>
-        <%=  cl_image_tag(post.user.avatar_url, class:"avatar_navbar avatar_navbar_show") %>
-      <% end %>
-      </a>
+      <%= link_to user_path(@post.user) do %>
+        <% if @post.user.avatar_url.blank? == true %>
+          <%= image_tag("default-avatar.png", class:"avatar_navbar avatar_navbar_show") %>
+        <% else %>
+          <%=  cl_image_tag(@post.user.avatar_url, class:"avatar_navbar avatar_navbar_show") %>
+        <% end %>
+      <% end  %>
     </div>
 
     <!-- COMMENT -->
