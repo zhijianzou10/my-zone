@@ -5,39 +5,77 @@
             <%= f.error_notification %>
 
             <div class="container-signup">
-        <h2>Sign up</h2>
+              <h2>Sign up</h2>
               <div class="form-inputs">
-                <%= f.input :email,
+<!--                 <%= f.input :email,
                             required: true,
                             autofocus: true ,
-                            placeholder: "john@gmail.com",
+                            placeholder: "Email",
+                            label: false,
                             input_html: { autocomplete: "email" }%>
                 <%= f.input :password,
                             required: true,
-                            placeholder: "********",
+                            placeholder: "Password",
+                            label: false,
                             hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                             input_html: { autocomplete: "new-password" } %>
                 <%= f.input :password_confirmation,
-                            placeholder: "********",
+                            placeholder: "Confirm Password",
+                            label: false,
                             required: true,
                             input_html: { autocomplete: "new-password" } %>
                 <%= f.input :firstname,
-                            placeholder: "John",
+                            placeholder: "First name",
+                            label: false,
                             required: true,
                             input_html: { autocomplete: "firstname" } %>
                 <%= f.input :lastname,
-                            placeholder: "Smith",
+                            placeholder: "Last name",
+                            label: false,
                             required: true,
                             input_html: { autocomplete: "lastname" } %>
                 <%= f.input :gender,
+                            label: false,
                             as: :radio_buttons,
                             collection: [[:male, 'male'], [:female, 'female'], [:other, 'other']],
                             label_method: :second,
                             value_method: :first,
                             required: true,
                             input_html: { autocomplete: "gender" },
-                            checked: true %>
+                            checked: true %> -->
+
+                <div class="form-group email required user_email">
+                  <input class="form-control string email required" autocomplete="email" autofocus="autofocus" required="required" aria-required="true" placeholder="Email" type="email" value="" name="user[email]" id="user_email">
+                </div>
+                <div class="form-group password required user_password">
+                  <input class="form-control password required" autocomplete="new-password" required="required" aria-required="true" placeholder="Password" type="password" name="user[password]" id="user_password" aria-autocomplete="list"><small class="form-text text-muted">6 characters minimum</small>
+                </div>
+                <div class="form-group password required user_password_confirmation">
+                  <input class="form-control password required" autocomplete="new-password" required="required" aria-required="true" placeholder="Confirm Password" type="password" name="user[password_confirmation]" id="user_password_confirmation">
+                </div>
+                <div class="form-group string required user_firstname">
+                  <input class="form-control string required" autocomplete="firstname" required="required" aria-required="true" placeholder="First name" type="text" name="user[firstname]" id="user_firstname">
+                </div>
+                <div class="form-group string required user_lastname">
+                  <input class="form-control string required" autocomplete="lastname" required="required" aria-required="true" placeholder="Last name" type="text" name="user[lastname]" id="user_lastname">
+                </div>
+                <fieldset class="form-group radio_buttons required user_gender form-group-valid">
+                  <input type="hidden" name="user[gender]" value="">
+                  <div class="form-check">
+                    <input class="form-check-input is-valid radio_buttons required" autocomplete="gender" required="required" aria-required="true" type="radio" value="male" name="user[gender]" id="user_gender_male">
+                    <label class="collection_radio_buttons" for="user_gender_male">Male</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input is-valid radio_buttons required" autocomplete="gender" required="required" aria-required="true" type="radio" value="female" name="user[gender]" id="user_gender_female">
+                    <label class="collection_radio_buttons" for="user_gender_female">Female</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input is-valid radio_buttons required" autocomplete="gender" required="required" aria-required="true" type="radio" value="other" name="user[gender]" id="user_gender_other">
+                    <label class="collection_radio_buttons" for="user_gender_other">Other</label>
+                  </div>
+                </fieldset>
               </div>
+
 
               <div class="form-actions">
                 <%= f.button :submit, "Sign up", class: "bouton-sign-up button_normal"%>

@@ -1,25 +1,59 @@
+    <h2 id="slogan"><em>Get connected in local</em></h2>
 <div class="signin_content">
-  <div class="container_signin">
+
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-inputs labelclass">
-        <%= f.input :email, required: true, autofocus: true,
+      <div class="container_signin">
+        <h2>Sign in</h2>
+      <div class="form-inputs">
+<!--         <%= f.input :email, required: true, autofocus: true,
+                    placeholder: "Email",
+                    label: false,
                     input_html: { autocomplete: "email", class: "autolabel"} %>
         <%= f.input :password,
                     required: true,
+                    placeholder: "Password",
+                    label: false,
                     input_html: { autocomplete: "current-password" } %>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
         <%= f.button :submit, class: "button_normal", value: "Log in" %>
         <br>
         <div>
-           <%= link_to "Forget your password?", new_user_password_path %>
+           <%= link_to "Forgot your password?", new_user_password_path %>
         </div>
         <div>
            <%= link_to "Create an account", new_user_registration_path %>
+        </div> -->
+
+      <div class="form-inputs">
+        <div class="form-group email required user_email">
+          <input class="form-control string email required" autocomplete="email" autofocus="autofocus" required="required" aria-required="true" placeholder="Email" type="email" value="" name="user[email]" id="user_email">
+        </div>
+        <div class="form-group password required user_password">
+          <input class="form-control password required" autocomplete="current-password" required="required" aria-required="true" placeholder="Password" type="password" name="user[password]" id="user_password">
+        </div>
+        <fieldset class="form-group boolean optional user_remember_me">
+          <div class="form-check">
+            <input name="user[remember_me]" type="hidden" value="0">
+            <input class="form-check-input boolean optional" type="checkbox" value="1" name="user[remember_me]" id="user_remember_me">
+            <label class="form-check-label boolean optional" for="user_remember_me">Remember me</label>
+          </div>
+          </fieldset>
+        <input type="submit" name="commit" value="Log in" class="btn button_normal" data-disable-with="Create User">
+        <br>
+        <div>
+           <a href="/users/password/new">Forgot your password?</a>
+        </div>
+        <div>
+           <a href="/users/sign_up">Create an account</a>
         </div>
 
 
       </div>
-      <% end %>
-    </div>
-</div>
+
+
+
+      </div>
+
+    <% end %>
+  </div>
 </div>
