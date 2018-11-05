@@ -12,7 +12,7 @@ var update = function() {
   });
 
   var input_radius = parseInt($("input[name='zone[radius]']").val());
-  var input_address = String($("textarea[name='zone[address]']").val());
+  var input_address = String($("input[name='zone[address]']").val());
 
   if (input_address != "" && isNaN(input_radius) === false && input_radius < 500) {
     geocoder.geocode( { 'address': input_address}, function(results, status) {
