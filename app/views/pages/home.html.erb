@@ -10,16 +10,19 @@
           <%= render 'components/input_write_post.html.erb' %>
         </div>
 
+        <% array = [] %>
         <% current_user.zones.each do |my_zone| %>
           <% Zone.near(my_zone.address, my_zone.radius/1000).each do |in_zone| %>
             <% in_zone.posts.where(interest_tag: my_zone.interest_tags).order(updated_at: :desc).uniq.each do |post| %>
-
-        <div class="col-xs-12 col-lg-6 col-lg-offset-3">
-          <%= render 'components/main_card', post: post %>
-        </div>
-
+              <% array << post %>
             <% end %>
           <% end %>
+        <% end %>
+
+        <% array.uniq.each do |post| %>
+          <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+            <%= render 'components/main_card', post: post %>
+          </div>
         <% end %>
       </div>
 
