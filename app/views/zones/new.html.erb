@@ -41,31 +41,48 @@
     </div>
 
 
-
- -->
-    <div class="form-check zones_select">
+<div class="form-check">
+  <div class="container-interest-all">
+      <div class="row">
       <% @interest_tags.each do |interest| %>
-        <div class="interest-select">
-          <input id="interest_choice_<%= interest.id %>" required="required" aria-required="true" type="checkbox" value="<%= interest.id %>"
-           name="zone[interest_tag_ids][]" >
-            <label for="interest_choice_<%= interest.id %>">
-              <%= image_tag interest.photo, class:"zone_photo" %>
-            <div>
-              <%= interest.title %>
-            </div>
-          </label>
+
+        <div class="col-xs-4 col-md-3 col-lg-2">
+          <div class="wrapper-card-interest">
+            <input id="interest_choice_<%= interest.id %>" required="required" aria-required="true" type="checkbox" value="<%= interest.id %>" name="zone[interest_tag_ids][]" >
+              <label for="interest_choice_<%= interest.id %>">
+                <%= image_tag interest.photo, class:"zone_photo" %>
+              <div class="interest-title">
+               <%= interest.title %>
+              </div>
+            </label>
+          </div>
+
         </div>
-      <% end %>
+           <% end %>
+      </div>
+
+
+  </div>
     </div>
     <br>
     <%= f.button :submit, "Create", class:"button_normal" %>
+    <br>
+    <br>
+    <br>
+    <br>
   <% end %>
 
   </div>
 
 
-
+    <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+      <%= render 'components/navbar_bottom' %>
+    </div>
 
 
  <%= javascript_pack_tag 'zone_map' %>
 
+
+    <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+      <%= render 'components/navbar_bottom' %>
+    </div>
