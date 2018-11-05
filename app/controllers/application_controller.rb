@@ -15,6 +15,9 @@ class ApplicationController < ActionController::Base
   # def after_sign_in_path_for(resource)
   #    new_user_zone_path(current_user)
 
+  def default_url_options
+    { host: ENV["HOST"] || "localhost:3000" }
+  end
 
   private
 
