@@ -7,25 +7,37 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :address %>
+    <%= f.input :title,
+    placeholder: "Zone title (ex: Home)"
+    %>
+
+    <%= f.input :address,
+    as: :string %>
     <%= f.input :radius %>
-  <div id='creation_zone' style='height: 250px; width:100%;'>
-  </div>
 
+      <div id='creation_zone' class="zone-design" style='height: 250px; width:100%;'>
+      </div>
 
-<div class="form-check zones_select">
+<div class="form-check">
+  <div class="container-interest-all">
+      <div class="row">
       <% @interest_tags.each do |interest| %>
-        <div class="interest-select">
-          <input id="interest_choice_<%= interest.id %>" required="required" aria-required="true" type="checkbox" value="<%= interest.id %>" name=interest.title >
-            <label for="interest_choice_<%= interest.id %>">
-              <%= image_tag interest.photo, class:"zone_photo" %>
-            <div>
-              <%= interest.title %>
-            </div>
-          </label>
+        <div class="col-xs-4">
+          <div class="wrapper-card-interest">
+            <input id="interest_choice_<%= interest.id %>" required="required" aria-required="true" type="checkbox" value="<%= interest.id %>" name=interest.title >
+              <label for="interest_choice_<%= interest.id %>">
+                <%= image_tag interest.photo, class:"zone_photo" %>
+              <div class="interest-title">
+               <%= interest.title %>
+              </div>
+            </label>
+          </div>
         </div>
-         <% end %>
+           <% end %>
+      </div>
+
+
+  </div>
     </div>
 
 
