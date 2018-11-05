@@ -4,6 +4,7 @@
   display:flex;
   align-items:flex-start;
   justify-content:space-between;
+  align-items:center;
 
   padding-top:10px;
   height: 60px;
@@ -23,9 +24,9 @@
   height: 40px;
   background-color:#EFEFEF;
   }
-  .comment_content {
-    width:80%;
-    margin-left:0px;
+  #comment_content {
+    width: 85%;
+    margin-left: 10px;
   }
 }
 
