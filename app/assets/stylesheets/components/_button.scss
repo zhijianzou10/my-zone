@@ -41,8 +41,37 @@
       text-decoration:none;
       color:white;
     }
-
 }
+
+
+.button_edit_profile {
+    background-color: #1B6DA4; /* Green */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    font-size: 15px;
+    height:41px;
+    width: 90px;
+    left: 10px;
+    top: 130px;
+
+    // right: 10px;
+    // top: 130px;
+    position: absolute;
+    &:hover {
+      background-color:#286090;
+      text-decoration:none;
+      color:white;
+    }
+}
+
+
+
 .button_sign_in {
     background-color: #1B6DA4; /* Green */
     border: none;
