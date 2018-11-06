@@ -1,27 +1,88 @@
-<%= simple_form_for([@post]) do |f| %>
-  <%= f.error_notification %>
+<%= render 'components/navbar_newsfeed' %>
 
-  <div class="form-inputs">
-    <%= f.input :content,
-                required: true,
-                autofocus: true
-                %>
-    <%= f.association :zone,
-                collection: current_user.zones,
-                as: :select,
-                required: true
-                 %>
-    <%= f.association :interest_tag,
-                collection: @zone.interest_tags,
-                as: :radio_buttons,
-                required: true
-                %>
-<!-- Should only display interest tag belong to the zone -->
-  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+      <div class="form-post">
+        <%= simple_form_for(@post) do |f| %>
+          <%= f.error_notification %>
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="input-write-post">
 
-  <div class="form-actions">
-    <%= f.button :submit, "publish" %>
-  </div>
-<% end %>
+                    <div class="form-group text required post_content image-upload-wrap">
+                      <textarea class="form-control text required" autofocus="autofocus" required="required" aria-required="true"  name="post[content]" id="post_content"><%= @post.content %>
+                      </textarea>
+
+
+                        <label for="post_photo">
+                        <div class="image-upload">
+                          <i class="far fa-images upload-image"></i>
+                        </label>
+                          <input type="file" name="post[photo]" id="post_photo"/>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xs-12">
+                  <div class="form-check zones">
+                    <% current_user.zones.all.each do |zone| %>
+                      <div class="zone-select">
+                        <input id="zone_choice_<%= zone.id %>" required="required" aria-required="true" type="radio" value="<%= zone.id %>" name="post[zone_id]" checked="checked">
+                        <label for="zone_choice_<%= zone.id %>">
+                          <div class="zone_logo_list2">
+                          </div>
+                          <% zone_data = {
+                            interest_tags: zone.interest_tags,
+                            zone_id: zone.id
+                          } %>
+                          <div class='zone_data' data-interests='<%= zone_data.to_json %>'>
+                            <%= zone.title %>
+                          </div>
+                        </label>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+
+
+                <div class="col-xs-12">
+                  <div class="wrapper-interest-write">
+                    <div id='interest_tags_with_zone' data-zone-id>
+                  <%= f.association :interest_tag,
+                                # collection: Zone.find(z).interest_tags,
+                                as: :radio_buttons,
+                                label: :none,
+                                required: true
+                                %>
+                    </div>
+                  </div>
+                </div>
+                    <div class="form-actions publish-button-wrapper">
+                      <div class="publish_button">
+                        <%= f.button :submit, "publish", class: "button_normal"%>
+                      </div>
+                    </div>
+                  <% end %>
+
+              <br>
+              <br>
+              <br>
+
+              </div>
+
+    <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+      <%= render 'components/navbar_bottom' %>
+    </div>
+
+</div>
 
 <%= javascript_pack_tag 'edit_post' %>
+
+
+
+
+
+
+
