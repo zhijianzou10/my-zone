@@ -3,7 +3,7 @@
   // height: 500px;
   margin-top: 10px;
   textarea.form-control {
-    height: 300px;
+    height: 50vh;
     box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   }
 }
@@ -12,7 +12,8 @@
  display: flex;
  overflow-x: scroll;
  width: 92vw;
- margin-top: -30px;
+ // margin-top: -30px;
+ margin-bottom: 20px;
 }
 
 .zones_select {
@@ -22,11 +23,7 @@
 }
 
 .zone-select {
-  // width: 160px;
   margin: 0px;
-  // background-color: red;
-
-  // display: flex;
 
  input[type=radio] {
   display: none;
@@ -60,7 +57,12 @@
   margin-right: 5px;
 }
 
-.zone_logo_list2{
+.container_zone_logo_list2 {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.zone_logo_list2 {
   border-radius: 50%;
   height: 49px;
   width: 49px;
@@ -125,4 +127,24 @@ bottom: 35px;
   background-color: $blue;
   color: white;
   }
+}
+
+.container-interest-write-post {
+  display: flex;
+  // overflow-x: scroll;
+  margin-top: 25px;
+}
+
+legend {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+fieldset {
+  // height: 100px;
+}
+
+.publish_button {
+  position: absolute;
+    top: 75vh;
+    right: 5vw;
 }

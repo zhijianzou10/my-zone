@@ -8,7 +8,7 @@
           <%= f.error_notification %>
 
               <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-12" style="height: 53vh">
                   <div class="input-write-post">
 
                     <div class="form-group text required post_content image-upload-wrap">
@@ -26,13 +26,15 @@
                   </div>
                 </div>
 
-                <div class="col-xs-12">
+                <div class="col-xs-12" style="height: 12vh">
                   <div class="form-check zones">
                     <% current_user.zones.all.each do |zone| %>
                       <div class="zone-select">
                         <input id="zone_choice_<%= zone.id %>" required="required" aria-required="true" type="radio" value="<%= zone.id %>" name="post[zone_id]">
                         <label for="zone_choice_<%= zone.id %>">
-                          <div class="zone_logo_list2">
+                          <div class="container_zone_logo_list2">
+                            <div class="zone_logo_list2">
+                            </div>
                           </div>
                           <% zone_data = {
                             interest_tags: zone.interest_tags,
@@ -48,23 +50,37 @@
                 </div>
 
 
-                <div class="col-xs-12">
+                <div class="col-xs-12" style="height: 10vh">
                   <div class="wrapper-interest-write">
                     <div id='interest_tags_with_zone' data-zone-id>
-                  <%= f.association :interest_tag,
+<!--                    <%= f.association :interest_tag,
                                 # collection: Zone.find(z).interest_tags,
                                 as: :radio_buttons,
                                 label: :none,
                                 required: true
-                                %>
+                                %> -->
+                     <fieldset class="form-group radio_buttons required post_interest_tag" style="position: relative; top: 10px;">
+            <!--           <legend class="col-form-label pt-0">none <abbr title="required">*</abbr>
+                      </legend> -->
+                      <input type="hidden" name="post[interest_tag_id]" value="">
+                        <div class="form-check">
+                          <div class="container-interest-write-post">
+                            <% InterestTag.all.each do |interest| %>
+                                <input class="form-check-input radio_buttons required" required="required" aria-required="true" type="radio" value="<%= interest.id %>" name="post[interest_tag_id]" id="post_interest_tag_id_<%= interest.id %>">
+                                <label class="collection_radio_buttons" for="post_interest_tag_id_<%= interest.id %>" style="display: none;"><%= interest.title %></label>
+                            <% end %>
+                          </div>
+                        </div>
+                     </fieldset>
+
                     </div>
                   </div>
                 </div>
-                    <div class="form-actions publish-button-wrapper">
-                      <div class="publish_button">
-                        <%= f.button :submit, "publish", class: "button_normal"%>
-                      </div>
 
+                    <div class="form-actions">
+                        <div class="publish_button">
+                          <%= f.button :submit, "Publish", class: "button_normal"%>
+                        </div>
                     </div>
 
                   <% end %>
