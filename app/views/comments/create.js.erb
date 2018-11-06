@@ -4,4 +4,6 @@ document.getElementById('comments_list').insertAdjacentHTML("afterbegin", "<%= j
 // // list.insertAdjacentHTML("afterbegin", "<%= j render 'components/comment_show', comment: @comment %>")
 document.getElementById('commentnumber').innerText = "<%= pluralize @post.comments.size, 'comment'%>"
 
+document.getElementById("comment_content").value = ""
+
 

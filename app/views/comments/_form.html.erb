@@ -9,12 +9,13 @@
       <% end %>
       <% end  %>
   </div>
-  <div class="simple_form">
+  <div class="simple_form" id="clear">
     <%= simple_form_for([@post, @comment], remote: true) do |form| %>
     <%= form.input :content,
                 required: true,
                 autofocus: true,
-                label: false %>
+                label: false,
+                id:"clear_input" %>
     <%= form.hidden_field :user_id, value: current_user.id %>
     <%= form.hidden_field :post_id, value: @post.id %>
     <%= form.button :submit, class: "button_normal", id:"comment_send", value:"send" %>
