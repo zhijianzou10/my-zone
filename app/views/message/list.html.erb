@@ -1,0 +1,98 @@
+<div class="navbar_newsfeed title_zonelist">
+<!--   <div class="blank">
+  </div> -->
+      <p>Message list</p>
+</div>
+
+<div class="container">
+  <p style="margin-top: 10px; margin-bottom: -5px; font-size: 12px; color:#615858">Recent messages</p>
+
+  <div class="message_row">
+    <%= link_to message_privatemessage_path do %>
+    <div>
+      <%= image_tag "marybush.jpg",class:"avatar_message" %>
+    </div>
+    <% end %>
+    <div class="card_message" >
+      <div>
+        <p  style="margin-top:13px"><b>Marry:</b> Greate! Let's go tonight!</p>
+      </div>
+      <div>
+        <p style="color:#615858; font-size:12px">2 hours ago</p>
+      </div>
+    </div>
+  </div>
+
+ <div class="message_row">
+    <div>
+      <%= image_tag "camillebike.jpg",class:"avatar_message" %>
+    </div>
+    <div class="card_message" >
+      <div>
+        <p  style="margin-top:13px"><b>Camille:</b> Yes! Biking this Saturday!</p>
+      </div>
+      <div>
+        <p style="color:#615858; font-size:12px">5 hours ago</p>
+      </div>
+    </div>
+  </div>
+
+   <div class="message_row">
+    <div>
+      <%= image_tag "jamesfoot.jpg",class:"avatar_message" %>
+    </div>
+    <div class="card_message" >
+      <div>
+        <p  style="margin-top:13px"><b>James:</b> Cool man!</p>
+      </div>
+      <div>
+        <p style="color:#615858; font-size:12px">6 hours ago</p>
+      </div>
+    </div>
+  </div>
+
+   <div class="message_row">
+    <div>
+      <%= image_tag "jennydupire.jpg",class:"avatar_message" %>
+    </div>
+    <div class="card_message" >
+      <div>
+        <p  style="margin-top:13px"><b>Jenny:</b> See you this weekend!</p>
+      </div>
+      <div>
+        <p style="color:#615858; font-size:12px">7 hours ago</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="message_row">
+    <div>
+      <%= image_tag "brucethomas.jpg",class:"avatar_message" %>
+    </div>
+    <div class="card_message" >
+      <div>
+        <p  style="margin-top:13px"><b>Bruce:</b> Yeah, why not!</p>
+      </div>
+      <div>
+        <p style="color:#615858; font-size:12px">9 hours ago</p>
+      </div>
+    </div>
+  </div>
+
+   <div class="message_row">
+    <div>
+      <%= image_tag "liuyifei.jpg",class:"avatar_message" %>
+    </div>
+    <div class="card_message" >
+      <div>
+        <p style="margin-top:13px"><b>Feifei:</b> Sorry, mabye next week</p>
+      </div>
+      <div>
+        <p style="color:#615858; font-size:12px">23 hours ago</p>
+      </div>
+    </div>
+  </div>
+
+<div class="col-xs-12 col-lg-6 col-lg-offset-3">
+    <%= render 'components/navbar_bottom' %>
+</div>
