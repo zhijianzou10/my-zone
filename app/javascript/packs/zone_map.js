@@ -19,6 +19,7 @@ var update = function() {
 
   if (input_address != "" && isNaN(input_radius) === false && input_radius < 500) {
     geocoder.geocode( { 'address': input_address}, function(results, status) {
+      console.log(status);
       if (status == 'OK') {
         var coordinates = [results[0].geometry.location.lat(),results[0].geometry.location.lng()];
         L.circle(coordinates, {radius: input_radius}).addTo(map);
