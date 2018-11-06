@@ -19,7 +19,7 @@
                         <div class="image-upload">
                           <i class="far fa-images upload-image"></i>
                         </label>
-                          <input type="file" name="post[photo]" id="post_photo"/>
+                          <%= f.file_field :photo %>
                         </div>
                     </div>
                   </div>
@@ -64,8 +64,12 @@
                       <input type="hidden" name="post[interest_tag_id]" value="">
                         <div class="form-check">
                           <div class="container-interest-write-post">
-                            <% @post.zone.interest_tags.each do |interest| %>
-                                <input class="form-check-input radio_buttons required" required="required" aria-required="true" type="radio" value="<%= interest.id %>" <% if interest == @post.interest_tag %>checked="checked"<% end %> name="post[interest_tag_id]" id="post_interest_tag_id_<%= interest.id %>">
+                            <% InterestTag.all.each do |interest| %>
+                              <% if interest == @post.interest_tag %>
+                                <input class="form-check-input radio_buttons required" required="required" aria-required="true" type="radio" value="<%= interest.id %>" checked="checked" name="post[interest_tag_id]" id="post_interest_tag_id_<%= interest.id %>">
+                              <% else  %>
+                                <input class="form-check-input radio_buttons required" required="required" aria-required="true" type="radio" value="<%= interest.id %>" name="post[interest_tag_id]" id="post_interest_tag_id_<%= interest.id %>">
+                              <% end %>
                                 <label class="collection_radio_buttons" for="post_interest_tag_id_<%= interest.id %>"><%= interest.title %></label>
                             <% end %>
                           </div>
