@@ -11,4 +11,5 @@ class User < ApplicationRecord
   has_many :goods
 
   mount_uploader :avatar_url, PhotoUploader
+  mount_uploader :background_url, PhotoUploader
 end

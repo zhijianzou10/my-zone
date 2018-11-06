@@ -1,7 +1,11 @@
 <%= render 'components/navbar_newsfeed' %>
 
 <!-- BANNER -->
-<div class="container_banner" style="background-image: url('<%= image_path('wave.jpg') %>')">
+  <% if @user.background_url.blank? %>
+    <div class="container_banner" style="background-image: url('<%= image_path('wave.jpg') %>')">
+  <% else %>
+    <div class="container_banner" style="background-image: url('<%= cl_image_path @user.background_url %>')">
+  <% end %>
 <!-- AVATAR -->
 
   <% if @user.avatar_url.blank? %>
