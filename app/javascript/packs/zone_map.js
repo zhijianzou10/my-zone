@@ -1,11 +1,19 @@
 import { autocomplete } from '../components/autocomplete';
 autocomplete();
 
-var map = L.map('creation_zone', { drawControl: false }).setView([48.856614, 2.3522219], 16)
+var map = L.map('creation_zone', { drawControl: false, scrollWheelZoom: false }).setView([48.856614, 2.3522219], 16)
 var ggRoadmap = new L.Google('ROADMAP');
 map.addLayer(ggRoadmap);
 var geocoder;
 geocoder = new google.maps.Geocoder();
+map.on('click', function() {
+if (map.scrollWheelZoom.enabled()) {
+  map.scrollWheelZoom.disable();
+  }
+  else {
+  map.scrollWheelZoom.enable();
+  }
+});
 
 var update = function() {
   map.eachLayer(function(layer){
@@ -19,6 +27,7 @@ var update = function() {
 
   if (input_address != "" && isNaN(input_radius) === false && input_radius < 500) {
     geocoder.geocode( { 'address': input_address}, function(results, status) {
+      console.log(status);
       if (status == 'OK') {
         var coordinates = [results[0].geometry.location.lat(),results[0].geometry.location.lng()];
         L.circle(coordinates, {radius: input_radius}).addTo(map);
