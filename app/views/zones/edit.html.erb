@@ -27,9 +27,16 @@
 
         <div class="col-xs-4 col-md-3 col-lg-2">
           <div class="wrapper-card-interest">
-            <input id="interest_choice_<%= interest.id %>" required="required" aria-required="true" type="checkbox" value="<%= interest.id %>" name="zone[interest_tag_ids][]" >
-              <label for="interest_choice_<%= interest.id %>">
-                <%= image_tag interest.photo, class:"zone_photo" %>
+            <% @zone.interest_tags.each do |z| %>
+              <% if z == interest %>
+                <input id="interest_choice_<%= interest.id %>" required="required" aria-required="true" type="checkbox" value="<%= interest.id %>" checked="checked" name="zone[interest_tag_ids][]" >
+                <label for="interest_choice_<%= interest.id %>">
+              <% else %>
+                <input id="interest_choice_<%= interest.id %>" required="required" aria-required="true" type="checkbox" value="<%= interest.id %>" name="zone[interest_tag_ids][]" >
+                <label for="interest_choice_<%= interest.id %>">
+              <% end  %>
+            <% end %>
+              <%= image_tag interest.photo, class:"zone_photo" %>
               <div class="interest-title">
                <%= interest.title %>
               </div>
@@ -46,7 +53,7 @@
 
 
     <br>
-    <%= f.button :submit, "Finish", class:"button_normal" %>
+    <%= f.button :submit, "Finish", class:"button_normal", id: "action-completed" %>
     <br>
     <br>
     <br>
