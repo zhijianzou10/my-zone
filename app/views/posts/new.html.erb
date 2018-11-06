@@ -19,7 +19,7 @@
                         <div class="image-upload">
                           <i class="far fa-images upload-image"></i>
                         </label>
-                          <input type="file" name="post[photo]" id="post_photo"/>
+                          <%= f.file_field :photo %>
                         </div>
                     </div>
                   </div>
@@ -96,5 +96,5 @@
 
 </div>
 
-<%= javascript_pack_tag 'edit_post' %>
+<%= javascript_pack_tag 'new_post' %>
 
