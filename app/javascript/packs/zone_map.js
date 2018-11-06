@@ -1,3 +1,6 @@
+import { autocomplete } from '../components/autocomplete';
+autocomplete();
+
 var map = L.map('creation_zone', { drawControl: false }).setView([48.856614, 2.3522219], 16)
 var ggRoadmap = new L.Google('ROADMAP');
 map.addLayer(ggRoadmap);

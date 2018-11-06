@@ -3,7 +3,8 @@
 
 // var map =  // LIGNE 14
 // map.addLayer(osmLayer);
-
+import { autocomplete } from '../components/autocomplete';
+autocomplete();
 
 var mapElements = document.getElementsByClassName('zone_maps');
 Array.from(mapElements).forEach(mapElement => {

@@ -12,17 +12,16 @@
                   as: :string,
                   label: "Name your zone",
                   autofocus: true,
-
                   input_html: { data: { title: :title} }
                   %>
-
     <%= f.input :address,
                   as: :string,
                   hint: false,
                   required: true,
                   label: "Type your address",
                   autofocus: true,
-                  input_html: { data: { address: :address} }
+                  input_html: { data: { address: :address} },
+                  id: 'zone_address'
                   %>
     <%= f.input :radius,
                   as: :integer,
