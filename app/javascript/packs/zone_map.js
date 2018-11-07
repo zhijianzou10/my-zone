@@ -25,19 +25,27 @@ var update = function() {
   var input_radius = parseInt($("input[name='zone[radius]']").val());
   var input_address = String($("input[name='zone[address]']").val());
 
-  if (input_address != "" && isNaN(input_radius) === false && input_radius < 500) {
+  if (input_address != "" && isNaN(input_radius) === false && input_radius <= 1000) {
     geocoder.geocode( { 'address': input_address}, function(results, status) {
       console.log(status);
       if (status == 'OK') {
         var coordinates = [results[0].geometry.location.lat(),results[0].geometry.location.lng()];
         L.circle(coordinates, {radius: input_radius}).addTo(map);
-        map.setView(coordinates, 16);
+        if (input_radius <= 100) {
+          map.setView(coordinates, 16);
+        } else if (input_radius <= 350) {
+          map.setView(coordinates, 15);
+        } else if (input_radius <= 700) {
+          map.setView(coordinates, 14);
+        } else {
+          map.setView(coordinates, 13);
+        }
       } else {
         alert('Please enter a valid address');
       }
     });
-  } else if (isNaN(input_radius) === false && input_radius >= 500) {
-    alert('Please enter a radius less than 500 meters');
+  } else if (isNaN(input_radius) === false && input_radius > 1000) {
+    alert('Please enter a radius less than 1km');
   };
 };
 update();

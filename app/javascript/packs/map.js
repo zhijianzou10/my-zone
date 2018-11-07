@@ -26,5 +26,13 @@ Array.from(mapElements).forEach(mapElement => {
     .bindPopup('This is your zone: ' + zoneTitle)
     .openPopup();
   L.circle([marker.lat, marker.lng], {radius: marker.radius}).addTo(map);
+  if (marker.radius <= 100) {
+    map.setView([marker.lat, marker.lng], 16);
+  } else if (marker.radius <= 350) {
+    map.setView([marker.lat, marker.lng], 15);
+  } else if (marker.radius <= 700) {
+    map.setView([marker.lat, marker.lng], 14);
+  } else {
+    map.setView([marker.lat, marker.lng], 13);
+  }
 });
-

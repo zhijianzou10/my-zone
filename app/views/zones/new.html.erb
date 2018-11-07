@@ -47,7 +47,7 @@
 
         <div class="col-xs-4 col-md-3 col-lg-2">
           <div class="wrapper-card-interest">
-            <input id="interest_choice_<%= interest.id %>" required="required" aria-required="true" type="checkbox" value="<%= interest.id %>" name="zone[interest_tag_ids][]" >
+            <input required id="interest_choice_<%= interest.id %>" aria-required="true" type="checkbox" value="<%= interest.id %>" name="zone[interest_tag_ids][]" >
               <label for="interest_choice_<%= interest.id %>">
                 <%= image_tag interest.photo, class:"zone_photo" %>
               <div class="interest-title">
