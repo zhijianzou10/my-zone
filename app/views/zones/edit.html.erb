@@ -8,14 +8,15 @@
 
   <div class="form-inputs">
     <%= f.input :title,
-    placeholder: "Zone title (ex: Home)"
+    placeholder: "Ex: home"
     %>
 
     <%= f.input :address,
     as: :string,
     id: 'zone_address' %>
 
-    <%= f.input :radius %>
+    <%= f.input :radius,
+    placeholder: "Enter a radius less than 1000m" %>
 
       <div id='creation_zone' class="zone-design" style='height: 250px; width:100%;'>
       </div>

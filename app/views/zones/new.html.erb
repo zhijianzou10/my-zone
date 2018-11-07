@@ -12,7 +12,8 @@
                   as: :string,
                   label: "Name your zone",
                   autofocus: true,
-                  input_html: { data: { title: :title} }
+                  input_html: { data: { title: :title} },
+                  placeholder: "Ex: Home"
                   %>
     <%= f.input :address,
                   as: :string,
@@ -29,7 +30,8 @@
                   label: "Choose the radius",
                   required: true,
                   autofocus: true,
-                  input_html: { data: { radius: :radius} }
+                  input_html: { data: { radius: :radius} },
+                  placeholder: "Enter a radius less than 1000m"
                   %>
 
 
