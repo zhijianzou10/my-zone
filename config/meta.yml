@@ -1,7 +1,7 @@
 # config/meta.yml
 
-meta_product_name: "Product Name"
-meta_title: "Product name - Product tagline"
-meta_description: "Relevant description"
+meta_product_name: "MyZone"
+meta_title: "MyZone - Get connected in local"
+meta_description: "My Zone is a social network to get connected in local."
 meta_image: "cover.png"                       # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
