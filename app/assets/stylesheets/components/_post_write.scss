@@ -144,7 +144,11 @@ fieldset {
 }
 
 .publish_button {
-  position: absolute;
+    margin-left: 200px;
     top: 76vh;
     right: 5vw;
+}
+
+#post_content_width {
+  width:100%;
 }
