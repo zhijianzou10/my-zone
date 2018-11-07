@@ -9,5 +9,5 @@ class Zone < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_address?
 
   validates :address, presence: true
-  validates :radius, numericality: { less_than: 500 }
+  validates :radius, numericality: { less_than: 1001 }
 end
