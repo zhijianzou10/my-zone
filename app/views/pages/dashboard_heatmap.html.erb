@@ -1,10 +1,10 @@
 <%= render 'components/navbar_dashboard' %>
 
-<h1>Heatmap</h1>
+<!-- <h1>Heatmap</h1> -->
 
 <div class="container-dashboard">
   <div class="heatmap">
-    <div id='db_map' style="height: 75vh; width: 50vw" data-zone='<%= @zone_data.to_json %>'></div>
+    <div id='db_map' style="height: 100vh; width: 100%" data-zone='<%= @zone_data.to_json %>'></div>
   </div>
 
   <div class="wrapper-all-input">
@@ -70,13 +70,50 @@
         </label>
       <% end %>
     </div>
-    <!-- </div> -->
 
     <button class="button_normal">Validate</button>
 
+  </div>
+</div>
+
+<%= javascript_pack_tag 'db_map' %>
+
+<!-- GRAPHIQUES -->
+<div class="container-all-graph">
+  <!-- //SORTING FLAT -->
+
+  <div class="sorting-flat-container">
+
+    <p class="graph-type-title">SORTING FLAT</p>
+    <div class="sorting-flat-age-range">
+      <span class="graph-title">Age range :</span> histogram (y: volume x:age range)
+    </div>
+
+    <div class="sorting-flat-gender">
+      <span class="graph-title">Gender :</span> Camembert %
+    </div>
+
+    <div class="sorting-flat-interest">
+      <span class="graph-title">Interest : </span>Camembert %
+    </div>
 
   </div>
 
+  <!-- //CROSS SORT -->
+
+  <div class="cross-sort-container">
+
+    <p class="graph-type-title">CROSS SORT</p>
+
+    <div class="interest-and-gender">
+      <span class="graph-title">Interest / Gender</span>
+    </div>
+
+    <div class="interest-and-age">
+      <span class="graph-title">Interest / Age</span>
+    </div>
+
+  </div>
 </div>
-<%= javascript_pack_tag 'db_map' %>
+
 
