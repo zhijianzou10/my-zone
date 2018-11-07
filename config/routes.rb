@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
-  get 'notification/lists'
-  get 'message/list'
-  get 'message/privatemessage'
+
   devise_for :users, :controllers => {:registrations => "registrations"}
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/components', to: 'pages#components'
+  get '/dashboard_heatmap', to: 'pages#dashboard_heatmap'
+  get '/dashboard_data', to: 'pages#dashboard_data'
+  get 'notification/lists'
+  get 'message/list'
+  get 'message/privatemessage'
 
   resources :users, only: [:edit, :update, :show]
 
