@@ -1,4 +1,5 @@
 <%= render 'components/navbar_dashboard' %>
+
 <h1>Heatmap</h1>
 
 <div class="container-dashboard">
@@ -7,7 +8,8 @@
   </div>
 
   <div class="wrapper-all-input">
-    <span>Address</span>
+
+    <span class="input-title-heatmap">Address</span>
     <div class="input-box address-heatmap">
 
       <div class="form-group string required zone_address">
@@ -16,50 +18,65 @@
 
     </div>
 
-    <span>Radius</span>
+    <span class="input-title-heatmap">Radius</span>
     <div class="input-box radius-heatmap">
       <div class="form-group integer required zone_radius">
       <input class="form-control numeric integer required" data-radius="radius" autofocus="autofocus" required="required" aria-required="true" type="number" step="1" name="zone[radius]" id="zone_radius"></div>
 
     </div>
 
-    <span>Gender</span>
-    <div class="input-box gender-heatmap">
-      <div>
-        <input type="radio">
-        <label class="collection_radio_buttons" for="user_gender_male">Male</label>
+    <span class="input-title-heatmap">Gender</span>
+
+    <div class="input-box gender-heatmap gender-choices">
+
+      <div class="checkbox-gender-heatmap">
+        <input class="hidden" type="checkbox" value="1" name="post[gender_ids][]" id="post_gender_ids_1">
+        <label class="gender-choice" for="post_gender_ids_1">Male
+        </label>
       </div>
-      <div>
-        <input type="radio">
-        <label class="collection_radio_buttons" for="user_gender_male">Female</label>
+
+      <div class="checkbox-gender-heatmap">
+        <input class="hidden" type="checkbox" value="2" name="post[gender_ids][]" id="post_gender_ids_2">
+        <label class="gender-choice" for="post_gender_ids_2">Female
+        </label>
       </div>
-      <div>
-        <input type="radio">
-        <label class="collection_radio_buttons" for="user_gender_male">Other</label>
+
+      <div class="checkbox-gender-heatmap">
+        <input class="hidden" type="checkbox" value="3" name="post[gender_ids][]" id="post_gender_ids_3">
+        <label class="gender-choice" for="post_gender_ids_3">Other
+        </label>
       </div>
     </div>
 
-    <span>Age</span>
+    <span class="input-title-heatmap">Age</span>
     <div class="input-box age-heatmap">
         <div class="input-age">
-          <input placeholder="Min Age" value="">
+          <input placeholder="Min Age" value="" name="min-age">
         </div>
         <div class="input-age">
-          <input placeholder="Max Age" value="">
+          <input placeholder="Max Age" value="" name="max-age">
         </div>
     </div>
 
-    <span>Interest</span>
-    <div class="input-box interest-heatmap">
+
+    <span class="input-title-heatmap">Interest</span>
+<!--     <div class="input-box interest-heatmap" id="interest-heatmap"> -->
+    <div class="int-choices">
       <% InterestTag.all.each do |interest| %>
 
-      <input type="checkbox" >
-        <div class="interest-title">
-         <%= interest.title %>
-        </div>
-    <% end %>
+        <input class="hidden" type="checkbox" value="<%= interest.id %>" name="post[interest_ids][]" id="post_interest_ids_<%= interest.id %>">
 
+        <label class="int-choice" for="post_interest_ids_<%= interest.id %>"><%= interest.title %>
+        </label>
+      <% end %>
     </div>
+    <!-- </div> -->
+
+    <button class="button_normal">Validate</button>
+
+
   </div>
 
 </div>
+
+
