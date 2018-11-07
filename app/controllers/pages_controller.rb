@@ -10,6 +10,9 @@ class PagesController < ApplicationController
   def test
   end
 
-  def dashboard
+  def dashboard_heatmap
+  end
+
+  def dashboard_data
   end
 end
