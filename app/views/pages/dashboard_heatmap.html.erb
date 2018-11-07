@@ -8,21 +8,20 @@
   </div>
 
   <div class="wrapper-all-input">
-
+  <form action="/dashboard_heatmap" method="get">
     <span class="input-title-heatmap">Address</span>
     <div class="input-box address-heatmap">
 
-      <div class="form-group string required zone_address">
-        <input class="form-control string required" data-address="address" autofocus="autofocus" required="required" aria-required="true" type="text" name="address" id="zone_address" placeholder="Enter a location" autocomplete="off">
+      <div class="form-group string zone_address">
+        <input class="form-control string " data-address="address" autofocus="autofocus" type="text" name="address" id="zone_address" placeholder="Enter a location" autocomplete="off" value="<%= params[:address] %>">
       </div>
 
     </div>
 
     <span class="input-title-heatmap">Radius</span>
     <div class="input-box radius-heatmap">
-      <div class="form-group integer required zone_radius">
-      <input class="form-control numeric integer required" placeholder="Enter a radius in meters (ex: 1000)"data-radius="radius" autofocus="autofocus" required="required" aria-required="true" type="number" step="1" name="radius" id="zone_radius"></div>
-
+      <div class="form-group integer zone_radius">
+      <input class="form-control numeric integer" placeholder="Enter a radius in kilometers (ex: 1000)"data-radius="radius" autofocus="autofocus" type="number" step="1" name="radius" id="zone_radius" value="<%= params[:radius] %>"></div>
     </div>
 
     <span class="input-title-heatmap">Gender</span>
@@ -30,19 +29,19 @@
     <div class="input-box gender-heatmap gender-choices">
 
       <div class="checkbox-gender-heatmap">
-        <input class="hidden" type="checkbox" value="1" name="post[gender_ids][]" id="post_gender_ids_1">
+        <input class="hidden" type="checkbox" value="male" name="gender[]" id="post_gender_ids_1">
         <label class="gender-choice" for="post_gender_ids_1">Male
         </label>
       </div>
 
       <div class="checkbox-gender-heatmap">
-        <input class="hidden" type="checkbox" value="2" name="post[gender_ids][]" id="post_gender_ids_2">
+        <input class="hidden" type="checkbox" value="female" name="gender[]" id="post_gender_ids_2">
         <label class="gender-choice" for="post_gender_ids_2">Female
         </label>
       </div>
 
       <div class="checkbox-gender-heatmap">
-        <input class="hidden" type="checkbox" value="3" name="post[gender_ids][]" id="post_gender_ids_3">
+        <input class="hidden" type="checkbox" value="other" name="gender[]" id="post_gender_ids_3">
         <label class="gender-choice" for="post_gender_ids_3">Other
         </label>
       </div>
@@ -51,10 +50,10 @@
     <span class="input-title-heatmap">Age</span>
     <div class="input-box age-heatmap">
         <div class="input-age">
-          <input placeholder="Min Age" value="" name="min-age">
+          <input placeholder="Min Age" name="minage" value="<%= params[:minage] %>">
         </div>
         <div class="input-age">
-          <input placeholder="Max Age" value="" name="max-age">
+          <input placeholder="Max Age" name="maxage" value="<%= params[:maxage] %>">
         </div>
     </div>
 
@@ -64,7 +63,7 @@
     <div class="int-choices">
       <% InterestTag.all.each do |interest| %>
 
-        <input class="hidden" type="checkbox" value="<%= interest.id %>" name="post[interest_ids][]" id="post_interest_ids_<%= interest.id %>">
+        <input class="hidden" type="checkbox" value="<%= interest.id %>" name="interest_input[]" id="post_interest_ids_<%= interest.id %>" <%= 'checked' if params[:interest_input].nil? == false && params[:interest_input].include?(interest.id.to_s) %>>
 
         <label class="int-choice" for="post_interest_ids_<%= interest.id %>"><%= interest.title %>
         </label>
@@ -72,11 +71,11 @@
     </div>
     <!-- </div> -->
 
-    <button class="button_normal">Validate</button>
+    <input type="submit" value="Submit" class="button_normal">
 
 
   </div>
-
+  </form>
 </div>
 <%= javascript_pack_tag 'db_map' %>
 

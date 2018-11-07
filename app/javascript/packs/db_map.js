@@ -10,7 +10,7 @@ geocoder = new google.maps.Geocoder();
 var zoneData = JSON.parse(document.getElementById('db_map').dataset.zone);
 var heatmapData = []
 Array.from(zoneData).forEach(data => {
-  heatmapData.push({location: new google.maps.LatLng(JSON.parse(data).lat, JSON.parse(data).lng), weight: JSON.parse(data).weight});
+  heatmapData.push(new google.maps.LatLng(JSON.parse(data).lat, JSON.parse(data).lng));
 });
 var heatmap = new google.maps.visualization.HeatmapLayer({
   data: heatmapData
@@ -34,6 +34,24 @@ var gradient = [
     ]
 heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
 heatmap.setMap(map);
+
+
+var update = function() {
+  var input_address = String($("input[name='address']").val());
+  if (input_address != "") {
+    geocoder.geocode( { 'address': input_address}, function(results, status) {
+      console.log(status);
+      if (status == 'OK') {
+        var gLat = results[0].geometry.location.lat();
+        var gLng = results[0].geometry.location.lng();
+        map.setCenter(new google.maps.LatLng(gLat, gLng));
+      }
+    });
+  }
+};
+update();
+$('form').change(update);
+
 
 
 
