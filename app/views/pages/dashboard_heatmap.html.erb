@@ -1,2 +1,15 @@
 <h1>Test heatmap</h1>
 <%= link_to "Go to data", dashboard_data_path %>
+
+
+
+<div id='db_map' style="height: 75vh; width: 50vw" data-zone='<%= @zone_data.to_json %>'></div>
+
+
+
+<ul>
+   <li><%= @zone_data %></li>
+</ul>
+
+
+<%= javascript_pack_tag 'db_map' %>
