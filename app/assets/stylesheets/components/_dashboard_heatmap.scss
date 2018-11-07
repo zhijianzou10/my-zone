@@ -1,0 +1,49 @@
+
+.container-dashboard {
+  display: flex;
+}
+
+.heatmap {
+  width: 90%;
+  // width: 500px;
+  height: 500px;
+  background-color: gray;
+  margin: 10px;
+}
+
+.wrapper-all-input {
+  width: 90%;
+    // width: 500px;
+  height: 500px;
+  background-color: white;
+  margin: 10px;
+}
+
+.input-box {
+  height: 100px;
+  width: 90%;
+  background-color: $blue;
+  margin: 10px;
+}
+
+.age-heatmap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-age {
+  margin: 10px;
+  width: 50%;
+  // width: 10px;
+}
+
+.input-age input {
+  width: 100px;
+}
+
+.gender-heatmap {
+  // display: inline-block;
+  padding: 10px;
+  color: white;
+}
