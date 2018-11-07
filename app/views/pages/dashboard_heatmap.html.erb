@@ -1,2 +1,65 @@
-<h1>Test heatmap</h1>
-<%= link_to "Go to data", dashboard_data_path %>
+<%= render 'components/navbar_dashboard' %>
+<h1>Heatmap</h1>
+
+<div class="container-dashboard">
+  <div class="heatmap">
+    MAP
+  </div>
+
+  <div class="wrapper-all-input">
+    <span>Address</span>
+    <div class="input-box address-heatmap">
+
+      <div class="form-group string required zone_address">
+        <input class="form-control string required" data-address="address" autofocus="autofocus" required="required" aria-required="true" type="text" name="zone[address]" id="zone_address" placeholder="Enter a location" autocomplete="off">
+      </div>
+
+    </div>
+
+    <span>Radius</span>
+    <div class="input-box radius-heatmap">
+      <div class="form-group integer required zone_radius">
+      <input class="form-control numeric integer required" data-radius="radius" autofocus="autofocus" required="required" aria-required="true" type="number" step="1" name="zone[radius]" id="zone_radius"></div>
+
+    </div>
+
+    <span>Gender</span>
+    <div class="input-box gender-heatmap">
+      <div>
+        <input type="radio">
+        <label class="collection_radio_buttons" for="user_gender_male">Male</label>
+      </div>
+      <div>
+        <input type="radio">
+        <label class="collection_radio_buttons" for="user_gender_male">Female</label>
+      </div>
+      <div>
+        <input type="radio">
+        <label class="collection_radio_buttons" for="user_gender_male">Other</label>
+      </div>
+    </div>
+
+    <span>Age</span>
+    <div class="input-box age-heatmap">
+        <div class="input-age">
+          <input placeholder="Min Age" value="">
+        </div>
+        <div class="input-age">
+          <input placeholder="Max Age" value="">
+        </div>
+    </div>
+
+    <span>Interest</span>
+    <div class="input-box interest-heatmap">
+      <% InterestTag.all.each do |interest| %>
+
+      <input type="checkbox" >
+        <div class="interest-title">
+         <%= interest.title %>
+        </div>
+    <% end %>
+
+    </div>
+  </div>
+
+</div>
