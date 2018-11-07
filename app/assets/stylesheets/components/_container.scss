@@ -75,3 +75,31 @@
 .container_contact {
   line-height: 0.6;
 }
+
+.container_dash_data {
+  display:flex;
+  width:80%;
+  margin-top:30px;
+
+}
+
+.container_dash_data_right {
+  width: 50%;
+  border-color: gray;
+  border:solid;
+  margin-left: 20px;
+  p {
+    color: #1B6DA4;
+  }
+
+}
+
+.container_dash_data_left {
+  width: 50%;
+  border-color: gray;
+  border:solid;
+  p {
+    color: #1B6DA4;
+  }
+  margin-right: 20px;
+}
