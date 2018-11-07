@@ -4,46 +4,116 @@
 }
 
 .heatmap {
-  width: 90%;
-  // width: 500px;
-  height: 500px;
+  width: 100%;
   background-color: gray;
   margin: 10px;
 }
 
 .wrapper-all-input {
-  width: 90%;
-    // width: 500px;
-  height: 500px;
-  background-color: white;
+  width: 100%;
+  background-color: #E5E5E5;
   margin: 10px;
+  padding: 20px;
 }
 
 .input-box {
-  height: 100px;
+  margin: 0 auto;
+  padding: 10px;
   width: 90%;
-  background-color: $blue;
   margin: 10px;
+  border-radius: 5px;
 }
 
 .age-heatmap {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .input-age {
   margin: 10px;
-  width: 50%;
+  // width: 50%;
   // width: 10px;
 }
 
 .input-age input {
   width: 100px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
 }
 
-.gender-heatmap {
-  // display: inline-block;
+.input-title-heatmap {
+  font-size: 25px;
+  font-weight: bold;
   padding: 10px;
+
+}
+
+#interest-heatmap {
+  color: black;
+  font-weight: bold;
+}
+
+.interest-list-heatmap {
+  // background-color: green;
+  width: 200px;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.int-choices {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  input[type=checkbox]:checked+label {
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  background-color: $blue;
   color: white;
+  opacity: 1;
+  }
+}
+
+.int-choice {
+  flex: 0 0 30%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  opacity: 0.4;
+  cursor: pointer;
+  text-align: center;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.gender-choices {
+  display: flex;
+  justify-content: flex-start;
+  // flex-wrap: wrap;
+  margin: 20px 0;
+  input[type=checkbox]:checked+label {
+  background-color: $blue;
+  color: white;
+  opacity: 1;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  // padding: 20px;
+  }
+}
+
+.gender-choice {
+  margin-right: 10px;
+  flex: 0 0 30%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  opacity: 0.4;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
 }
