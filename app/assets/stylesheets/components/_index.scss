@@ -1,23 +1,33 @@
 // Import your components CSS files here.
+
+//CARDS
+@import "cards/interest-card";
+@import "cards/main-card-newsfeed";
+@import "cards/notification-card";
+@import "cards/profile-card";
+@import "cards/card"; //(dashboard)
+
+//INPUTS
+@import "inputs/input-write-post";
+@import "inputs/input-search-map";
+//NAVBARS
+@import "navbars/navbar";
+@import "navbars/navbar_myzone";
+@import "navbars/navbar-newsfeed";
+@import "navbars/navbar_sign_up";
+@import "navbars/navbar_dashboard";
+
+//OTHER
 @import "alert";
-@import "navbar";
-@import "navbar_myzone";
 @import "police";
-@import "interest-card";
 @import "zone-logo";
 @import "form";
 @import "button";
 @import "avatar";
-@import "main-card-newsfeed";
 @import "zone-logo-newsfeed";
-@import "profile-card";
 @import "comment-bar";
-@import "input-search-map";
-@import "notification-card";
-@import "input-write-post";
 @import "banner";
 @import "divider";
-@import "navbar-newsfeed";
 @import "container";
 @import "icon";
 @import "comment-read";
@@ -26,7 +36,8 @@
 @import "zone-logo-zonelist";
 @import "post_write";
 @import "sign-up";
-@import "navbar_sign_up";
 @import "simple_form_creation_zone";
 @import "edit-profile";
 @import "message";
+@import "dashboard_heatmap";
+

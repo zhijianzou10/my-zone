@@ -79,19 +79,16 @@
 .upload-image {
  font-size: 40px;
  cursor: pointer;
- // padding: 10px;
  position: absolute;
 bottom: 35px;
  right: 15px;
  color: gray;
- // justify-content: flex-end;
 }
 
 
 .image-upload > input {
   display: none;
 }
-
 
 .wrapper-interest-write {
   display: flex;
@@ -144,7 +141,12 @@ fieldset {
 }
 
 .publish_button {
-  position: absolute;
-    top: 76vh;
+    margin-left: 235px;
+    margin-top: 500px;
+    // top: 60vh;
     right: 5vw;
+}
+
+#post_content_width {
+  width:100%;
 }

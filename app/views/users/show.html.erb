@@ -40,12 +40,14 @@
     <% end %>
   </div>
 
-
   <div>
   <!-- NAVBAR BOTTOM -->
+
     <div class="col-xs-12 col-lg-6 col-lg-offset-3">
       <%= render 'components/navbar_bottom' %>
     </div>
+
+    <div class="container" style="padding: 0px">
 
     <div class="col-xs-12 col-lg-6 col-lg-offset-3">
       <%= render 'components/input_write_post.html.erb' %>
@@ -58,6 +60,10 @@
     <% end %>
   </div>
 
+  <br>
+  <br>
+  <br>
+
 <% else  %>
     <% @user.posts.each do |post| %>
       <div class="col-xs-12 col-lg-6 col-lg-offset-3">
@@ -65,9 +71,6 @@
       </div>
     <% end %>
 <% end  %>
-<br>
-<br>
-<br>
 </div>
 
 <%= javascript_pack_tag 'user_map' %>

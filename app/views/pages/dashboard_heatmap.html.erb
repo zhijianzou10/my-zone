@@ -1,15 +1,82 @@
-<h1>Test heatmap</h1>
-<%= link_to "Go to data", dashboard_data_path %>
+<%= render 'components/navbar_dashboard' %>
+
+<h1>Heatmap</h1>
+
+<div class="container-dashboard">
+  <div class="heatmap">
+    <div id='db_map' style="height: 75vh; width: 50vw" data-zone='<%= @zone_data.to_json %>'></div>
+  </div>
+
+  <div class="wrapper-all-input">
+
+    <span class="input-title-heatmap">Address</span>
+    <div class="input-box address-heatmap">
+
+      <div class="form-group string required zone_address">
+        <input class="form-control string required" data-address="address" autofocus="autofocus" required="required" aria-required="true" type="text" name="address" id="zone_address" placeholder="Enter a location" autocomplete="off">
+      </div>
+
+    </div>
+
+    <span class="input-title-heatmap">Radius</span>
+    <div class="input-box radius-heatmap">
+      <div class="form-group integer required zone_radius">
+      <input class="form-control numeric integer required" placeholder="Enter a radius in meters (ex: 1000)"data-radius="radius" autofocus="autofocus" required="required" aria-required="true" type="number" step="1" name="radius" id="zone_radius"></div>
+
+    </div>
+
+    <span class="input-title-heatmap">Gender</span>
+
+    <div class="input-box gender-heatmap gender-choices">
+
+      <div class="checkbox-gender-heatmap">
+        <input class="hidden" type="checkbox" value="1" name="post[gender_ids][]" id="post_gender_ids_1">
+        <label class="gender-choice" for="post_gender_ids_1">Male
+        </label>
+      </div>
+
+      <div class="checkbox-gender-heatmap">
+        <input class="hidden" type="checkbox" value="2" name="post[gender_ids][]" id="post_gender_ids_2">
+        <label class="gender-choice" for="post_gender_ids_2">Female
+        </label>
+      </div>
+
+      <div class="checkbox-gender-heatmap">
+        <input class="hidden" type="checkbox" value="3" name="post[gender_ids][]" id="post_gender_ids_3">
+        <label class="gender-choice" for="post_gender_ids_3">Other
+        </label>
+      </div>
+    </div>
+
+    <span class="input-title-heatmap">Age</span>
+    <div class="input-box age-heatmap">
+        <div class="input-age">
+          <input placeholder="Min Age" value="" name="min-age">
+        </div>
+        <div class="input-age">
+          <input placeholder="Max Age" value="" name="max-age">
+        </div>
+    </div>
 
 
+    <span class="input-title-heatmap">Interest</span>
+<!--     <div class="input-box interest-heatmap" id="interest-heatmap"> -->
+    <div class="int-choices">
+      <% InterestTag.all.each do |interest| %>
 
-<div id='db_map' style="height: 75vh; width: 50vw" data-zone='<%= @zone_data.to_json %>'></div>
+        <input class="hidden" type="checkbox" value="<%= interest.id %>" name="post[interest_ids][]" id="post_interest_ids_<%= interest.id %>">
+
+        <label class="int-choice" for="post_interest_ids_<%= interest.id %>"><%= interest.title %>
+        </label>
+      <% end %>
+    </div>
+    <!-- </div> -->
+
+    <button class="button_normal">Validate</button>
 
 
+  </div>
 
-<ul>
-   <li><%= @zone_data %></li>
-</ul>
-
-
+</div>
 <%= javascript_pack_tag 'db_map' %>
+
