@@ -4,7 +4,7 @@
 
 <div class="container-dashboard">
   <div class="heatmap">
-    MAP
+    <div id='db_map' style="height: 75vh; width: 50vw" data-zone='<%= @zone_data.to_json %>'></div>
   </div>
 
   <div class="wrapper-all-input">
@@ -78,5 +78,5 @@
   </div>
 
 </div>
-
+<%= javascript_pack_tag 'db_map' %>
 
