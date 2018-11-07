@@ -1,19 +1,22 @@
-
+// MAP & FORM
 .container-dashboard {
   display: flex;
 }
 
 .heatmap {
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   width: 100%;
-  background-color: gray;
+  // background-color: gray;
   margin: 10px;
+  padding: 10px;
 }
 
 .wrapper-all-input {
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   width: 100%;
   background-color: #E5E5E5;
   margin: 10px;
-  padding: 20px;
+  padding: 10px;
 }
 
 .input-box {
@@ -32,8 +35,6 @@
 
 .input-age {
   margin: 10px;
-  // width: 50%;
-  // width: 10px;
 }
 
 .input-age input {
@@ -48,7 +49,6 @@
   font-size: 25px;
   font-weight: bold;
   padding: 10px;
-
 }
 
 #interest-heatmap {
@@ -57,7 +57,6 @@
 }
 
 .interest-list-heatmap {
-  // background-color: green;
   width: 200px;
   padding: 5px;
   margin: 5px;
@@ -101,7 +100,6 @@
   color: white;
   opacity: 1;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  // padding: 20px;
   }
 }
 
@@ -116,4 +114,90 @@
   &:hover {
     opacity: 1;
   }
+}
+
+// GRAPHIQUES
+
+.container-all-graph {
+  display: flex;
+}
+
+.sorting-flat-container {
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  background-color: #E4E4E4;
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  height: 2000px;
+}
+
+.cross-sort-container {
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  background-color: #E4E4E4;
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  height: 2000px;
+}
+
+.graph-type-title {
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+  background-color: $blue;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.graph-title {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px;
+  // margin: 50px;
+}
+
+// SORTING FLAT
+.sorting-flat-age-range {
+  // margin-top: 40px;
+  background-color: white;
+  border-radius: 5px;
+  height: 500px;
+  width: 80%;
+  margin: 10px auto;
+}
+
+.sorting-flat-gender {
+  background-color: white;
+  border-radius: 5px;
+  height: 500px;
+  width: 80%;
+  margin: 10px auto;
+}
+
+.sorting-flat-interest {
+  background-color: white;
+  border-radius: 5px;
+  height: 500px;
+  width: 80%;
+  margin: 10px auto;
+}
+
+// CROSS SORT
+
+.interest-and-gender {
+  background-color: white;
+  border-radius: 5px;
+  height: 500px;
+  width: 80%;
+  margin: 10px auto;
+}
+
+.interest-and-age {
+  background-color: white;
+  border-radius: 5px;
+  height: 500px;
+  width: 80%;
+  margin: 10px auto;
 }
