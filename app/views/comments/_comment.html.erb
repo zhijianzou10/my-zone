@@ -6,7 +6,11 @@
     <div class="avatar-comment">
        <%= link_to user_path(comment.user) do %>
         <% if comment.user.avatar_url.blank? == true %>
+        <div class="comment_name">
           <%= image_tag("default-avatar.png", class:"avatar_navbar avatar_navbar_show") %>
+
+        </div>
+
         <% else %>
           <%=  cl_image_tag(comment.user.avatar_url, class:"avatar_navbar avatar_navbar_show") %>
         <% end %>
@@ -16,7 +20,7 @@
     <!-- COMMENT -->
 
     <div class="comment-read" >
-      <p id="comment-read"><%= comment.content %></p>
+      <p id="comment-read"><span id="name-comment"><%= comment.user.firstname %> <%= comment.user.lastname %></span> <%= comment.content %></p>
     </div>
   </div>
 

@@ -39,3 +39,21 @@
   justify-content:space-around;
 
 }
+
+.comment_name {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+}
+
+.name_color {
+  color:#1B6DA4;
+}
+ #name-comment {
+  color: #1B6DA4;
+ }
