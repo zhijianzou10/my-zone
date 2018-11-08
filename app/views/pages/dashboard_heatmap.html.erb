@@ -169,9 +169,9 @@
         cross_interest_gender_data = {}
         ["male", "female", "other"].each do |gender|
           cross_interest_gender_data[gender.to_sym] = {}
-          InterestTag.all.each do |i|
-            i_sym = i.title.downcase.parameterize.underscore.to_sym
-            cross_interest_gender_data[gender.to_sym][i_sym] = @zone_data.select { |d| d[:user_gender] == gender }.select{ |d| d[:zone_interests].include?(i.id.to_i) }.count
+        InterestTag.all.each do |i|
+          i_sym = i.title.downcase.parameterize.underscore.to_sym
+          cross_interest_gender_data[gender.to_sym][i_sym] = @zone_data.select { |d| d[:user_gender] == gender }.select{ |d| d[:zone_interests].include?(i.id.to_i) }.count
           end
         end
        %>
