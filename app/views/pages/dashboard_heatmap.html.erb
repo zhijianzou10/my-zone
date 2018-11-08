@@ -1,10 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js' %>
+  </head>
+
+
+<body>
 <%= render 'components/navbar_dashboard' %>
 
 <!-- <h1>Heatmap</h1> -->
 
 <div class="container-dashboard">
   <div class="heatmap">
-    <div id='db_map' style="height: 90vh; width: 100%" data-zone='<%= @zone_data.to_json %>'></div>
+
+    <% zone_data_json = [] %>
+    <% @zone_data.each do |d| %>
+      <% zone_data_json << d.to_json %>
+    <% end %>
+    <div id='db_map' style="height: 100vh; width: 100%" data-zone='<%= zone_data_json.to_json %>'></div>
+
   </div>
 
   <div class="wrapper-all-input">
@@ -81,22 +95,49 @@
 <!-- GRAPHIQUES -->
 <div class="container-all-graph">
   <!-- //SORTING FLAT -->
-
   <div class="sorting-flat-container">
 
     <p class="graph-type-title">SORTING FLAT</p>
     <div class="sorting-flat-age-range">
       <span class="graph-title">Age range :</span> histogram (y: volume x:age range)
+      <% sorting_age_collection = {
+        no_value: @zone_data.select { |d| d[:user_birth_year].nil? },
+        less_than_15: @zone_data.select { |d| !d[:user_birth_year].nil? && d[:user_birth_year] >= 2003 },
+        young: @zone_data.select { |d| !d[:user_birth_year].nil? && d[:user_birth_year] < 2003 && d[:user_birth_year] >= 1993 },
+        mid: @zone_data.select { |d| !d[:user_birth_year].nil? && d[:user_birth_year] < 1993 && d[:user_birth_year] >= 1983 },
+        mid_old: @zone_data.select { |d| !d[:user_birth_year].nil? && d[:user_birth_year] < 1983 && d[:user_birth_year] >= 1973 },
+        old: @zone_data.select { |d| !d[:user_birth_year].nil? && d[:user_birth_year] < 1973 && d[:user_birth_year] >= 1963 },
+        more_than_55: @zone_data.select { |d| !d[:user_birth_year].nil? && d[:user_birth_year] < 1963 }
+      }
+       %>
+       <% sorting_age_data = {} %>
+       <% sorting_age_collection.each do |key, value| %>
+        <% sorting_age_data[key] = value.count %>
+       <% end %>
+      <canvas id="sortingAge" width="200px" height="200px" data-age=<%= sorting_age_data.to_json %>></canvas>
     </div>
 
     <div class="sorting-flat-gender">
       <span class="graph-title">Gender :</span> Camembert %
+      <% sorting_gender_data = {
+        male: @zone_data.select { |d| d[:user_gender] == "male"}.count,
+        female: @zone_data.select { |d| d[:user_gender] == "female"}.count,
+        other: @zone_data.select { |d| d[:user_gender] == "other"}.count
+      } %>
+      <canvas id="sortingGender" width="200px" height="200px" data-gender=<%= sorting_gender_data.to_json %>></canvas>
     </div>
+
 
     <div class="sorting-flat-interest">
-      <span class="graph-title">Interest : </span>Camembert %
+      <span class="graph-title">Interest : </span>
+      <%
+        sorting_interest_data = {}
+        InterestTag.all.each do |i|
+          sorting_interest_data[i.title.downcase.parameterize.underscore.to_sym] = @zone_data.select { |d| d[:zone_interests].include?(i.id.to_i) }.count
+        end
+       %>
+       <canvas id="sortingInterest" width="200px" height="200px" data-interest=<%= sorting_interest_data.to_json %>></canvas>
     </div>
-
   </div>
 
 
@@ -108,14 +149,39 @@
     <p class="graph-type-title">CROSS SORT</p>
 
     <div class="interest-and-gender">
-      <span class="graph-title">Interest / Gender</span>
+      <span class="graph-title">Interest / Ager</span>
+      <%
+        cross_interest_age_data = {}
+        sorting_age_collection.each do |key, value|
+          cross_interest_age_data[key] = {}
+          InterestTag.all.each do |i|
+            i_sym = i.title.downcase.parameterize.underscore.to_sym
+            cross_interest_age_data[key][i_sym] = value.select { |d| d[:zone_interests].include?(i.id.to_i) }.count
+          end
+        end
+      %>
+      <canvas id="crossInterestAge" width="200px" height="200px" data-interest-age=<%= cross_interest_age_data.to_json %>></canvas>
     </div>
 
     <div class="interest-and-age">
-      <span class="graph-title">Interest / Age</span>
+      <span class="graph-title">Interest / Gender</span>
+      <%
+        cross_interest_gender_data = {}
+        ["male", "female", "other"].each do |gender|
+          cross_interest_gender_data[gender.to_sym] = {}
+          InterestTag.all.each do |i|
+            i_sym = i.title.downcase.parameterize.underscore.to_sym
+            cross_interest_gender_data[gender.to_sym][i_sym] = @zone_data.select { |d| d[:user_gender] == gender }.select{ |d| d[:zone_interests].include?(i.id.to_i) }.count
+          end
+        end
+       %>
+       <p><%= cross_interest_gender_data %></p>
+       <canvas id="crossInterestGender" width="200px" height="200px" data-interest-gender=<%= cross_interest_gender_data.to_json %>></canvas>
     </div>
 
   </div>
 </div>
+</body>
 
+<%= javascript_pack_tag 'charts' %>
 

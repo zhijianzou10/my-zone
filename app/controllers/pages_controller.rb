@@ -24,7 +24,16 @@ class PagesController < ApplicationController
     e = filter_interest(d, params[:interest_input])
 
     e.each do |zone|
-      @zone_data << {lat: zone.latitude, lng: zone.longitude, weight: zone.posts.count/10}.to_json
+      @zone_data << {
+        zone_id: zone.id,
+        user_id: zone.user.id,
+        user_gender: zone.user.gender,
+        user_birth_year: zone.user.birth_year,
+        zone_interests: zone.interest_tag_ids,
+        lat: zone.latitude,
+        lng: zone.longitude,
+        weight: zone.posts.count/10
+      }
     end
   end
 
