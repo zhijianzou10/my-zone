@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   skip_before_action :verify_authenticity_token, :only => [:dashboard_heatmap]
-  skip_before_action :authenticate_user!, only: [:home, :components, :dashboard_heatmap]
+  skip_before_action :authenticate_user!, only: [:home, :components]
 
   def home
   end
@@ -12,6 +12,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard_heatmap
+    authorize(:page, :dashboard_heatmap?)
 
     address = params[:address] || 'Paris'
     radius = params[:radius].to_i || 1000
@@ -24,7 +25,16 @@ class PagesController < ApplicationController
     e = filter_interest(d, params[:interest_input])
 
     e.each do |zone|
-      @zone_data << {lat: zone.latitude, lng: zone.longitude, weight: zone.posts.count/10}.to_json
+      @zone_data << {
+        zone_id: zone.id,
+        user_id: zone.user.id,
+        user_gender: zone.user.gender,
+        user_birth_year: zone.user.birth_year,
+        zone_interests: zone.interest_tag_ids,
+        lat: zone.latitude,
+        lng: zone.longitude,
+        weight: zone.posts.count/10
+      }
     end
   end
 
