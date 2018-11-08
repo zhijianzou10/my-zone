@@ -40,7 +40,6 @@ var update = function() {
   var input_address = String($("input[name='address']").val());
   if (input_address != "") {
     geocoder.geocode( { 'address': input_address}, function(results, status) {
-      console.log(status);
       if (status == 'OK') {
         var gLat = results[0].geometry.location.lat();
         var gLng = results[0].geometry.location.lng();
@@ -51,22 +50,3 @@ var update = function() {
 };
 update();
 $('form').change(update);
-
-
-
-
-
-// var update = function() {
-//   var input_radius = parseInt($("input[name='zone[radius]']").val());
-//   var input_address = String($("input[name='zone[address]']").val());
-
-
-// {location: new google.maps.LatLng(37.782, -122.447), weight: 0.5},
-
-
-
-
-
-// };
-// update();
-// $('form').change(update);

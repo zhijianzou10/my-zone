@@ -1,12 +1,7 @@
 <div class="navbar_dashboard">
-  <%= link_to root_path, id: "logo_myzone_navbar" do %>
-    <h1>MyZone</h1>
+  <%= link_to root_path do %>
+   <%= image_tag("my_zone_logo.svg", class: "logo_myzone" ) %>
   <% end %>
-
-  <%= link_to "Heatmap", dashboard_heatmap_path, class: "button_normal" %>
-
-
-  <%= link_to "DATA / ZONE", dashboard_data_path, class: "button_normal"%>
 
 
   <div class="navbar_right">
