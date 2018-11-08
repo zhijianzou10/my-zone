@@ -5,7 +5,8 @@ var sortingGender = new Chart(ctx,{
     data: {
       labels: ['male', 'female', 'other'],
       datasets: [{
-        data: [data.male, data.female, data.other]
+        data: [data.male, data.female, data.other],
+        backgroundColor: ['#2F4F4F','#ADD8E6', '#008080']
       }]
     }
 
