@@ -9,7 +9,6 @@ var colorset = {
 var keys = Object.keys(data).forEach (k => {
   dataset.push({ label: String(k), data: Object.values(data[k]), backgroundColor: colorset[k] })
 })
-console.log(dataset);
 var crossInterestGender = new Chart(ctx, {
     type: 'radar',
     data: {
