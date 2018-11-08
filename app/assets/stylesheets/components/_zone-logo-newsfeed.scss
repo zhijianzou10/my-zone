@@ -1,12 +1,8 @@
 .card-zone-newsfeed {
-  // background-color: blue;
-  // border: 2px solid blue;
-  // justify-content: space-around;
   display: flex;
 }
 
 .zone-logo-newsfeed {
-  // background-color: red;
   border-radius: 50%;
   height: 31px;
   width: 31px;
@@ -17,8 +13,6 @@
 }
 
 .zone-name-newsfeed {
-  // background-color: yellow;
-  // width: 50%;
   margin-left: 10px;
 }
 
@@ -29,4 +23,24 @@
 .name-newsfeed {
   position: relative;
   top: 25%;
+}
+
+.add_zone-card {
+  opacity: 0.7;
+  height: 80px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.add_zone-card_content {
+  text-align: center;
+  width: 80px;
+  margin: 0 auto;
+  font-size: 35px;
+  color: $blue;
 }

@@ -13,29 +13,78 @@
                   label: "Name your zone",
                   autofocus: true,
                   input_html: { data: { title: :title} },
-                  placeholder: "Ex: Home"
+                  placeholder: "Home, Work, School..."
                   %>
     <%= f.input :address,
                   as: :string,
                   hint: false,
                   required: true,
-                  label: "Type your address",
+                  label: "Type a location",
                   autofocus: true,
                   input_html: { data: { address: :address} },
+                  placeholder: "Avenue des Saules, 59160 Lille ",
                   id: 'zone_address'
                   %>
-    <%= f.input :radius,
-                  as: :integer,
-                  hint: false,
-                  label: "Choose the radius",
-                  required: true,
-                  autofocus: true,
-                  input_html: { data: { radius: :radius} },
-                  placeholder: "Enter a radius less than 1000m"
-                  %>
+
+                  <fieldset class="form-group radio_buttons required zone_radius">
+                    <label class="form-control-label string required" for="zone_address">Choose its size <abbr title="required"></abbr></label>
+                    <div class="input-box-radius gender-heatmap radius-choices">
+                      <input type="hidden" name="zone[radius]" value="">
+                      <div class="form-check">
+                        <div class="checkbox-gender-heatmap">
+                          <input class="hidden form-check-input radio_buttons required" data-radius="radius" autofocus="autofocus" required="required" aria-required="true" type="radio" value="250" name="zone[radius]" id="zone_radius_250">
+                          <label class="radius-choice collection_radio_buttons" for="zone_radius_250">250</label>
+                        </div>
+                      </div>
+                      <div class="form-check">
+                        <div class="checkbox-gender-heatmap">
+                          <input class="hidden form-check-input radio_buttons required" data-radius="radius" autofocus="autofocus" required="required" aria-required="true" type="radio" value="500" name="zone[radius]" id="zone_radius_500">
+                          <label class="radius-choice collection_radio_buttons" for="zone_radius_500">500</label>
+                        </div>
+                      </div>
+                      <div class="form-check">
+                        <div class="checkbox-gender-heatmap">
+                          <input class="hidden form-check-input radio_buttons required" data-radius="radius" autofocus="autofocus" required="required" aria-required="true" type="radio" value="750" name="zone[radius]" id="zone_radius_750">
+                          <label class="radius-choice collection_radio_buttons" for="zone_radius_750">750</label>
+                        </div>
+                      </div>
+                      <div class="form-check">
+                        <div class="checkbox-gender-heatmap">
+                          <input class="hidden form-check-input radio_buttons required" data-radius="radius" autofocus="autofocus" required="required" aria-required="true" type="radio" value="1000" name="zone[radius]" id="zone_radius_1000">
+                          <label class="radius-choice collection_radio_buttons" for="zone_radius_1000">1000</label>
+                        </div>
+                      </div>
+                  </div>
+                  </fieldset>
 
 
 
+<!--     <div class="input-box gender-heatmap gender-choices">
+
+      <div class="checkbox-gender-heatmap">
+        <input class="hidden" type="checkbox" value="male" name="gender[]" id="post_gender_ids_1">
+        <label class="gender-choice" for="post_gender_ids_1">250m
+        </label>
+      </div>
+
+      <div class="checkbox-gender-heatmap">
+        <input class="hidden" type="checkbox" value="female" name="gender[]" id="post_gender_ids_2">
+        <label class="gender-choice" for="post_gender_ids_2">500
+        </label>
+      </div>
+
+      <div class="checkbox-gender-heatmap">
+        <input class="hidden" type="checkbox" value="other" name="gender[]" id="post_gender_ids_3">
+        <label class="gender-choice" for="post_gender_ids_3">750
+        </label>
+      </div>
+
+      <div class="checkbox-gender-heatmap">
+        <input class="hidden" type="checkbox" value="other" name="gender[]" id="post_gender_ids_3">
+        <label class="gender-choice" for="post_gender_ids_3">1000
+        </label>
+      </div>
+    </div> -->
 
     <div id='creation_zone' style='height: 250px; width:100%;'>
 
