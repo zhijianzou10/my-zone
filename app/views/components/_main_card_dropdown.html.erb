@@ -72,9 +72,9 @@
      <span id="good-<%= post.id %>" data-good=<%= post.id %>><%= post.goods.where(is_good: true).size %> goods</span>
     </a>
 
-    <a href="#" class="interaction-results-comment">
-      <%= pluralize post.comments.size, "comment" %>
-    </a>
+  <%= link_to new_post_comment_path(post.id), class: "interaction-results-comment", id: "commentnumber", data: { 'post-id' => post.id } do %>
+        <%= pluralize post.comments.size, "comment" %>
+  <% end %>
   </div>
 
   <hr class="divider">
