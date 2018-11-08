@@ -9,7 +9,7 @@
 
 
               <div class="row">
-                <div class="col-xs-12" style="height: 53vh">
+                <div class="col-xs-12" style="height: 48vh">
 
 
                   <div class="input-write-post">
@@ -55,15 +55,9 @@
                 <div class="col-xs-12" style="height: 10vh">
                   <div class="wrapper-interest-write">
                     <div id='interest_tags_with_zone' data-zone-id>
-<!--                    <%= f.association :interest_tag,
-                                # collection: Zone.find(z).interest_tags,
-                                as: :radio_buttons,
-                                label: :none,
-                                required: true
-                                %> -->
+
                      <fieldset class="form-group radio_buttons required post_interest_tag">
-            <!--           <legend class="col-form-label pt-0">none <abbr title="required">*</abbr>
-                      </legend> -->
+
                       <input type="hidden" name="post[interest_tag_id]" value="">
                         <div class="form-check">
                           <div class="container-interest-write-post">
@@ -80,9 +74,12 @@
                 </div>
 
                     <div class="form-actions">
+                      <div class="wrapper_publish">
                         <div class="publish_button">
                           <%= f.button :submit, "Publish", class: "button_normal"%>
                         </div>
+
+                      </div>
                     </div>
 
                   <% end %>
