@@ -41,19 +41,18 @@
 
 
 <% else %> <!-- user without account -->
-<!-- Page 1 -->
-<!-- navbar -->
-  <div class="row">
-    <div class="col-xs-12">
+
       <div class="navbar_signup">
-        <h1>MyZone</h1>
+      <%= link_to root_path do %>
+       <%= image_tag("my_zone_logo.svg", class: "logo_myzone" ) %>
+      <% end %>
           <div class="navbar_right">
-            <a href="/users/sign_in">Sign in</a>&nbsp;&nbsp;&nbsp; <!-- Ces codes sont des espaces -->
+            <a href="/users/sign_in">Sign in</a>&nbsp;&nbsp;&nbsp;
             <a href="/users/sign_up">Sign up</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </div>
       </div>
-    </div>
-  </div>
+
+</div>
 
 
 <!-- content -->
@@ -87,15 +86,17 @@
 
   <div class="banner_introduction_last">
     <br>
-      <h2>You're now connected in your zone!</h2>
+      <h2>You are now connected in your zone(s) !</h2>
       <br>
 
       <a href="/users/sign_up" class="button_sign_in">Sign up</a>
       <br>
       <div class="container_contact">
-      <div><h6><b>Contact us</b></h6></div>
+      <div><h2><b>Contact us</b></h2></div>
       <div><h6>guanguan.hu@yahoo.com</h6></div>
-      <div><h6>By Benoit, Guanguan & Zhijian</h6></div>
+      <div><h6>zhijian.zou@edhec.com</h6></div>
+      <div><h6>benoit.legendre@edhec.com</h6></div>
+      <div><h6>This web-app was made with <i class="fas fa-heart"></i> at Lewagon - Lille - Batch 179 </h6></div>
       </div>
   </div>
 
