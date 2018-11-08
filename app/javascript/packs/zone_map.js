@@ -22,7 +22,7 @@ var update = function() {
     }
   });
 
-  var input_radius = parseInt($("input[name='zone[radius]']").val());
+  var input_radius = parseInt($("[name='zone[radius]']:checked").val());
   var input_address = String($("input[name='zone[address]']").val());
 
   if (input_address != "" && isNaN(input_radius) === false && input_radius <= 1000) {

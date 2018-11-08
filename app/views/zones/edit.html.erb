@@ -8,15 +8,47 @@
 
   <div class="form-inputs">
     <%= f.input :title,
-    placeholder: "Ex: home"
+    label: "Name your zone",
+    placeholder: "Home, Work, School..."
     %>
 
     <%= f.input :address,
     as: :string,
     id: 'zone_address' %>
 
-    <%= f.input :radius,
+    <%#= f.input :radius,
     placeholder: "Enter a radius less than 1000m" %>
+
+    <fieldset class="form-group radio_buttons required zone_radius">
+      <label class="form-control-label string required" for="zone_address">Choose its size <abbr title="required"></abbr></label>
+      <div class="input-box-radius gender-heatmap radius-choices">
+        <input type="hidden" name="zone[radius]" value="">
+        <div class="form-check">
+          <div class="checkbox-gender-heatmap">
+            <input class="hidden form-check-input radio_buttons required" data-radius="radius" autofocus="autofocus" required="required" aria-required="true" type="radio" value="250" name="zone[radius]" id="zone_radius_250" checked=<%= 'checked' if 250 == @zone.radius.to_i %>>
+            <label class="radius-choice collection_radio_buttons" for="zone_radius_250">250</label>
+          </div>
+        </div>
+        <div class="form-check">
+          <div class="checkbox-gender-heatmap">
+            <input class="hidden form-check-input radio_buttons required" data-radius="radius" autofocus="autofocus" required="required" aria-required="true" type="radio" value="500" name="zone[radius]" id="zone_radius_500" checked=<%= 'checked' if 500 == @zone.radius.to_i %>>
+            <label class="radius-choice collection_radio_buttons" for="zone_radius_500">500</label>
+          </div>
+        </div>
+        <div class="form-check">
+          <div class="checkbox-gender-heatmap">
+            <input class="hidden form-check-input radio_buttons required" data-radius="radius" autofocus="autofocus" required="required" aria-required="true" type="radio" value="750" name="zone[radius]" id="zone_radius_750" checked=<%= 'checked' if 750 == @zone.radius.to_i %>>
+            <label class="radius-choice collection_radio_buttons" for="zone_radius_750">750</label>
+          </div>
+        </div>
+        <div class="form-check">
+          <div class="checkbox-gender-heatmap">
+            <input class="hidden form-check-input radio_buttons required" data-radius="radius" autofocus="autofocus" required="required" aria-required="true" type="radio" value="1000" name="zone[radius]" id="zone_radius_1000" checked=<%= 'checked' if 1000 == @zone.radius.to_i %>>
+            <label class="radius-choice collection_radio_buttons" for="zone_radius_1000">1000</label>
+          </div>
+        </div>
+    </div>
+    </fieldset>
 
       <div id='creation_zone' class="zone-design" style='height: 250px; width:100%;'>
       </div>

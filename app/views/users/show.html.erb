@@ -32,6 +32,13 @@
           <%= render 'components/zone_card_profile',zone: zone %>
         </div>
     <% end %>
+    <%= link_to new_zone_path do %>
+      <div class="add_zone-card">
+        <div class="add_zone-card_content">
+          <i class="fas fa-plus"></i>
+        </div>
+      </div>
+    <% end %>
   </div>
 
   <div>

@@ -12,11 +12,13 @@
 
 <div class="container-dashboard">
   <div class="heatmap">
+
     <% zone_data_json = [] %>
     <% @zone_data.each do |d| %>
       <% zone_data_json << d.to_json %>
     <% end %>
     <div id='db_map' style="height: 100vh; width: 100%" data-zone='<%= zone_data_json.to_json %>'></div>
+
   </div>
 
   <div class="wrapper-all-input">
