@@ -17,6 +17,17 @@
   font-weight: bold;
 }
 
-#finish_edit_profile {
+.finish-edit-profile {
+input[type="submit"] {
   margin-top: 10px;
+}
+}
+
+
+// .finish-edit-profile {
+//  margin-top: 10px;
+// }
+
+.image-upload-profile-pictures > input {
+  display: none;
 }

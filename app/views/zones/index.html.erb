@@ -78,11 +78,7 @@
   <% end %>
 </div>
 
-
-<br>
-  <%= link_to "back to profile", user_path(@user) , class: 'button_normal', style:"margin-left:17px" %>
-
-
+  <%= link_to "Back to profile", user_path(@user) , class: 'button_normal', id: 'back_to_profile'%>
 
 <%= javascript_pack_tag 'map' %>
 
