@@ -26,6 +26,7 @@
     </a>
 
       <!-- EDIT & DELETE DROPDOWN -->
+      <% if current_user == post.user %>
       <div class="dropdown points">
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           <i class="fas fa-ellipsis-h"></i>
@@ -35,6 +36,7 @@
           <li><%= link_to "Delete", post_path(post), method: :delete %></li>
         </ul>
       </div>
+      <% end %>
       <!-- DROPDOWN -->
 
     <div>
