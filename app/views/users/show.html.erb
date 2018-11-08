@@ -14,20 +14,14 @@
     <%= cl_image_tag(@user.avatar_url, class:"avatar_profile") %>
   <% end %>
 
-  <%= link_to "Edit Profile", edit_user_path(@user), class: 'button_edit_profile' %>
-    <!-- <div class="edit-profile button_normal"> -->
-      <!-- <i class="fas fa-camera" id="change_profile_picture"></i> -->
-    <!-- </div> -->
 
-
-
-  <%= link_to "My Zones", zones_path , class: 'button_zones' %>
 </div>
 
 <% if current_user == @user %>
 
 <div class="newsfeed-container">
-
+  <%= link_to "Edit Profile", edit_user_path(@user), class: 'button_edit_profile' %>
+  <%= link_to "My Zones", zones_path , class: 'button_zones' %>
  <!--  <p><%= link_to "Edit my profile", edit_user_path(@user) %></p> -->
 
   <div class="wrapper-all-profile-card">
