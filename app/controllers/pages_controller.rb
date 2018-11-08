@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   skip_before_action :verify_authenticity_token, :only => [:dashboard_heatmap]
-  skip_before_action :authenticate_user!, only: [:home, :components, :dashboard_heatmap]
+  skip_before_action :authenticate_user!, only: [:home, :components]
 
   def home
   end
@@ -12,6 +12,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard_heatmap
+    authorize(:page, :dashboard_heatmap?)
 
     address = params[:address] || 'Paris'
     radius = params[:radius].to_i || 1000

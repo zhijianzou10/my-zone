@@ -3,9 +3,8 @@ var data = JSON.parse(document.getElementById("sortingGender").dataset.gender);
 var sortingGender = new Chart(ctx,{
     type: 'pie',
     data: {
-
+      labels: ['male', 'female', 'other'],
       datasets: [{
-        labels: ['male', 'female', 'other'],
         data: [data.male, data.female, data.other]
       }]
     }
