@@ -163,23 +163,30 @@
   // margin-top: 40px;
   background-color: white;
   border-radius: 5px;
-  height: 500px;
+  height: 400px;
   width: 80%;
   margin: 10px auto;
+  > canvas {
+    // height: 450px !important;
+    // width: 450px !important;
+  }
 }
 
 .sorting-flat-gender {
   background-color: white;
   border-radius: 5px;
-  height: 500px;
+  height:  400px;
   width: 80%;
   margin: 10px auto;
+  > canvas {
+
+  }
 }
 
 .sorting-flat-interest {
   background-color: white;
   border-radius: 5px;
-  height: 500px;
+  height: 400px;
   width: 80%;
   margin: 10px auto;
 }
@@ -189,7 +196,7 @@
 .interest-and-gender {
   background-color: white;
   border-radius: 5px;
-  height: 500px;
+  height: 400px;
   width: 80%;
   margin: 10px auto;
 }
@@ -197,7 +204,7 @@
 .interest-and-age {
   background-color: white;
   border-radius: 5px;
-  height: 500px;
+  height:  400px;
   width: 80%;
   margin: 10px auto;
 }
