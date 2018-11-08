@@ -9,24 +9,18 @@
 }
 
 .comments {
-  // margin: 10px;
   display: flex;
-  // padding-top: 10px;
   margin-top: 10px;
   align-items:center;
 }
 
 .comment-read {
   flex: 1 0 auto;
-  // border-radius: 5px;
-  // margin-left: 10px;
-  // width: 95%;
   font-size: 14px;
   margin-left: 10px;
   margin-top: 10px;
   width: 75%;
     #comment-read {
-    // background-color: red;
     background-color: $very-light-gray;
     border-radius: 5px;
     border: 0;
@@ -34,13 +28,13 @@
     word-break: break-word;
     margin-right: 15px;
     padding: 10px;
+    // display: wrap;
   }
 }
 
 .avatar_navbar_show {
   flex: 0 0 20%;
   margin-left: 10px;
-  // margin-top: 10px;
 }
 
 .avatar_navbar_show2 {
