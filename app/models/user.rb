@@ -12,4 +12,9 @@ class User < ApplicationRecord
 
   mount_uploader :avatar_url, PhotoUploader
   mount_uploader :background_url, PhotoUploader
+
+  validates :firstname, presence: true
+  validates :gender, presence: true
+  validates :lastname, presence: true
+  validates :birth_year, presence: true
 end
