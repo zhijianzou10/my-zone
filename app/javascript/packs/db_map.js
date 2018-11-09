@@ -1,3 +1,6 @@
+import { autocomplete } from '../components/autocomplete';
+autocomplete();
+
 var map = new google.maps.Map(document.getElementById('db_map'), {
   center: new google.maps.LatLng(48.856614, 2.3522219),
   zoom: 13,

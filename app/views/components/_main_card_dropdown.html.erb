@@ -64,7 +64,7 @@
     </p>
 
       <% if post.photo.blank? == false %>
-        <%=  cl_image_tag(post.photo, class:"post-picture") %>
+        <%=  cl_image_tag(post.photo, class:"post-picture", a_ignore: true) %>
       <% end %>
 
   </div>
