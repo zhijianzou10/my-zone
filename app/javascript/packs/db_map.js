@@ -36,6 +36,7 @@ var gradient = [
       'rgba(255, 0, 0, 1)'
     ]
 heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
+heatmap.set('radius', heatmap.get('radius') ? null : 30);
 heatmap.setMap(map);
 
 
